@@ -125,6 +125,9 @@ namespace ShiftOS
             WriteAllText(InPath, string.Join(Environment.NewLine, InLines));
         }
 
-
+        public void CreateDirectory(string InPath)
+        {
+            Directory.CreateDirectory(MapToEnvironmentPath(InPath));
+        }
     }
 }
