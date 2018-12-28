@@ -12,9 +12,17 @@ namespace ShiftOS
 {
     public partial class Desktop : Form
     {
-        public Desktop()
+        private SystemContext CurrentSystem = null;
+
+        public Desktop(SystemContext InSystem)
         {
+            this.CurrentSystem = InSystem;
             InitializeComponent();
+        }
+
+        private void UpdateTimer_Tick(object sender, EventArgs e)
+        {
+            this.CurrentTime.Text = CurrentSystem.GetTimeOfDay();
         }
     }
 }

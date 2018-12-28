@@ -26,11 +26,17 @@ namespace ShiftOS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            using (_desktop = new Desktop())
+            using (_desktop = new Desktop(this))
             {
                 // Run Windows Forms.
                 Application.Run(_desktop);
             }
+        }
+
+        public string GetTimeOfDay()
+        {
+            // TODO: Shiftorium time upgrades.
+            return DateTime.Now.ToShortTimeString();
         }
     }
 }
