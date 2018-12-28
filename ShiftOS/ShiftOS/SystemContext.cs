@@ -10,10 +10,16 @@ namespace ShiftOS
     public class SystemContext : IDisposable
     {
         private Desktop _desktop = null;
+        private int _codepoints = 0;
 
         public void Dispose()
         {
             _desktop = null;
+        }
+
+        public int GetCodepoints()
+        {
+            return this._codepoints;
         }
 
         public void Initialize()
