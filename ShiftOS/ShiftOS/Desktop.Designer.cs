@@ -32,6 +32,7 @@
             this.DesktopPanel = new System.Windows.Forms.Panel();
             this.CurrentTime = new System.Windows.Forms.Label();
             this.UpdateTimer = new System.Windows.Forms.Timer(this.components);
+            this.Workspace = new System.Windows.Forms.Panel();
             this.DesktopPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,12 +64,22 @@
             this.UpdateTimer.Interval = 50;
             this.UpdateTimer.Tick += new System.EventHandler(this.UpdateTimer_Tick);
             // 
+            // Workspace
+            // 
+            this.Workspace.BackColor = System.Drawing.Color.Transparent;
+            this.Workspace.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Workspace.Location = new System.Drawing.Point(0, 24);
+            this.Workspace.Name = "Workspace";
+            this.Workspace.Size = new System.Drawing.Size(800, 426);
+            this.Workspace.TabIndex = 1;
+            // 
             // Desktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Workspace);
             this.Controls.Add(this.DesktopPanel);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -88,6 +99,7 @@
         private System.Windows.Forms.Panel DesktopPanel;
         private System.Windows.Forms.Label CurrentTime;
         private System.Windows.Forms.Timer UpdateTimer;
+        private System.Windows.Forms.Panel Workspace;
     }
 }
 
