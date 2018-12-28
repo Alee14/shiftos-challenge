@@ -129,5 +129,31 @@ namespace ShiftOS
         {
             Directory.CreateDirectory(MapToEnvironmentPath(InPath));
         }
+
+        public void MoveDirectory(string InPath, string OutPath)
+        {
+            Directory.Move(MapToEnvironmentPath(InPath), MapToEnvironmentPath(OutPath));
+        }
+
+        public void CopyFile(string InPath, string OutPath)
+        {
+            File.Copy(MapToEnvironmentPath(InPath), MapToEnvironmentPath(OutPath));
+        }
+
+        public void MoveFile(string InPath, string OutPath)
+        {
+            File.Move(MapToEnvironmentPath(InPath), MapToEnvironmentPath(OutPath));
+        }
+
+        public void DeleteFile(string InPath)
+        {
+            File.Delete(MapToEnvironmentPath(InPath));
+        }
+
+        public void DeleteDirectory(string InPath, bool Recurse = false)
+        {
+            Directory.Delete(MapToEnvironmentPath(InPath), Recurse);
+        }
+
     }
 }
