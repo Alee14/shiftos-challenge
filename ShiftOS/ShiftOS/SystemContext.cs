@@ -11,12 +11,19 @@ namespace ShiftOS
     {
         private Desktop _desktop = null;
         private SkinContext _skinContext = null;
+        private FilesystemContext _filesystem = null;
         private int _codepoints = 0;
 
         private void LoadCurrentSkin()
         {
             // TODO: Load it from a filesystem of some sort.
             _skinContext = new SkinContext();
+        }
+
+        private void LoadFilesystem()
+        {
+            Console.WriteLine("Loading filesystem context...");
+            this._filesystem = new FilesystemContext();
         }
 
         public void Dispose()
@@ -27,6 +34,11 @@ namespace ShiftOS
         public int GetCodepoints()
         {
             return this._codepoints;
+        }
+
+        public FilesystemContext GetFilesystem()
+        {
+            return this._filesystem;
         }
 
         public SkinContext GetSkinContext()
@@ -45,6 +57,8 @@ namespace ShiftOS
             // Set up WinForms to run normally.
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            this.LoadFilesystem();
 
             Console.WriteLine("Loading current skin...");
             this.LoadCurrentSkin();
