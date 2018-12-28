@@ -62,5 +62,69 @@ namespace ShiftOS
         {
             return Path.Combine(_workingDirectory, ResolveToAbsolutePath(InPath).Replace("/", Path.DirectorySeparatorChar.ToString()));
         }
+
+        public Stream Open(string InPath, FileMode InFileMode)
+        {
+            return File.Open(MapToEnvironmentPath(InPath), InFileMode);
+        }
+
+       public Stream OpenRead(string InPath)
+        {
+            return File.OpenRead(this.MapToEnvironmentPath(InPath));
+        }
+
+        public Stream OpenWrite(string InPath)
+        {
+            return File.OpenWrite(this.MapToEnvironmentPath(InPath));
+        }
+
+        public StreamReader OpenText(string InPath)
+        {
+            return File.OpenText(this.MapToEnvironmentPath(InPath));
+        }
+
+        public string ReadAllText(string InPath)
+        {
+            using (var sr = OpenText(InPath))
+            {
+                return sr.ReadToEnd();
+            }
+        }
+
+        public string[] ReadAllLines(string InPath)
+        {
+            return ReadAllText(InPath).Split(new[] { Environment.NewLine.ToString() }, StringSplitOptions.None);
+        }
+
+        public byte[] ReadAllBytes(string InPath)
+        {
+            using (var s = OpenRead(InPath))
+            {
+                byte[] bytes = new byte[s.Length];
+                s.Read(bytes, 0, bytes.Length);
+                return bytes;
+            }
+        }
+
+        public void WriteAllBytes(string InPath, byte[] InBytes)
+        {
+            using (var s = OpenWrite(InPath))
+            {
+                s.SetLength(InBytes.Length);
+                s.Write(InBytes, 0, InBytes.Length);
+            }
+        }
+
+        public void WriteAllText(string InPath, string InText)
+        {
+            WriteAllBytes(InPath, Encoding.UTF8.GetBytes(InText));
+        }
+
+        public void WriteAllLines(string InPath, string[] InLines)
+        {
+            WriteAllText(InPath, string.Join(Environment.NewLine, InLines));
+        }
+
+
     }
 }
