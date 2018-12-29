@@ -4,16 +4,20 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Threading.Tasks;
+using System.Reflection;
+using System.Windows.Forms;
 
 namespace ShiftOS
 {
+
     public class FilesystemContext
     {
         private string _workingDirectory;
 
         public FilesystemContext()
         {
-            _workingDirectory = Path.Combine(Environment.CurrentDirectory, "ShiftFS");
+            _workingDirectory = Path.Combine(Application.StartupPath, "ShiftFS");
+            Console.WriteLine(" --> Working directory: {0}", _workingDirectory);
 
             // Create the directory if it does not exist.
             if (!Directory.Exists(_workingDirectory))
@@ -53,14 +57,21 @@ namespace ShiftOS
             string OutPath = "";
             foreach(var Part in PathParts)
             {
-                OutPath = "/" + Part;
+                OutPath = "/" + Part + OutPath;
             }
             return OutPath;
         }
 
         private string MapToEnvironmentPath(string InPath)
         {
-            return Path.Combine(_workingDirectory, ResolveToAbsolutePath(InPath).Replace("/", Path.DirectorySeparatorChar.ToString()));
+            string abs = ResolveToAbsolutePath(InPath);
+            while (abs.StartsWith("/"))
+                abs = abs.Remove(0, 1);
+
+            string mapped = Path.Combine(_workingDirectory, abs.Replace("/", Path.DirectorySeparatorChar.ToString()));
+
+            Console.WriteLine("Mapped {0} to {1}.", InPath, mapped);
+            return mapped;
         }
 
         public Stream Open(string InPath, FileMode InFileMode)
@@ -108,10 +119,11 @@ namespace ShiftOS
 
         public void WriteAllBytes(string InPath, byte[] InBytes)
         {
-            using (var s = OpenWrite(InPath))
+            using (var s = this.Open(InPath, FileMode.OpenOrCreate))
             {
                 s.SetLength(InBytes.Length);
                 s.Write(InBytes, 0, InBytes.Length);
+                s.Flush();
             }
         }
 
@@ -127,7 +139,21 @@ namespace ShiftOS
 
         public void CreateDirectory(string InPath)
         {
+            if (DirectoryExists(InPath))
+                return;
+
             Directory.CreateDirectory(MapToEnvironmentPath(InPath));
+            Console.WriteLine("Creating directory: {0}", InPath);
+        }
+
+        public bool DirectoryExists(string InPath)
+        {
+            return Directory.Exists(MapToEnvironmentPath(InPath));
+        }
+
+        public bool FileExists(string InPath)
+        {
+            return File.Exists(MapToEnvironmentPath(InPath));
         }
 
         public void MoveDirectory(string InPath, string OutPath)
@@ -148,12 +174,30 @@ namespace ShiftOS
         public void DeleteFile(string InPath)
         {
             File.Delete(MapToEnvironmentPath(InPath));
+            Console.Write("Deleting file {0}", InPath);
         }
 
         public void DeleteDirectory(string InPath, bool Recurse = false)
         {
             Directory.Delete(MapToEnvironmentPath(InPath), Recurse);
+            Console.WriteLine("Deleting directory {0} (recursive: {1})", InPath, Recurse);
         }
+
+        public string[] GetFiles(string InPath)
+        {
+            var files = Directory.GetFiles(MapToEnvironmentPath(InPath));
+
+            var ret = new string[files.Length];
+
+            for (int i = 0; i < ret.Length; i++)
+            {
+                ret[i] = InPath + "/" + Path.GetFileName(files[i]);
+            }
+
+            return ret;
+        }
+
+        
 
     }
 }
