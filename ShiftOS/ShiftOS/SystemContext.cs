@@ -32,7 +32,7 @@ namespace ShiftOS
         public bool LaunchProgram(string InExecutableName)
         {
             // Does the program exist in our typemap?
-            if(!_programTypeMap.ContainsKey(InExecutableName))
+            if (!_programTypeMap.ContainsKey(InExecutableName))
             {
                 // Program doesn't exist.
                 return false;
@@ -169,7 +169,7 @@ namespace ShiftOS
             // Set up WinForms to run normally.
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+            
             ToolStripManager.Renderer = new ToolStripSkinRenderer(this);
 
             // Load all programs in the game.

@@ -171,6 +171,7 @@ namespace ShiftOS
 
             Console.WriteLine(" --> Read enable window corners...");
             _skin.enablecorners = bool.Parse(stream.ReadLine());
+            _skin.enablebordercorners = _skin.enablecorners;
 
             Console.WriteLine(" --> Read titlebar corner width...");
             _skin.titlebarcornerwidth = Convert.ToInt32(stream.ReadLine());
@@ -340,7 +341,7 @@ namespace ShiftOS
             // but never made it into this format because of the 0.0.8 format being implemented
             // by William.
 
-            for(int i = 0; i < (100 - 73); i++)
+            for(int i = 0; i < (100 - 73) - 1; i++)
             {
                 stream.ReadLine();
             }
@@ -362,14 +363,29 @@ namespace ShiftOS
             }
 
             _skinimages.Add("closebtn", GetImage(fs, ImageFileNames[0]));
+            _skinimages.Add("closebtnhover", GetImage(fs, ImageFileNames[1]));
+            _skinimages.Add("closebtnclick", GetImage(fs, ImageFileNames[2]));
             _skinimages.Add("titlebar", GetImage(fs, ImageFileNames[3]));
             _skinimages.Add("desktopbackground", GetImage(fs, ImageFileNames[6]));
             _skinimages.Add("rollbtn", GetImage(fs, ImageFileNames[9]));
-            _skinimages.Add("titlebarright", GetImage(fs, ImageFileNames[12]));
-            _skinimages.Add("titlebarleft", GetImage(fs, ImageFileNames[15]));
+            _skinimages.Add("rollbtnhover", GetImage(fs, ImageFileNames[10]));
+            _skinimages.Add("rollbtnclick", GetImage(fs, ImageFileNames[11]));
+            _skinimages.Add("rightcorner", GetImage(fs, ImageFileNames[12]));
+            _skinimages.Add("leftcorner", GetImage(fs, ImageFileNames[15]));
             _skinimages.Add("desktoppanel", GetImage(fs, ImageFileNames[18]));
             _skinimages.Add("panelclock", GetImage(fs, ImageFileNames[21]));
             _skinimages.Add("applauncher", GetImage(fs, ImageFileNames[24]));
+            _skinimages.Add("applaunchermouseover", GetImage(fs, ImageFileNames[25]));
+            _skinimages.Add("applauncherclick", GetImage(fs, ImageFileNames[26]));
+            _skinimages.Add("borderleft", GetImage(fs, ImageFileNames[27]));
+            _skinimages.Add("borderright", GetImage(fs, ImageFileNames[30]));
+            _skinimages.Add("borderbottom", GetImage(fs, ImageFileNames[33]));
+            _skinimages.Add("bottomrightcorner", GetImage(fs, ImageFileNames[36]));
+            _skinimages.Add("bottomleftcorner", GetImage(fs, ImageFileNames[39]));
+            _skinimages.Add("minbtn", GetImage(fs, ImageFileNames[42]));
+            _skinimages.Add("minbtnhover", GetImage(fs, ImageFileNames[43]));
+            _skinimages.Add("minbtnclick", GetImage(fs, ImageFileNames[44]));
+            _skinimages.Add("panelbutton", GetImage(fs, ImageFileNames[45]));
 
         }
 

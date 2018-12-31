@@ -15,6 +15,9 @@ namespace ShiftOS.Windowing
     public partial class Window : UserControl
     {
         private SystemContext _currentSystem = null;
+        private int PreRollHeight = 0;
+        private bool IsRolled = false;
+
 
         public Window()
         {
@@ -35,6 +38,8 @@ namespace ShiftOS.Windowing
 
         private void OnDesktopUpdated(object sender, EventArgs e)
         {
+            this.BackColor = Color.Transparent;
+
             // Get the skin data.
             var skin = this.CurrentSystem.GetSkinContext();
             var skindata = skin.GetSkinData();
@@ -112,6 +117,183 @@ namespace ShiftOS.Windowing
                 RollButton.BackColor = skindata.rollbtncolour;
             }
 
+            // Set up the minimize button background.
+            if (skin.HasImage("minbtn"))
+            {
+                MinimizeButton.BackColor = Color.Transparent;
+                if (MinimizeButton.BackgroundImage != skin.GetImage("minbtn"))
+                    MinimizeButton.BackgroundImage = skin.GetImage("minbtn");
+                MinimizeButton.BackgroundImageLayout = skindata.minbtnlayout;
+            }
+            else
+            {
+                MinimizeButton.BackgroundImage = null;
+                MinimizeButton.BackColor = skindata.minbtncolour;
+            }
+
+            // Set up the widths of our borders.
+            this.LeftBar.Width = skindata.borderwidth;
+            this.RightBar.Width = skindata.borderwidth;
+            this.BottomBarHolder.Height = skindata.borderwidth;
+
+            // Bottom corners get their heights from the bottom bar holder, but their widths must be set.
+            this.BottomLeft.Width = this.LeftBar.Width;
+            this.BottomRight.Width = this.RightBar.Width;
+            
+            // Should we show the titlebar corners?
+            if(skindata.enablecorners)
+            {
+                // Show titlebar corners.
+                this.TitleBarLeft.Show();
+                this.TitleBarRight.Show();
+
+                // Set their widths.
+                this.TitleBarLeft.Width = skindata.titlebarcornerwidth;
+                this.TitleBarRight.Width = this.TitleBarLeft.Width;
+
+                // Set their backgrounds.
+                if(skin.HasImage("leftcorner"))
+                {
+                    if (TitleBarLeft.BackgroundImage != skin.GetImage("leftcorner"))
+                        TitleBarLeft.BackgroundImage = skin.GetImage("leftcorner");
+                    TitleBarLeft.BackgroundImageLayout = skindata.leftcornerlayout;
+                    TitleBarLeft.BackColor = Color.Transparent;
+                }
+                else
+                {
+                    TitleBarLeft.BackColor = skindata.leftcornercolour;
+                    TitleBarLeft.BackgroundImage = null;
+                }
+
+                if (skin.HasImage("rightcorner"))
+                {
+                    if (TitleBarRight.BackgroundImage != skin.GetImage("rightcorner"))
+                        TitleBarRight.BackgroundImage = skin.GetImage("rightcorner");
+                    TitleBarRight.BackgroundImageLayout = skindata.rightcornerlayout;
+                    TitleBarRight.BackColor = Color.Transparent;
+                }
+                else
+                {
+                    TitleBarRight.BackColor = skindata.rightcornercolour;
+                    TitleBarRight.BackgroundImage = null;
+                }
+
+            }
+            else
+            {
+                // Hide them.
+                this.TitleBarLeft.Hide();
+                this.TitleBarRight.Hide();
+            }
+
+            // Should we show the border corners?
+            if (skindata.enablebordercorners)
+            {
+                // Show titlebar corners.
+                this.BottomLeft.Show();
+                this.BottomRight.Show();
+
+                // Set their backgrounds.
+                if (skin.HasImage("bottomleftcorner"))
+                {
+                    if (BottomLeft.BackgroundImage != skin.GetImage("bottomleftcorner"))
+                        BottomLeft.BackgroundImage = skin.GetImage("bottomleftcorner");
+                    BottomLeft.BackgroundImageLayout = skindata.bottomleftcornerlayout;
+                    BottomLeft.BackColor = Color.Transparent;
+                }
+                else
+                {
+                    BottomLeft.BackColor = skindata.bottomleftcornercolour;
+                    BottomLeft.BackgroundImage = null;
+                }
+
+                if (skin.HasImage("bottomrightcorner"))
+                {
+                    if (BottomRight.BackgroundImage != skin.GetImage("bottomrightcorner"))
+                        BottomRight.BackgroundImage = skin.GetImage("bottomrightcorner");
+                    BottomRight.BackgroundImageLayout = skindata.bottomrightcornerlayout;
+                    BottomRight.BackColor = Color.Transparent;
+                }
+                else
+                {
+                    BottomRight.BackColor = skindata.bottomrightcornercolour;
+                    BottomRight.BackgroundImage = null;
+                }
+
+            }
+            else
+            {
+                // Hide them.
+                this.BottomLeft.Hide();
+                this.BottomRight.Hide();
+            }
+
+
+            // Set the titlebar background.
+            if (skin.HasImage("titlebar"))
+            {
+                if(this.TitleBarHolder.BackgroundImage != skin.GetImage("titlebar"))
+                {
+                    this.TitleBarHolder.BackgroundImage = skin.GetImage("titlebar");
+                }
+                this.TitleBarHolder.BackColor = Color.Transparent;
+                this.TitleBarHolder.BackgroundImageLayout = skindata.titlebarlayout;
+            }
+            else
+            {
+                this.TitleBarHolder.BackColor = skindata.titlebarcolour;
+                this.TitleBarHolder.BackgroundImage = null;
+            }
+
+            if(skin.HasImage("borderleft"))
+            {
+                if(this.LeftBar.BackgroundImage != skin.GetImage("borderleft"))
+                {
+                    this.LeftBar.BackgroundImage = skin.GetImage("borderleft");
+                }
+                this.LeftBar.BackColor = Color.Transparent;
+                this.LeftBar.BackgroundImageLayout = skindata.borderleftlayout;
+            }
+            else
+            {
+                this.LeftBar.BackColor = skindata.borderleftcolour;
+                this.LeftBar.BackgroundImage = null;
+            }
+
+            if (skin.HasImage("borderright"))
+            {
+                if (this.RightBar.BackgroundImage != skin.GetImage("borderright"))
+                {
+                    this.RightBar.BackgroundImage = skin.GetImage("borderright");
+                }
+                this.RightBar.BackColor = Color.Transparent;
+                this.RightBar.BackgroundImageLayout = skindata.borderrightlayout;
+            }
+            else
+            {
+                this.RightBar.BackColor = skindata.borderrightcolour;
+                this.RightBar.BackgroundImage = null;
+            }
+
+            if (skin.HasImage("borderbottom"))
+            {
+                if (this.BottomBarHolder.BackgroundImage != skin.GetImage("borderbottom"))
+                {
+                    this.BottomBarHolder.BackgroundImage = skin.GetImage("borderbottom");
+                }
+                this.BottomBarHolder.BackColor = Color.Transparent;
+                this.BottomBarHolder.BackgroundImageLayout = skindata.borderbottomlayout;
+            }
+            else
+            {
+                this.BottomBarHolder.BackColor = skindata.borderbottomcolour;
+                this.BottomBarHolder.BackgroundImage = null;
+            }
+
+            if(IsRolled)
+            {
+                Height = TitleBarHolder.Height;
+            }
         }
 
 
@@ -133,6 +315,55 @@ namespace ShiftOS.Windowing
         {
             get => this.IconBox.Image;
             set => this.IconBox.Image = value;
+        }
+
+        private void TitleBarMouseDown(object sender, MouseEventArgs e)
+        {
+            if (this.CurrentSystem.HasShiftoriumUpgrade("draggablewindows"))
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    this.TitleBarHolder.Capture = false;
+                    this.TitleText.Capture = false;
+                    this.IconBox.Capture = false;
+                    this.TitleBarLeft.Capture = false;
+                    this.TitleBarRight.Capture = false;
+                    const ushort WM_NCLBUTTONDOWN = 0xA1;
+                    const long HTCAPTION = 2;
+                    Message msg = Message.Create(this.Handle, WM_NCLBUTTONDOWN, new IntPtr(HTCAPTION), IntPtr.Zero);
+                    this.DefWndProc(ref msg);
+                }
+            }
+        }
+
+        public event EventHandler WindowClosed;
+
+        protected virtual void OnClose() { }
+
+        public void Close()
+        {
+            WindowClosed?.Invoke(this, EventArgs.Empty);
+            OnClose();
+            this.Parent?.Controls.Remove(this);
+        }
+
+        private void CloseButton_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void RollButton_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(IsRolled)
+            {
+                this.Height = PreRollHeight;
+            }
+            else
+            {
+                PreRollHeight = this.Height;
+                this.Height = TitleBarHolder.Height;
+            }
+            IsRolled = !IsRolled;
         }
     }
 }

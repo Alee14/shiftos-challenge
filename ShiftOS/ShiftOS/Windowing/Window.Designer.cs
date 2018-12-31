@@ -29,22 +29,21 @@
         private void InitializeComponent()
         {
             this.TitleBarHolder = new System.Windows.Forms.Panel();
-            this.TitleBarLeft = new System.Windows.Forms.Panel();
+            this.IconBox = new System.Windows.Forms.PictureBox();
+            this.TitleText = new System.Windows.Forms.Label();
+            this.MinimizeButton = new System.Windows.Forms.Panel();
+            this.RollButton = new System.Windows.Forms.Panel();
+            this.CloseButton = new System.Windows.Forms.Panel();
             this.TitleBarRight = new System.Windows.Forms.Panel();
+            this.TitleBarLeft = new System.Windows.Forms.Panel();
             this.BottomBarHolder = new System.Windows.Forms.Panel();
-            this.BottomBar = new System.Windows.Forms.Panel();
             this.BottomRight = new System.Windows.Forms.Panel();
             this.BottomLeft = new System.Windows.Forms.Panel();
             this.RightBar = new System.Windows.Forms.Panel();
             this.LeftBar = new System.Windows.Forms.Panel();
-            this.CloseButton = new System.Windows.Forms.Panel();
-            this.RollButton = new System.Windows.Forms.Panel();
-            this.MinimizeButton = new System.Windows.Forms.Panel();
-            this.TitleText = new System.Windows.Forms.Label();
-            this.IconBox = new System.Windows.Forms.PictureBox();
             this.TitleBarHolder.SuspendLayout();
-            this.BottomBarHolder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconBox)).BeginInit();
+            this.BottomBarHolder.SuspendLayout();
             this.SuspendLayout();
             // 
             // TitleBarHolder
@@ -62,15 +61,58 @@
             this.TitleBarHolder.Name = "TitleBarHolder";
             this.TitleBarHolder.Size = new System.Drawing.Size(601, 30);
             this.TitleBarHolder.TabIndex = 0;
+            this.TitleBarHolder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleBarMouseDown);
             // 
-            // TitleBarLeft
+            // IconBox
             // 
-            this.TitleBarLeft.BackColor = System.Drawing.Color.Gray;
-            this.TitleBarLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.TitleBarLeft.Location = new System.Drawing.Point(0, 0);
-            this.TitleBarLeft.Name = "TitleBarLeft";
-            this.TitleBarLeft.Size = new System.Drawing.Size(2, 30);
-            this.TitleBarLeft.TabIndex = 1;
+            this.IconBox.BackColor = System.Drawing.Color.Black;
+            this.IconBox.Location = new System.Drawing.Point(7, 7);
+            this.IconBox.Name = "IconBox";
+            this.IconBox.Size = new System.Drawing.Size(16, 16);
+            this.IconBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.IconBox.TabIndex = 8;
+            this.IconBox.TabStop = false;
+            // 
+            // TitleText
+            // 
+            this.TitleText.AutoSize = true;
+            this.TitleText.BackColor = System.Drawing.Color.Transparent;
+            this.TitleText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.TitleText.ForeColor = System.Drawing.Color.White;
+            this.TitleText.Location = new System.Drawing.Point(26, 6);
+            this.TitleText.Name = "TitleText";
+            this.TitleText.Size = new System.Drawing.Size(100, 17);
+            this.TitleText.TabIndex = 5;
+            this.TitleText.Text = "Window Title";
+            // 
+            // MinimizeButton
+            // 
+            this.MinimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MinimizeButton.BackColor = System.Drawing.Color.Black;
+            this.MinimizeButton.Location = new System.Drawing.Point(520, 3);
+            this.MinimizeButton.Name = "MinimizeButton";
+            this.MinimizeButton.Size = new System.Drawing.Size(24, 24);
+            this.MinimizeButton.TabIndex = 7;
+            // 
+            // RollButton
+            // 
+            this.RollButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RollButton.BackColor = System.Drawing.Color.Black;
+            this.RollButton.Location = new System.Drawing.Point(547, 3);
+            this.RollButton.Name = "RollButton";
+            this.RollButton.Size = new System.Drawing.Size(24, 24);
+            this.RollButton.TabIndex = 6;
+            this.RollButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.RollButton_MouseClick);
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseButton.BackColor = System.Drawing.Color.Black;
+            this.CloseButton.Location = new System.Drawing.Point(574, 3);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(24, 24);
+            this.CloseButton.TabIndex = 5;
+            this.CloseButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CloseButton_MouseClick);
             // 
             // TitleBarRight
             // 
@@ -81,10 +123,18 @@
             this.TitleBarRight.Size = new System.Drawing.Size(2, 30);
             this.TitleBarRight.TabIndex = 2;
             // 
+            // TitleBarLeft
+            // 
+            this.TitleBarLeft.BackColor = System.Drawing.Color.Gray;
+            this.TitleBarLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TitleBarLeft.Location = new System.Drawing.Point(0, 0);
+            this.TitleBarLeft.Name = "TitleBarLeft";
+            this.TitleBarLeft.Size = new System.Drawing.Size(2, 30);
+            this.TitleBarLeft.TabIndex = 1;
+            // 
             // BottomBarHolder
             // 
             this.BottomBarHolder.BackColor = System.Drawing.Color.Transparent;
-            this.BottomBarHolder.Controls.Add(this.BottomBar);
             this.BottomBarHolder.Controls.Add(this.BottomRight);
             this.BottomBarHolder.Controls.Add(this.BottomLeft);
             this.BottomBarHolder.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -92,16 +142,6 @@
             this.BottomBarHolder.Name = "BottomBarHolder";
             this.BottomBarHolder.Size = new System.Drawing.Size(601, 2);
             this.BottomBarHolder.TabIndex = 1;
-            // 
-            // BottomBar
-            // 
-            this.BottomBar.BackColor = System.Drawing.Color.Gray;
-            this.BottomBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BottomBar.ForeColor = System.Drawing.Color.White;
-            this.BottomBar.Location = new System.Drawing.Point(2, 0);
-            this.BottomBar.Name = "BottomBar";
-            this.BottomBar.Size = new System.Drawing.Size(597, 2);
-            this.BottomBar.TabIndex = 0;
             // 
             // BottomRight
             // 
@@ -139,55 +179,6 @@
             this.LeftBar.Size = new System.Drawing.Size(2, 314);
             this.LeftBar.TabIndex = 4;
             // 
-            // CloseButton
-            // 
-            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CloseButton.BackColor = System.Drawing.Color.Black;
-            this.CloseButton.Location = new System.Drawing.Point(574, 3);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(24, 24);
-            this.CloseButton.TabIndex = 5;
-            // 
-            // RollButton
-            // 
-            this.RollButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RollButton.BackColor = System.Drawing.Color.Black;
-            this.RollButton.Location = new System.Drawing.Point(547, 3);
-            this.RollButton.Name = "RollButton";
-            this.RollButton.Size = new System.Drawing.Size(24, 24);
-            this.RollButton.TabIndex = 6;
-            // 
-            // MinimizeButton
-            // 
-            this.MinimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MinimizeButton.BackColor = System.Drawing.Color.Black;
-            this.MinimizeButton.Location = new System.Drawing.Point(520, 3);
-            this.MinimizeButton.Name = "MinimizeButton";
-            this.MinimizeButton.Size = new System.Drawing.Size(24, 24);
-            this.MinimizeButton.TabIndex = 7;
-            // 
-            // TitleText
-            // 
-            this.TitleText.AutoSize = true;
-            this.TitleText.BackColor = System.Drawing.Color.Transparent;
-            this.TitleText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.TitleText.ForeColor = System.Drawing.Color.White;
-            this.TitleText.Location = new System.Drawing.Point(26, 6);
-            this.TitleText.Name = "TitleText";
-            this.TitleText.Size = new System.Drawing.Size(100, 17);
-            this.TitleText.TabIndex = 5;
-            this.TitleText.Text = "Window Title";
-            // 
-            // IconBox
-            // 
-            this.IconBox.BackColor = System.Drawing.Color.Black;
-            this.IconBox.Location = new System.Drawing.Point(7, 7);
-            this.IconBox.Name = "IconBox";
-            this.IconBox.Size = new System.Drawing.Size(16, 16);
-            this.IconBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.IconBox.TabIndex = 8;
-            this.IconBox.TabStop = false;
-            // 
             // Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,8 +194,8 @@
             this.Size = new System.Drawing.Size(601, 346);
             this.TitleBarHolder.ResumeLayout(false);
             this.TitleBarHolder.PerformLayout();
-            this.BottomBarHolder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IconBox)).EndInit();
+            this.BottomBarHolder.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -215,7 +206,6 @@
         private System.Windows.Forms.Panel TitleBarRight;
         private System.Windows.Forms.Panel TitleBarLeft;
         private System.Windows.Forms.Panel BottomBarHolder;
-        private System.Windows.Forms.Panel BottomBar;
         private System.Windows.Forms.Panel BottomRight;
         private System.Windows.Forms.Panel BottomLeft;
         private System.Windows.Forms.Panel RightBar;

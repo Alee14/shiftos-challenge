@@ -16,7 +16,7 @@ namespace ShiftOS
         private SystemContext CurrentSystem = null;
         private bool _inUnity = false;
         private int _lastWorkspaceChildCount = -1;
-
+        
         public SystemContext GetCurrentSystem()
         {
             return CurrentSystem;
@@ -25,7 +25,6 @@ namespace ShiftOS
         public Desktop(SystemContext InSystem)
         {
             this.CurrentSystem = InSystem;
-            this.DoubleBuffered = true;
             InitializeComponent();
             ResetAppLauncher();
         }
@@ -70,7 +69,8 @@ namespace ShiftOS
                 // Otherwise, we get a wallpaper.
                 if(skin.HasImage("desktopbackground"))
                 {
-                    this.BackgroundImage = skin.GetImage("desktopbackground");
+                    if(this.BackgroundImage != skin.GetImage("desktopbackground"))
+                        this.BackgroundImage = skin.GetImage("desktopbackground");
                     this.BackgroundImageLayout = skin.GetSkinData().desktopbackgroundlayout;
                 }
                 else
@@ -86,7 +86,8 @@ namespace ShiftOS
                 // Set the desktop panel background
                 if(skin.HasImage("desktoppanel"))
                 {
-                    DesktopPanel.BackgroundImage = skin.GetImage("desktoppanel");
+                    if(DesktopPanel.BackgroundImage != skin.GetImage("desktoppanel"))
+                        DesktopPanel.BackgroundImage = skin.GetImage("desktoppanel");
                     DesktopPanel.BackgroundImageLayout = skin.GetSkinData().desktoppanellayout;
                     DesktopPanel.BackColor = Color.Transparent;
                 }
@@ -125,7 +126,8 @@ namespace ShiftOS
                 if(skin.HasImage("panelclock"))
                 {
                     TimePanel.BackColor = Color.Transparent;
-                    TimePanel.BackgroundImage = skin.GetImage("panelclock");
+                    if(TimePanel.BackgroundImage != skin.GetImage("panelclock"))
+                        TimePanel.BackgroundImage = skin.GetImage("panelclock");
                     TimePanel.BackgroundImageLayout = skin.GetSkinData().panelclocklayout;
                 }
                 else
@@ -198,7 +200,8 @@ namespace ShiftOS
                 {
                     AppLauncherMenu.Text = "";
                     AppLauncherMenu.BackColor = Color.Transparent;
-                    AppLauncherMenu.BackgroundImage = skin.GetImage("applauncher");
+                    if(AppLauncherMenu.BackgroundImage != skin.GetImage("applauncher"))
+                        AppLauncherMenu.BackgroundImage = skin.GetImage("applauncher");
                     AppLauncherMenu.BackgroundImageLayout = skin.GetSkinData().applauncherlayout;
                 }
                 else
