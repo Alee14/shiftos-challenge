@@ -82,5 +82,19 @@ namespace ShiftOS
 
 
         }
+
+        private void PanelButton_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(_window.Enabled == false)
+            {
+                _window.Enabled = true;
+                _window.Opacity = 1;
+            }
+            else
+            {
+                _window.Opacity = 0;
+                _window.Enabled = false;
+            }
+        }
     }
 }

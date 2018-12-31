@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace ShiftOS.Windowing
 {
     [Designer("System.Windows.Forms.Design.ParentControlDesigner, System.Design", typeof(IDesigner))]
-    public partial class Window : UserControl
+    public partial class Window : Form
     {
         private SystemContext _currentSystem = null;
         private int PreRollHeight = 0;
@@ -38,8 +38,6 @@ namespace ShiftOS.Windowing
 
         private void OnDesktopUpdated(object sender, EventArgs e)
         {
-            this.BackColor = Color.Transparent;
-
             // Get the skin data.
             var skin = this.CurrentSystem.GetSkinContext();
             var skindata = skin.GetSkinData();
@@ -336,17 +334,6 @@ namespace ShiftOS.Windowing
             }
         }
 
-        public event EventHandler WindowClosed;
-
-        protected virtual void OnClose() { }
-
-        public void Close()
-        {
-            WindowClosed?.Invoke(this, EventArgs.Empty);
-            OnClose();
-            this.Parent?.Controls.Remove(this);
-        }
-
         private void CloseButton_MouseClick(object sender, MouseEventArgs e)
         {
             this.Close();
@@ -364,6 +351,12 @@ namespace ShiftOS.Windowing
                 this.Height = TitleBarHolder.Height;
             }
             IsRolled = !IsRolled;
+        }
+
+        private void MinimizeButton_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Opacity = 0;
+            this.Enabled = false;
         }
     }
 }

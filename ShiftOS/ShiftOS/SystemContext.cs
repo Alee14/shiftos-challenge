@@ -16,7 +16,7 @@ namespace ShiftOS
         private SkinContext _skinContext = null;
         private FilesystemContext _filesystem = null;
         private int _codepoints = 0;
-
+        private List<Window> _windows = new List<Window>();
         private Dictionary<string, Type> _programTypeMap = new Dictionary<string, Type>();
         private List<ProgramAttribute> _programMetadata = new List<ProgramAttribute>();
 
@@ -50,17 +50,14 @@ namespace ShiftOS
 
             // Set the system context of the window.
             window.SetSystemContext(this);
-
-            // Add the window to the desktop's workspace.
-            var work = _desktop.GetWorkspace();
-            work.Controls.Add(window);
-
-            // Center the window on the workspace.
-            window.Left = (work.Width - window.Width) / 2;
-            window.Top = (work.Height - window.Height) / 2;
-
-            // Ensure the window is visible.
+            _windows.Add(window);
             window.Show();
+
+            window.FormClosed += (o, a) =>
+            {
+                _windows.Remove(window);
+                Console.WriteLine(" --> Closed {0}", window.WindowTitle);
+            };
 
             // Program was successfully launched.
             return true;
@@ -73,6 +70,11 @@ namespace ShiftOS
             {
                 yield return program.ExecutableName;
             }
+        }
+
+        public List<Window> GetWindows()
+        {
+            return _windows;
         }
 
         public string GetProgramName(string InExecutableName)

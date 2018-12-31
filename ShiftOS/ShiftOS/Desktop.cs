@@ -27,6 +27,7 @@ namespace ShiftOS
             this.CurrentSystem = InSystem;
             InitializeComponent();
             ResetAppLauncher();
+            this.DoubleBuffered = true;
         }
 
         private void ResetPanelButtons()
@@ -34,18 +35,13 @@ namespace ShiftOS
             // Clear the panel button list.
             this.PanelButtonList.Controls.Clear();
 
-            // Go through every control in the workspace.
-            foreach(Control ctrl in Workspace.Controls)
+            foreach (var window in CurrentSystem.GetWindows())
             {
-                // Check if it's a Window.
-                if(ctrl is Window)
-                {
-                    // Create a panel button for the window.
-                    var panelButton = new PanelButton(this, ctrl as Window);
+                // Create a panel button for the window.
+                var panelButton = new PanelButton(this, window);
 
-                    // Add it to our UI.
-                    this.PanelButtonList.Controls.Add(panelButton);
-                }
+                // Add it to our UI.
+                this.PanelButtonList.Controls.Add(panelButton);
             }
         }
 
@@ -63,6 +59,8 @@ namespace ShiftOS
                 // then we become transparent.
                 this.BackgroundImage = null;
                 this.BackColor = this.TransparencyKey;
+
+                
             }
             else
             {
@@ -225,10 +223,10 @@ namespace ShiftOS
             }
 
             // Has the amount of children (windows) in the workspace changed?
-            if(_lastWorkspaceChildCount != this.Workspace.Controls.Count)
+            if(_lastWorkspaceChildCount != CurrentSystem.GetWindows().Count)
             {
                 // Update it.
-                _lastWorkspaceChildCount = this.Workspace.Controls.Count;
+                _lastWorkspaceChildCount = CurrentSystem.GetWindows().Count;
 
                 // Reset panel buttons.
                 this.ResetPanelButtons();
@@ -236,11 +234,6 @@ namespace ShiftOS
 
             // Tells any open programs that we've updated.
             this.CurrentSystem.UpdateDesktop();
-        }
-
-        public Panel GetWorkspace()
-        {
-            return this.Workspace;
         }
 
         public void ResetAppLauncher()

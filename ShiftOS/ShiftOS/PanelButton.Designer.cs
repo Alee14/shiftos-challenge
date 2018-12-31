@@ -42,6 +42,7 @@
             this.IconBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.IconBox.TabIndex = 0;
             this.IconBox.TabStop = false;
+            this.IconBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelButton_MouseClick);
             // 
             // TitleText
             // 
@@ -52,6 +53,7 @@
             this.TitleText.Size = new System.Drawing.Size(89, 15);
             this.TitleText.TabIndex = 1;
             this.TitleText.Text = "Window Title";
+            this.TitleText.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelButton_MouseClick);
             // 
             // PanelButton
             // 
@@ -62,9 +64,10 @@
             this.Controls.Add(this.IconBox);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.ForeColor = System.Drawing.Color.White;
-            this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "PanelButton";
             this.Size = new System.Drawing.Size(204, 20);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelButton_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.IconBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
