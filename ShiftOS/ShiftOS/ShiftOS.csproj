@@ -36,6 +36,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DocoptNet, Version=0.0.0.0, Culture=neutral, PublicKeyToken=7a38c71da49a547e, processorArchitecture=MSIL">
+      <HintPath>..\packages\docopt.net.0.6.1.10\lib\net40\DocoptNet.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -52,6 +55,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\Cheat.cs" />
+    <Compile Include="Commands\Clear.cs" />
+    <Compile Include="Commands\Clock.cs" />
+    <Compile Include="Commands\Codepoints.cs" />
+    <Compile Include="Commands\Help.cs" />
+    <Compile Include="Commands\IConsoleContext.cs" />
+    <Compile Include="Commands\Minimize.cs" />
+    <Compile Include="Commands\Move.cs" />
+    <Compile Include="Commands\Open.cs" />
+    <Compile Include="Commands\Set.cs" />
+    <Compile Include="Commands\Shutdown.cs" />
+    <Compile Include="Commands\TerminalCommand.cs" />
     <Compile Include="Desktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,7 +74,9 @@
       <DependentUpon>Desktop.cs</DependentUpon>
     </Compile>
     <Compile Include="FilesystemContext.cs" />
+    <Compile Include="Metadata\AppLauncherRequirementAttribute.cs" />
     <Compile Include="Metadata\ProgramAttribute.cs" />
+    <Compile Include="Metadata\RequiresAttribute.cs" />
     <Compile Include="PanelButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -67,19 +84,44 @@
       <DependentUpon>PanelButton.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Programs\Clock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programs\Clock.Designer.cs">
+      <DependentUpon>Clock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programs\FileSkimmer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programs\FileSkimmer.Designer.cs">
+      <DependentUpon>FileSkimmer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programs\Shiftorium.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programs\Shiftorium.Designer.cs">
+      <DependentUpon>Shiftorium.cs</DependentUpon>
+    </Compile>
     <Compile Include="Programs\Terminal.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Programs\Terminal.Designer.cs">
       <DependentUpon>Terminal.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Skin.cs" />
     <Compile Include="SkinContext.cs" />
     <Compile Include="SystemContext.cs" />
     <Compile Include="ToolStripSkinRenderer.cs" />
+    <Compile Include="UnrealObjectExtensions.cs" />
+    <Compile Include="Upgrade.cs" />
     <Compile Include="Windowing\Window.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Windowing\Window.Designer.cs">
       <DependentUpon>Window.cs</DependentUpon>
@@ -90,19 +132,23 @@
     <EmbeddedResource Include="PanelButton.resx">
       <DependentUpon>PanelButton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Programs\Clock.resx">
+      <DependentUpon>Clock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programs\FileSkimmer.resx">
+      <DependentUpon>FileSkimmer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programs\Shiftorium.resx">
+      <DependentUpon>Shiftorium.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Programs\Terminal.resx">
       <DependentUpon>Terminal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Windowing\Window.resx">
       <DependentUpon>Window.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +165,344 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Industrial.skn" />
+    <None Include="Resources\Linux Mint 7.skn" />
+    <None Include="Resources\UpgradeDatabase.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Main.usage.txt" />
+    <None Include="Resources\zoombuttonpressed.png" />
+    <None Include="Resources\zoombutton.png" />
+    <None Include="Resources\writesound.wav" />
+    <None Include="Resources\webhome.png" />
+    <None Include="Resources\webforward.png" />
+    <None Include="Resources\webback.png" />
+    <None Include="Resources\upgradeyellowshadeset.png" />
+    <None Include="Resources\upgradeyellowshades.png" />
+    <None Include="Resources\upgradeyellowcustom.png" />
+    <None Include="Resources\upgradeyellow.png" />
+    <None Include="Resources\upgradewindowsanywhere.png" />
+    <None Include="Resources\upgradewindowedterminal.png" />
+    <None Include="Resources\upgradewindowborders.png" />
+    <None Include="Resources\upgradevirusscanner.png" />
+    <None Include="Resources\upgradeusefulpanelbuttons.png" />
+    <None Include="Resources\upgradeunitymode.png" />
+    <None Include="Resources\upgradetrm.png" />
+    <None Include="Resources\upgradetitletext.png" />
+    <None Include="Resources\upgradetitlebar.png" />
+    <None Include="Resources\upgradetextpadsave.png" />
+    <None Include="Resources\upgradetextpadopen.png" />
+    <None Include="Resources\upgradetextpadnew.png" />
+    <None Include="Resources\upgradetextpadicon.png" />
+    <None Include="Resources\upgradetextpad.png" />
+    <None Include="Resources\upgradeterminalscrollbar.png" />
+    <None Include="Resources\upgradeterminalicon.png" />
+    <None Include="Resources\upgradesysinfo.png" />
+    <None Include="Resources\upgradesplitsecondaccuracy.png" />
+    <None Include="Resources\upgradeskinning.png" />
+    <None Include="Resources\upgradeskicarbrands.png" />
+    <None Include="Resources\upgradeshutdownicon.png" />
+    <None Include="Resources\upgradeshifttitletext.png" />
+    <None Include="Resources\upgradeshifttitlebar.png" />
+    <None Include="Resources\upgradeshiftpanelclock.png" />
+    <None Include="Resources\upgradeshiftpanelbuttons.png" />
+    <None Include="Resources\upgradeshiftoriumicon.png" />
+    <None Include="Resources\upgradeshiftitems.png" />
+    <None Include="Resources\upgradeshiftericon.png" />
+    <None Include="Resources\upgradeshifter.png" />
+    <None Include="Resources\upgradeshiftdesktoppanel.png" />
+    <None Include="Resources\upgradeshiftdesktop.png" />
+    <None Include="Resources\upgradeshiftbuttons.png" />
+    <None Include="Resources\upgradeshiftborders.png" />
+    <None Include="Resources\upgradeshiftapplauncher.png" />
+    <None Include="Resources\upgradesgameconsoles.png" />
+    <None Include="Resources\upgradesecondssincemidnight.png" />
+    <None Include="Resources\upgraderollupcommand.png" />
+    <None Include="Resources\upgraderollupbutton.gif" />
+    <None Include="Resources\upgraderesize.png" />
+    <None Include="Resources\upgraderemoveth4.png" />
+    <None Include="Resources\upgraderemoveth3.png" />
+    <None Include="Resources\upgraderemoveth2.png" />
+    <None Include="Resources\upgraderemoveth1.png" />
+    <None Include="Resources\upgraderedshadeset.png" />
+    <None Include="Resources\upgraderedshades.png" />
+    <None Include="Resources\upgraderedcustom.png" />
+    <None Include="Resources\upgradered.png" />
+    <None Include="Resources\upgradepurpleshadeset.png" />
+    <None Include="Resources\upgradepurpleshades.png" />
+    <None Include="Resources\upgradepurplecustom.png" />
+    <None Include="Resources\upgradepurple.png" />
+    <None Include="Resources\upgradepongicon.png" />
+    <None Include="Resources\upgradepong.png" />
+    <None Include="Resources\upgradepinkshadeset.png" />
+    <None Include="Resources\upgradepinkshades.png" />
+    <None Include="Resources\upgradepinkcustom.png" />
+    <None Include="Resources\upgradepink.png" />
+    <None Include="Resources\upgradepanelbuttons.png" />
+    <None Include="Resources\upgradeosname.png" />
+    <None Include="Resources\upgradeorangeshadeset.png" />
+    <None Include="Resources\upgradeorangeshades.png" />
+    <None Include="Resources\upgradeorangecustom.png" />
+    <None Include="Resources\upgradeorange.png" />
+    <None Include="Resources\upgrademultitasking.png" />
+    <None Include="Resources\upgrademoveablewindows.gif" />
+    <None Include="Resources\upgrademinutesssincemidnight.png" />
+    <None Include="Resources\upgrademinuteaccuracytime.png" />
+    <None Include="Resources\upgrademinimizecommand.png" />
+    <None Include="Resources\upgrademinimizebutton.png" />
+    <None Include="Resources\upgradeknowledgeinputicon.png" />
+    <None Include="Resources\upgradeknowledgeinput.png" />
+    <None Include="Resources\upgradekielements.png" />
+    <None Include="Resources\upgradekiaddons.png" />
+    <None Include="Resources\upgradeinfoboxicon.png" />
+    <None Include="Resources\upgradeiconunitymode.png" />
+    <None Include="Resources\upgradehoursssincemidnight.png" />
+    <None Include="Resources\upgradegreenshadeset.png" />
+    <None Include="Resources\upgradegreenshades.png" />
+    <None Include="Resources\upgradegreencustom.png" />
+    <None Include="Resources\upgradegreen.png" />
+    <None Include="Resources\upgradegrayshadeset.png" />
+    <None Include="Resources\upgradegrayshades.png" />
+    <None Include="Resources\upgradegraycustom.png" />
+    <None Include="Resources\upgradegray.png" />
+    <None Include="Resources\upgradefileskimmernew.png" />
+    <None Include="Resources\upgradefileskimmericon.png" />
+    <None Include="Resources\upgradefileskimmerdelete.png" />
+    <None Include="Resources\upgradefileskimmer.png" />
+    <None Include="Resources\upgradedraggablewindows.gif" />
+    <None Include="Resources\upgradedesktoppanelclock.png" />
+    <None Include="Resources\upgradedesktoppanel.png" />
+    <None Include="Resources\upgradecustomusername.png" />
+    <None Include="Resources\upgradecolourpickericon.png" />
+    <None Include="Resources\upgradeclosebutton.gif" />
+    <None Include="Resources\upgradeclockicon.png" />
+    <None Include="Resources\upgradeclock.png" />
+    <None Include="Resources\upgradebrownshadeset.png" />
+    <None Include="Resources\upgradebrownshades.png" />
+    <None Include="Resources\upgradebrowncustom.png" />
+    <None Include="Resources\upgradebrown.png" />
+    <None Include="Resources\upgradeblueshadeset.png" />
+    <None Include="Resources\upgradeblueshades.png" />
+    <None Include="Resources\upgradebluecustom.png" />
+    <None Include="Resources\upgradeblue.png" />
+    <None Include="Resources\upgradeautoscrollterminal.png" />
+    <None Include="Resources\upgradeartpadundo.png" />
+    <None Include="Resources\upgradeartpadtexttool.png" />
+    <None Include="Resources\upgradeartpadsave.png" />
+    <None Include="Resources\upgradeartpadredo.png" />
+    <None Include="Resources\upgradeartpadrectangletool.png" />
+    <None Include="Resources\upgradeartpadpixelplacermovementmode.png" />
+    <None Include="Resources\upgradeartpadpixelplacer.png" />
+    <None Include="Resources\upgradeartpadpixellimit65536.png" />
+    <None Include="Resources\upgradeartpadpixellimit16384.png" />
+    <None Include="Resources\upgradeartpadpixellimit4096.png" />
+    <None Include="Resources\upgradeartpadpixellimit1024.png" />
+    <None Include="Resources\upgradeartpadpixellimit256.png" />
+    <None Include="Resources\upgradeartpadpixellimit64.png" />
+    <None Include="Resources\upgradeartpadpixellimit16.png" />
+    <None Include="Resources\upgradeartpadpixellimit8.png" />
+    <None Include="Resources\upgradeartpadpixellimit4.png" />
+    <None Include="Resources\upgradeartpadpenciltool.png" />
+    <None Include="Resources\upgradeartpadpaintbrushtool.png" />
+    <None Include="Resources\upgradeartpadovaltool.png" />
+    <None Include="Resources\upgradeartpadnew.png" />
+    <None Include="Resources\upgradeartpadload.png" />
+    <None Include="Resources\upgradeartpadlinetool.png" />
+    <None Include="Resources\upgradeartpadlimitlesspixels.png" />
+    <None Include="Resources\upgradeartpadicon.png" />
+    <None Include="Resources\upgradeartpadfilltool.png" />
+    <None Include="Resources\upgradeartpaderaser.png" />
+    <None Include="Resources\upgradeartpad128colorpallets.png" />
+    <None Include="Resources\upgradeartpad64colorpallets.png" />
+    <None Include="Resources\upgradeartpad32colorpallets.png" />
+    <None Include="Resources\upgradeartpad16colorpallets.png" />
+    <None Include="Resources\upgradeartpad8colorpallets.png" />
+    <None Include="Resources\upgradeartpad4colorpallets.png" />
+    <None Include="Resources\upgradeartpad.png" />
+    <None Include="Resources\upgradeapplaunchershutdown.png" />
+    <None Include="Resources\upgradeapplaunchermenu.png" />
+    <None Include="Resources\upgradeamandpm.png" />
+    <None Include="Resources\upgradealunitymode.png" />
+    <None Include="Resources\upgradealtextpad.png" />
+    <None Include="Resources\upgradealshiftorium.png" />
+    <None Include="Resources\upgradealshifter.png" />
+    <None Include="Resources\upgradealpong.png" />
+    <None Include="Resources\upgradealfileskimmer.png" />
+    <None Include="Resources\upgradealclock.png" />
+    <None Include="Resources\upgradealartpad.png" />
+    <None Include="Resources\updatecustomcolourpallets.png" />
+    <None Include="Resources\uparrow.png" />
+    <None Include="Resources\typesound.wav" />
+    <None Include="Resources\transactionsUnclicked.png" />
+    <None Include="Resources\transactionsClicked.png" />
+    <None Include="Resources\TotalBalanceUnclicked.png" />
+    <None Include="Resources\TotalBalanceClicked.png" />
+    <None Include="Resources\tilebuttonpressed.png" />
+    <None Include="Resources\tilebutton.png" />
+    <None Include="Resources\textpad.fw.png" />
+    <None Include="Resources\test.png" />
+    <None Include="Resources\Symbolinfo.png" />
+    <None Include="Resources\stretchbuttonpressed.png" />
+    <None Include="Resources\stretchbutton.png" />
+    <None Include="Resources\stopbutton.png" />
+    <None Include="Resources\snakeyback.bmp" />
+    <None Include="Resources\skinuparrow.png" />
+    <None Include="Resources\skinfile.png" />
+    <None Include="Resources\skindownarrow.png" />
+    <None Include="Resources\ShiftOS License.txt" />
+    <None Include="Resources\shiftomizersliderrightarrow.png" />
+    <None Include="Resources\shiftomizersliderleftarrow.png" />
+    <None Include="Resources\shiftomizerskinshifterscreenshot.png" />
+    <None Include="Resources\shiftomizernamechangerpreview.png" />
+    <None Include="Resources\shiftomizerlinuxmintskinpreview.png" />
+    <None Include="Resources\shiftomizerindustrialskinpreview.png" />
+    <None Include="Resources\shiftomizericonpreview.png" />
+    <None Include="Resources\SendClicked.png" />
+    <None Include="Resources\Send.png" />
+    <None Include="Resources\saveicon.png" />
+    <None Include="Resources\rollup.wav" />
+    <None Include="Resources\rolldown.wav" />
+    <None Include="Resources\ReceiveClicked.png" />
+    <None Include="Resources\Receive.png" />
+    <None Include="Resources\previousbutton.png" />
+    <None Include="Resources\playbutton.png" />
+    <None Include="Resources\pixelsetter.png" />
+    <None Include="Resources\pausebutton.png" />
+    <None Include="Resources\openicon.png" />
+    <None Include="Resources\nextbutton.png" />
+    <None Include="Resources\newicon.png" />
+    <None Include="Resources\newfolder.png" />
+    <None Include="Resources\minimatchlabyrinthpreview.png" />
+    <None Include="Resources\minimatchdodgepreviewimage.png" />
+    <None Include="Resources\Minimatchbackground.png" />
+    <None Include="Resources\loadbutton.png" />
+    <None Include="Resources\Interop.WMPLib.dll" />
+    <None Include="Resources\installericon.png" />
+    <None Include="Resources\infobox.wav" />
+    <None Include="Resources\iconWebBrowser.png" />
+    <None Include="Resources\iconvirusscanner.png" />
+    <None Include="Resources\iconVideoPlayer.png" />
+    <None Include="Resources\iconunitytoggle.png" />
+    <None Include="Resources\iconTextPad.png" />
+    <None Include="Resources\iconTerminal.png" />
+    <None Include="Resources\iconSysinfo.png" />
+    <None Include="Resources\iconSnakey.png" />
+    <None Include="Resources\iconSkinShifter.png" />
+    <None Include="Resources\iconSkinLoader.png" />
+    <None Include="Resources\iconshutdown.png" />
+    <None Include="Resources\iconShiftorium.png" />
+    <None Include="Resources\iconShiftnet.png" />
+    <None Include="Resources\iconShifter.png" />
+    <None Include="Resources\iconPong.png" />
+    <None Include="Resources\iconorcwrite.png" />
+    <None Include="Resources\iconNameChanger.png" />
+    <None Include="Resources\iconmaze.png" />
+    <None Include="Resources\iconKnowledgeInput.png" />
+    <None Include="Resources\iconInfoBox.fw.png" />
+    <None Include="Resources\iconIconManager.png" />
+    <None Include="Resources\icongraphicpicker.png" />
+    <None Include="Resources\iconfloodgate.png" />
+    <None Include="Resources\iconFileSkimmer.png" />
+    <None Include="Resources\iconFileSaver.fw.png" />
+    <None Include="Resources\iconFileOpener.fw.png" />
+    <None Include="Resources\iconDownloader.png" />
+    <None Include="Resources\iconDodge.png" />
+    <None Include="Resources\iconColourPicker.fw.png" />
+    <None Include="Resources\iconClock.png" />
+    <None Include="Resources\iconCalculator.png" />
+    <None Include="Resources\iconBitnoteWallet.png" />
+    <None Include="Resources\iconBitnoteDigger.png" />
+    <None Include="Resources\iconAudioPlayer.png" />
+    <None Include="Resources\iconArtpad.png" />
+    <None Include="Resources\Gray Shades.png" />
+    <None Include="Resources\floodgateicn.png" />
+    <None Include="Resources\fileskimmericon.fw.png" />
+    <None Include="Resources\fileiconsaa.png" />
+    <None Include="Resources\DSC01042.JPG" />
+    <None Include="Resources\downloadmanagericon.png" />
+    <None Include="Resources\downarrow.png" />
+    <None Include="Resources\dodge.png" />
+    <None Include="Resources\dial-up-modem-02.wav" />
+    <None Include="Resources\DesktopPlusPlusAbout.txt" />
+    <None Include="Resources\deletefolder.png" />
+    <None Include="Resources\deletefile.png" />
+    <None Include="Resources\crash-force.png" />
+    <None Include="Resources\crash-cheat.png" />
+    <None Include="Resources\crash_ofm.png" />
+    <None Include="Resources\crash.png" />
+    <None Include="Resources\christmaseasteregg.png" />
+    <None Include="Resources\centrebuttonpressed.png" />
+    <None Include="Resources\centrebutton.png" />
+    <None Include="Resources\CatalystGrammar.xml" />
+    <None Include="Resources\bitnotewebsitetitle.png" />
+    <None Include="Resources\bitnotewalletpreviewscreenshot.png" />
+    <None Include="Resources\bitnotewalletdownload.png" />
+    <None Include="Resources\bitnoteswebsidepnl.png" />
+    <None Include="Resources\BitnotesAcceptedHereLogo.bmp" />
+    <None Include="Resources\bitnotediggergradetable.png" />
+    <None Include="Resources\AxInterop.WMPLib.dll" />
+    <None Include="Resources\ArtPadundo.png" />
+    <None Include="Resources\ArtPadtexttool.png" />
+    <None Include="Resources\ArtPadsquarerubberselected.png" />
+    <None Include="Resources\ArtPadsquarerubber.png" />
+    <None Include="Resources\ArtPadsave.png" />
+    <None Include="Resources\ArtPadredo.png" />
+    <None Include="Resources\ArtPadRectangle.png" />
+    <None Include="Resources\ArtPadpixelplacer.png" />
+    <None Include="Resources\ArtPadpencil.png" />
+    <None Include="Resources\ArtPadpaintbrush.png" />
+    <None Include="Resources\ArtPadOval.png" />
+    <None Include="Resources\ArtPadopen.png" />
+    <None Include="Resources\ArtPadnew.png" />
+    <None Include="Resources\ArtPadmagnify.png" />
+    <None Include="Resources\ArtPadlinetool.png" />
+    <None Include="Resources\ArtPadfloodfill.png" />
+    <None Include="Resources\ArtPaderacer.png" />
+    <None Include="Resources\ArtPadcirclerubberselected.png" />
+    <None Include="Resources\ArtPadcirclerubber.png" />
+    <None Include="Resources\appscapewelcometoappscape.png" />
+    <None Include="Resources\appscapewebbrowserpricepressed.png" />
+    <None Include="Resources\appscapewebbrowserprice.png" />
+    <None Include="Resources\appscapewebbrowser.png" />
+    <None Include="Resources\appscapevideoplayerpricepressed.png" />
+    <None Include="Resources\appscapevideoplayerprice.png" />
+    <None Include="Resources\appscapevideoplayer.png" />
+    <None Include="Resources\appscapeundefinedpricepressed.png" />
+    <None Include="Resources\appscapeundefinedprice.png" />
+    <None Include="Resources\appscapetitlebanner.png" />
+    <None Include="Resources\appscapeorcwrite.png" />
+    <None Include="Resources\appscapemoresoftware.png" />
+    <None Include="Resources\appscapeinfowebbrowservisualpreview.png" />
+    <None Include="Resources\appscapeinfowebbrowsertext.png" />
+    <None Include="Resources\appscapeinfovideoplayervisualpreview.png" />
+    <None Include="Resources\appscapeinfovideoplayertext.png" />
+    <None Include="Resources\appscapeinfoorcwritevisualpreview.png" />
+    <None Include="Resources\appscapeinfoorcwritetext.png" />
+    <None Include="Resources\appscapeinfocalculatorvisualpreview.png" />
+    <None Include="Resources\appscapeinfocalculatortext.png" />
+    <None Include="Resources\appscapeinfobuybutton.png" />
+    <None Include="Resources\appscapeinfobuttonpressed.png" />
+    <None Include="Resources\appscapeinfobutton.png" />
+    <None Include="Resources\appscapeinfobackbutton.png" />
+    <None Include="Resources\appscapeinfoaudioplayervisualpreview.png" />
+    <None Include="Resources\appscapeinfoaudioplayertext.png" />
+    <None Include="Resources\appscapedownloadbutton.png" />
+    <None Include="Resources\appscapedepositnowbutton.png" />
+    <None Include="Resources\appscapedepositinfo.png" />
+    <None Include="Resources\appscapedepositbitnotewalletscreenshot.png" />
+    <None Include="Resources\appscapecalculatorpricepressed.png" />
+    <None Include="Resources\appscapecalculatorprice.png" />
+    <None Include="Resources\appscapecalculator.png" />
+    <None Include="Resources\appscapeaudioplayerpricepressed.png" />
+    <None Include="Resources\appscapeaudioplayerprice.png" />
+    <None Include="Resources\appscapeaudioplayerbox.png" />
+    <None Include="Resources\anycolourshade4.png" />
+    <None Include="Resources\anycolourshade3.png" />
+    <None Include="Resources\anycolourshade2.png" />
+    <None Include="Resources\anycolourshade.png" />
+    <None Include="Resources\3beepvirus.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

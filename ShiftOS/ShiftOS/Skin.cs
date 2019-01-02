@@ -81,7 +81,7 @@ namespace ShiftOS
         public Color applauncherbuttoncolour = Color.Gray;
         public Color applauncherbuttonclickedcolour = Color.Gray;
         public Color applauncherbackgroundcolour = Color.Gray;
-        public Color applaunchermouseovercolour = Color.Gray;
+        public Color applaunchermouseovercolour = Color.White;
         public Color applicationsbuttontextcolour = Color.Black;
         public int applicationbuttonheight = 24;
         public int applicationbuttontextsize = 10;

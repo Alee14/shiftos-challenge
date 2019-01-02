@@ -1,0 +1,1412 @@
+[
+  {
+    "ID": "autoscrollterminal",
+    "Name": "Auto Scroll Terminal",
+    "Description": "Getting sick of the terminal filling up with text leaving you not knowing what you have typed unless you start typing more?\r\n\r\nThen buy this upgrade to keep the terminal scrolled to the bottom so you can always see the latest stuff you've typed.",
+    "Tutorial": "Buggy terminal Fixed! Although your terminal may not get filled up that much when it's full screen it certainly will if you find a way to make the terminal smaller.\r\n\r\nEvery time you press enter the terminal will now automatically scroll you to bottom so you can always see the latest terminal output.",
+    "Cost": 5
+  },
+  {
+    "ID": "osname",
+    "Name": "Change OS Name",
+    "Description": "Getting sick of being 'user@shiftos $>' Well now you can change that, how about 'user@ThEBesToSEver'?\r\n\r\n(We like self adverising here)",
+    "Tutorial": "So you got sick of the name 'ShiftOS' Great you can now change it to whatever you please. Just type 'set osname [Name]' into the terminal and your set!\r\n\r\nNote: changing the name of ShiftOS, only changes what it is called by the terminal, it will not change how other people or programs refer to it.",
+    "Cost": 15,
+    "Requires": [
+      "customusername"
+    ]
+  },
+  {
+    "ID": "customusername",
+    "Name": "Custom Username",
+    "Description": "Sick of being known as \"User\"? Want to be recognized and labeled? Then you need to replace the default username with your own!\r\n\r\nIf you want ShiftOS to refer to you by name then you are going to need this upgrade.",
+    "Tutorial": "Well, isn't this special? The terminal will now display any name you want it to. Even the ShiftOS desktop and some other applications will refer to you by the username you set.\r\n\r\nTo set your username simply type \"set username\" in the terminal followed by the name you want (spaces not allowed).",
+    "Cost": 15
+  },
+  {
+    "ID": "gray",
+    "Name": "Gray",
+    "Description": "Everything doesn't always have to be black and white. Give your programs and GUI some depth by mixing black and white together to form grey.\r\n\r\nNote: You are unable to make controls grey until you buy the Shifter.",
+    "Tutorial": "Originally the screen could only display black and white but now with the ability to display gray it's easier and more efficient to display more information and controls on the screen.\r\n\r\nYou can now set the colour of screen controls including the background to gray using Shifter and even draw in gray within Artpad.",
+    "Cost": 20
+  },
+  {
+    "ID": "artpad",
+    "Name": "Artpad",
+    "Description": "Ever wanted to play around with pixels on your screen?\r\n\r\nWell it looks like your newest companion may become the Artpad but be sure you know your x and y coordinates!",
+    "Tutorial": "Ah, I knew you were an artist at heart. Get your pixel setter ready and your magnifying glass, you’ll need it to see your 2 pixel masterpiece.\r\n\r\nMore tools, more pixels and more colours would be helpful though so be on the lookout for more upgrades.",
+    "Cost": 75,
+    "Requires": [
+      "gray"
+    ]
+  },
+  {
+    "ID": "artpad4colorpallettes",
+    "Name": "Artpad 4 Color pallettes",
+    "Description": "Having just 2 colours in your work may give it an interesting style but overall its very limiting.\r\n\r\nThis upgrade will double the amount of usable colour pallettes in the Artpad to allow you quick access to a wider range of colours.",
+    "Tutorial": "Two new black colour pallettes are available for you to use in the artpad.\r\n\r\nIf you would like to change the colour of any of the colour pallettes you can do so by right clicking them and then selecting a colour you would like to be from the colour picker.",
+    "Cost": 10,
+    "Requires": [
+      "artpad"
+    ]
+  },
+  {
+    "ID": "artpad8colorpallettes",
+    "Name": "Artpad 8 Color pallettes",
+    "Description": "4 colour pallettes is still very limiting and a lot less than your average paint program.\r\n\r\nThis upgrade will double the amount of usable colour pallettes in the Artpad to allow you quick access to a wider range of colours.",
+    "Tutorial": "Four new black colour pallettes are available for you to use in the artpad.\r\n\r\nIf you would like to change the colour of any of the colour pallettes you can do so by right clicking them and then selecting a colour you would like to be from the colour picker.",
+    "Cost": 20,
+    "Requires": [
+      "artpad4colorpallettes"
+    ]
+  },
+  {
+    "ID": "artpad16colorpallettes",
+    "Name": "Artpad 16 Color pallettes",
+    "Description": "8 colours is still going to leave you changing the colour of your pallettes quite often.\r\n\r\nThis upgrade will double the amount of usable colour pallettes in the Artpad to allow you quick access to a wider range of colours.",
+    "Tutorial": "Eight new black colour pallettes are available for you to use in the artpad.\r\n\r\nIf you would like to change the colour of any of the colour pallettes you can do so by right clicking them and then selecting a colour you would like to be from the colour picker.",
+    "Cost": 35,
+    "Requires": [
+      "artpad8colorpallettes"
+    ]
+  },
+  {
+    "ID": "artpad32colorpallettes",
+    "Name": "Artpad 32 Color pallettes",
+    "Description": "16 colours is definitely usable but it certainly could get better than that right?\r\n\r\nThis upgrade will double the amount of usable colour pallettes in the Artpad to allow you quick access to a wider range of colours.",
+    "Tutorial": "Sixteen new black colour pallettes are available for you to use in the artpad.\r\n\r\nIf you would like to change the colour of any of the colour pallettes you can do so by right clicking them and then selecting a colour you would like to be from the colour picker.",
+    "Cost": 50,
+    "Requires": [
+      "artpad16colorpallettes"
+    ]
+  },
+  {
+    "ID": "artpad64colorpallettes",
+    "Name": "Artpad 64 Color pallettes",
+    "Description": "32 colours is slightly more than average for a paint program but don’t you want extreme?\r\n\r\nThis upgrade will double the amount of usable colour pallettes in the Artpad to allow you quick access to a wider range of colours.",
+    "Tutorial": "Thirty Two new black colour pallettes are available for you to use in the artpad.\r\n\r\nIf you would like to change the colour of any of the colour pallettes you can do so by right clicking them and then selecting a colour you would like to be from the colour picker.",
+    "Cost": 100,
+    "Requires": [
+      "artpad32colorpallettes"
+    ]
+  },
+  {
+    "ID": "artpad128colorpallettes",
+    "Name": "Artpad 128 Color pallettes",
+    "Description": "For some people 64 colour pallettes may already be overkill but for the extremists like yourself it’s just not enough.\r\n\r\nThis upgrade will double the amount of usable colour pallettes in the Artpad to allow you quick access to a wider range of colours.",
+    "Tutorial": "Sixty Four new black colour pallettes are available for you to use in the artpad.\r\n\r\nIf you would like to change the colour of any of the colour pallettes you can do so by right clicking them and then selecting a colour you would like to be from the colour picker.",
+    "Cost": 150,
+    "Requires": [
+      "artpad64colorpallettes"
+    ]
+  },
+  {
+    "ID": "artpadcustompallettes",
+    "Name": "Artpad Custom pallettes",
+    "Description": "It can be annoying when things are set in stone and can’t be changed.\r\n\r\nLet’s not let that happen to the Artpad by programming the colour pallettes to be resizable by the user.",
+    "Tutorial": "Nice! The colour pallettes are now able to be resized any time you like and you can even adjust the spaces between pallettes.\r\n\r\nTo resize the colour pallettes simply middle click any of them and a special settings window will pop up.",
+    "Cost": 75,
+    "Requires": [
+      "artpad128colorpallettes"
+    ]
+  },
+  {
+    "ID": "artpadnew",
+    "Name": "Artpad New",
+    "Description": "Ever wanted to start a fresh with a new canvas without restarting Artpad\r\n\r\nWith a little research it may be possible to add a button to do just that whenever you want.",
+    "Tutorial": "Much better. A new button that looks like a folded page should now be in your tool set.\r\n\r\nBy clicking the button you should be able create a new canvas and even type in a new size for it as many times as you like without opening and closing Artpad.",
+    "Cost": 10,
+    "Requires": [
+      "artpad"
+    ]
+  },
+  {
+    "ID": "artpadpixellimit4",
+    "Name": "Artpad Pixel Limit 4",
+    "Description": "With just two pixels you can’t make very interesting artworks.\r\n\r\nDoubling the pixel limit to 4 should more than double the variety of unique creations you can make with the artpad.",
+    "Tutorial": "This increased pixel limit has unlocked the ability to make canvases in artpad totaling 4 whole pixels.\r\n\r\nYou can make a variety of interesting artworks such as um, a 4 pixel high tower or a 4 pixel tower lying on its side and err, other stuff.",
+    "Cost": 10,
+    "Requires": [
+      "artpad"
+    ]
+  },
+  {
+    "ID": "artpadpixellimit8",
+    "Name": "Artpad Pixel Limit 8",
+    "Description": "Earlier I lied about 4 pixels giving you many different types of unique artistic opportunities.\r\n\r\nA pixel limit of 8 may be a little limiting though and its still dirt cheap.",
+    "Tutorial": "Great you can now have canvases with a total of 8 pixels.\r\n\r\nIt may not seem like much but… oh I give up, it’s still hopeless. On the bright side you can always buy another upgrade.",
+    "Cost": 20,
+    "Requires": [
+      "artpadpixellimit4"
+    ]
+  },
+  {
+    "ID": "artpadpixellimit16",
+    "Name": "Artpad Pixel Limit 16",
+    "Description": "8 pixels may not be great but 16 is looking a little more pristine.\r\n\r\nIt may be a silly rhyme but it’s true.",
+    "Tutorial": "You’ve just doubled your pixel limit from 8 to 16.\r\n\r\nYou can now make a very cramped smiley face without a nose or a quarter of a chess board if you put your mind to it.",
+    "Cost": 30,
+    "Requires": [
+      "artpadpixellimit8"
+    ]
+  },
+  {
+    "ID": "artpadpixellimit64",
+    "Name": "Artpad Pixel Limit 64",
+    "Description": "Step right up to a pixel limit 4x greater than your current one.\r\n\r\nIsn’t it usually double you say? Well this time around its quadruple but unfortunately it does come with a dearer price.",
+    "Tutorial": "Finally you are starting to make it into deeper waters.\r\n\r\nI’m not quite sure what I meant by that but if you’re drawing ocean scenes you could make them deeper and if you’re up to it you could draw a full chessboard without and pieces on it.",
+    "Cost": 50,
+    "Requires": [
+      "artpadpixellimit16"
+    ]
+  },
+  {
+    "ID": "artpadpixellimit256",
+    "Name": "Artpad Pixel Limit 256",
+    "Description": "Finally we are on the verge on a decent pixel limit. Think of what you could do with 256 pixels\r\n\r\nThe width and height of your canvas could be huge!",
+    "Tutorial": "Actually I just realized that with 256 pixels the biggest canvas size you can make is 16 by 16 pixels.\r\n\r\nStill that’s enough pixels to make a picture of a grave yard with gravestones and sad faces right?",
+    "Cost": 75,
+    "Requires": [
+      "artpadpixellimit64"
+    ]
+  },
+  {
+    "ID": "artpadpixellimit1024",
+    "Name": "Artpad Pixel Limit 1024",
+    "Description": "Ahh, now we’re talking. This is an upgrade that will do you a world of good.\r\n\r\nIt’s a shame it’s is so expensive but good things always come at a cost.",
+    "Tutorial": "Designing things like UI elements should be a breeze with this limit.\r\n\r\nMany icon designers used to make their icons at a resolution of 32 by 32 pixels so if you want to make those kind of icons then you’re all set.",
+    "Cost": 100,
+    "Requires": [
+      "artpadpixellimit256"
+    ]
+  },
+  {
+    "ID": "artpadpixellimit4096",
+    "Name": "Artpad Pixel Limit 4096",
+    "Description": " With a pixel limit of 4096 you would have the ability to make canvases 64 by 64 pixels.\r\n\r\nDo you really think you will need this high of a pixel limit?",
+    "Tutorial": "Finally we are nearing the point where you are able to draw freely at a zoom level of 1x.\r\n\r\nOverall though 4096 pixels is still not good for large free hand sketch-like drawings.",
+    "Cost": 150,
+    "Requires": [
+      "artpadpixellimit1024"
+    ]
+  },
+  {
+    "ID": "artpadpixellimit16384",
+    "Name": "Artpad Pixel Limit 16384",
+    "Description": "You may think your current pixel limit is good but you aren’t seen nothing yet.\r\n\r\nFor some true 4x zoomed freehand drawing don’t miss this upgrade.",
+    "Tutorial": "Awesome! Now you can try and do some free hand drawing at 4x magnification with a canvas size of 160 by 100\r\n\r\nYou may even be able to design tiny website banners.",
+    "Cost": 200,
+    "Requires": [
+      "artpadpixellimit4096"
+    ]
+  },
+  {
+    "ID": "artpadpixellimit65536",
+    "Name": "Artpad Pixel Limit 65536",
+    "Description": "Oh come on how much higher can the pixel limit go?\r\n\r\nI doubt you actually need it but aren’t you curious how much higher this goes?",
+    "Tutorial": "Go ahead and celebrate your seemingly limitless pixel limit for a moment and don’t look at the upgrade list.\r\n\r\nYou couldn’t resist looking and making this upgrade seem so small could you? That’s right, you’re an upgrade away from truly limitless pixels.",
+    "Cost": 250,
+    "Requires": [
+      "artpadpixellimit16384"
+    ]
+  },
+  {
+    "ID": "artpadlimitlesspixels",
+    "Name": "Artpad Limitless Pixels",
+    "Description": "This is what you’ve been waiting for all this time after purchasing all those pixel limit upgrades\r\n\r\nIt may be ultra-expensive but you won’t have to ever get another after this one.",
+    "Tutorial": "Congratulations you now have absolutely no pixel limit and can create canvases as big as you want as long as your own computer can handle it.\r\n\r\nGo ahead and make yourself a native resolution desktop background to celebrate!",
+    "Cost": 350,
+    "Requires": [
+      "artpadpixellimit65536"
+    ]
+  },
+  {
+    "ID": "artpadpixelplacer",
+    "Name": "Artpad Pixel Placer",
+    "Description": "The pixel setter allows you to set pixels but do you really want to go around trying to pinpoint and calculate x and y coordinates\r\n\r\nClicking the pixel you want to change directly would be much more efficient don’t you agree?",
+    "Tutorial": "Now with the new Pixel Placer you have the power to simply click any pixel to change its colour.\r\n\r\nSimply left click a colour pallette then click any pixel on your canvas to set it to that colour. You can also right click your colour pallettes to change their colour.",
+    "Cost": 20,
+    "Requires": [
+      "artpad"
+    ]
+  },
+  {
+    "ID": "artpadppmovementmode",
+    "Name": "Artpad PP Movement Mode",
+    "Description": "Constantly clicking each individual pixel on your canvas using the Pixel Placer can be very time consuming and tiring for your hands\r\n\r\nWouldn’t it be easier to just click and drag? Well there’s an upgrade for that!",
+    "Tutorial": "The Pixel Placer now has a movement mode option. Simply Click the Pixel Placer tool and you will see the Movement Mode Switch in the options panel.\r\n\r\nWhen movement mode is on you can click and drag slowly to draw pixels with the mouse. Be slow otherwise it may skip pixels though.",
+    "Cost": 20,
+    "Requires": [
+      "artpadpixelplacer"
+    ]
+  },
+  {
+    "ID": "artpadpencil",
+    "Name": "Artpad Pencil",
+    "Description": "Does the buggy Pixel placer movement mode annoy you when it skips pixels?\r\n\r\nWell with a little more research we may be able to develop a new tool that can draw much more smoothly.",
+    "Tutorial": "Fantastic! You now have a new pencil tool which you can access from the toolbox.\r\n\r\nYou can now draw as fast as you want freehand and it won’t skip a single pixel. You can also draw with three different levels of thickness which can be set in the pencil’s option panel.",
+    "Cost": 30,
+    "Requires": [
+      "artpadppmovementmode"
+    ]
+  },
+  {
+    "ID": "artpaderaser",
+    "Name": "Artpad Eraser",
+    "Description": "Made a little mistake and want to erase it? Sounds like you need an eraser\r\n\r\nWith a little bit of research an eraser tool may not be too far away as overall its just a paintbrush set to the colour of the canvas.",
+    "Tutorial": "Your toolbox now has a new addition to it, An Eraser!\r\n\r\nThe eraser tool can be circular or square and any size you want. Clicking and dragging on the canvas will remove any colour on it and replace it with the default canvas colour which in most cases will be white.",
+    "Cost": 20,
+    "Requires": [
+      "artpadpencil"
+    ]
+  },
+  {
+    "ID": "artpadfilltool",
+    "Name": "Artpad Fill Tool",
+    "Description": "Instead of coloring in every single individual pixel sometimes it is more appropriate to simply draw an outline and instantly fill a space in.\r\n\r\nIf that’s a feature you’re interested in then you should definitely buy this upgrade.",
+    "Tutorial": "Fantastic! You now have a new fill tool which you can access from the toolbox.\r\n\r\nTo use the fill tool you simply have to click it, choose a colour then click a pixel on the canvas and it and every surrounding pixel matching its colour will become the new colour you set.",
+    "Cost": 60,
+    "Requires": [
+      "artpadppmovementmode"
+    ]
+  },
+  {
+    "ID": "artpadlinetool",
+    "Name": "Artpad Line Tool",
+    "Description": "Having difficulty drawing strait lines? Then you obviously need a line tool.\r\n\r\nWith a line tool you will be able to draw straight lines from any point to any point on your canvas.",
+    "Tutorial": "Great! You got a line tool. You can begin using it by selecting the tool from your toolbox.\r\n\r\nSimply click and drag on your canvas to draw a horizontal, vertical or diagonal line on your canvas.",
+    "Cost": 30,
+    "Requires": [
+      "artpadppmovementmode"
+    ]
+  },
+  {
+    "ID": "artpadovaltool",
+    "Name": "Artpad Oval Tool",
+    "Description": "Drawing perfect circles is a very tricky process especially if zoomed right in on the canvas\r\n\r\nWith a bit of research we may be able to discover a tool that calculates how to draw circles without much effort on our side.",
+    "Tutorial": "The new oval tool now allows you to draw circles and ovals with the mouse just by clicking and dragging on the canvas.\r\n\r\nYou can also change the inside and outside colour of the ovals and change their border width in the options panel.",
+    "Cost": 40,
+    "Requires": [
+      "artpadlinetool"
+    ]
+  },
+  {
+    "ID": "artpadpaintbrush",
+    "Name": "Artpad Paint Brush",
+    "Description": "Ever wanted to paint with a tool that can paint free handedly and be big, small, circular or square?\r\n\r\nThis paint brush tool may be the tool you want then and its pretty cheap too.",
+    "Tutorial": "You now have access to the paintbrush tool which you can use simply by clicking on its icon in the tool box.\r\n\r\nA good thing about the paint brush is that you can set its size to a specific value in pixels making it perfect for a variety of different situations.",
+    "Cost": 30,
+    "Requires": [
+      "artpadpencil"
+    ]
+  },
+  {
+    "ID": "artpadrectangletool",
+    "Name": "Artpad Rectangle Tool",
+    "Description": "Drawing perfect squares is a time consuming process especially if you are trying to draw them perfectly straight\r\n\r\nWith a bit of research we may be able to discover a tool that calculates how to draw squares without much effort on our side.",
+    "Tutorial": "The new rectangle tool now allows you to draw squares and rectangles with the mouse just by clicking and dragging on the canvas.\r\n\r\nYou can also change the inside and outside colour of the rectangles and change their border width in the options panel.",
+    "Cost": 40,
+    "Requires": [
+      "artpadlinetool"
+    ]
+  },
+  {
+    "ID": "artpadsave",
+    "Name": "Artpad Save",
+    "Description": "Artpad may be fun to play around with but wouldn’t saving be an amazing feature?\r\n\r\nSaving your pictures may even generate codepoints and the saved pictures might be able to be used for something.",
+    "Tutorial": "Now with your new saving ability you can save all those amazing artpad creations to be viewed at any point in the future\r\n\r\nEvery time you save a picture the amount of codepoints you earned for making it will appear briefly as title text or in an info box.",
+    "Cost": 50,
+    "Requires": [
+      "artpadnew",
+      "fileskimmer"
+    ]
+  },
+  {
+    "ID": "artpadload",
+    "Name": "Artpad Load",
+    "Description": "Sometimes after making something and saving it you wish to alter it slightly to enhance it\r\n\r\nA load feature in the Artpad should let you modify saved .pic files by allowing you to load them up again with the click of a button.",
+    "Tutorial": "You should now be able to load old .pic files by clicking the load button in your tool box and choosing the file you want with the file opener\r\n\r\nThe image will then pop up in artpad and you can get right to editing.",
+    "Cost": 50,
+    "Requires": [
+      "artpadnew",
+      "fileskimmer"
+    ]
+  },
+  {
+    "ID": "artpadtexttool",
+    "Name": "Artpad Text Tool",
+    "Description": "drawing text is very difficult but if you can pull it off then well done, nice accomplishment!\r\n\r\nFor those who can’t though research into a text drawing tool would be very handy unless you don’t require text in your artwork.",
+    "Tutorial": "A text tool is now sitting in your toolbox waiting patiently for you to use it.\r\n\r\nSimply choose a font, colour and size then type something in and click and drag the mouse to move the text around on the canvas until you are happy with its position. Once you’re done release the mouse and the text will be placed in the spot you chose.",
+    "Cost": 45,
+    "Requires": [
+      "artpadppmovementmode"
+    ]
+  },
+  {
+    "ID": "artpadundo",
+    "Name": "Artpad Undo",
+    "Description": "Ever spilt your paint over your masterpiece? It’s an awful feeling right?\r\n\r\nWell in situations like these an undo feature would be very useful so for backup I would definitely get this upgrade.",
+    "Tutorial": "From now on a line draw too long or the wrong splash of colour can’t hurt you anymore.\r\n\r\nAn undo button has been added to your toolbox and any time you make a mistake on your canvas you can fix it with a single click of that button.",
+    "Cost": 40,
+    "Requires": [
+      "artpad"
+    ]
+  },
+  {
+    "ID": "artpadredo",
+    "Name": "Artpad Redo",
+    "Description": "Ever clicked undo too many times and found that you have lost a large portion of work\r\n\r\nFor cases like these a redo button can be quite handy but obviously you could save your codepoints by just being careful with the undo button.",
+    "Tutorial": "Now that you can redo any undone actions you are totally free to cycle forwards and backwards through your work.\r\n\r\nIf you really wanted you could undo all your work then keep clicking redo to watch the creation of your entire picture.",
+    "Cost": 40,
+    "Requires": [
+      "artpadundo"
+    ]
+  },
+  {
+    "ID": "desktoppanel",
+    "Name": "Desktop Panel",
+    "Description": "Got a boring blank desktop? Feel it doesn't really serve a purpose? Then you need a desktop panel!\r\n\r\nThis beautiful gray desktop panel will sit at the top of your desktop and do absolutely nothing for only 150 codepoints!",
+    "Tutorial": "Now wasn't that worth it? Your desktop looks like it could actually do something now even though it can't. Doesn't this make your life feel totally complete now?\r\n\r\nNo? Well then... go buy some more upgrades and maybe that gray bar at the top of the screen will actually serve a purpose!",
+    "Cost": 150,
+    "Requires": [
+      "gray"
+    ]
+  },
+  {
+    "ID": "applaunchermenu",
+    "Name": "App Launcher Menu",
+    "Description": "Launching programs by typing their names in the terminal is very counterproductive especially if you are bad at spelling.\r\n\r\nA menu on the desktop that displays all programs on your computer and allows you to launch them would be a huge time saver.",
+    "Tutorial": "Fantastic! Your desktop panel now contains an application launcher. You can now use it at any time to open the terminal by clicking the application launcher menu and then selecting terminal from the dropdown list.\r\n\r\nFurther upgrades may add more programs you have installed on your computer to the launcher.",
+    "Cost": 120,
+    "Requires": [
+      "desktoppanel"
+    ]
+  },
+  {
+    "ID": "alartpad",
+    "Name": "AL Artpad",
+    "Description": "What's the point of an App Launcher if it can't launch all your apps? \r\n\r\nUse this tweak to add a shortcut to artpad in your app launcher so you can launch it at any time with just a few clicks.",
+    "Tutorial": "Your App Launcher is now more complete and will allow you to launch artpad at any time you like.\r\n\r\nBe sure to buy tweaks to add all your installed programs to the app launcher so you never have to use the terminal to open up a program ever again!",
+    "Cost": 5,
+    "Requires": [
+      "applaunchermenu",
+      "artpad"
+    ]
+  },
+  {
+    "ID": "alknowledgeinput",
+    "Name": "AL Knowledge Input",
+    "Description": "What's the point of an App Launcher if it can't launch all your apps?\r\n\r\nUse this tweak to add a shortcut to knowledge input in your app launcher so you can launch it at any time with just a few clicks.",
+    "Tutorial": "Your App Launcher is now more complete and will allow you to launch Knowledge input at any time you like.\r\n\r\nBe sure to buy tweaks to add all your installed programs to the app launcher so you never have to use the terminal to open up a program ever again!",
+    "Cost": 5,
+    "Requires": [
+      "applaunchermenu"
+    ]
+  },
+  {
+    "ID": "alshiftorium",
+    "Name": "AL Shiftorium",
+    "Description": "What's the point of an App Launcher if it can't launch all your apps?\r\n\r\nUse this tweak to add a shortcut to shiftorium in your app launcher so you can launch it at any time with just a few clicks.",
+    "Tutorial": "Your App Launcher is now more complete and will allow you to launch shiftorium at any time you like.\r\n\r\nBe sure to buy tweaks to add all your installed programs to the app launcher so you never have to use the terminal to open up a program ever again!",
+    "Cost": 5,
+    "Requires": [
+      "applaunchermenu"
+    ]
+  },
+  {
+    "ID": "applaunchershutdown",
+    "Name": "App Launcher Shutdown",
+    "Description": "You want a complete graphical interface with no reliance on the terminal right? That means every possible function of the operating system must be achievable graphically.\r\n\r\nYou may not shut down too often but hey, it beats opening the terminal...",
+    "Tutorial": "Congratulations! Under your programs in the program launcher you will now see an option to shut down your computer.\r\n\r\nYou may now instantly shutdown ShiftOS any time you want with just a few clicks! Be sure not to accidently click it though otherwise you may lose unsaved work or exit out of something before you're done.",
+    "Cost": 10,
+    "Requires": [
+      "applaunchermenu"
+    ]
+  },
+  {
+    "ID": "fileskimmer",
+    "Name": "File Skimmer",
+    "Description": "Almost all computers come with some form of permanent data storage.\r\n\r\nShiftOS is storing data on your storage device (e.g. HDD or SSD) however without a way to view and browse through these files you are practically locked out of your own computer.",
+    "Tutorial": "With the File Skimmer application you can freely browse through the files stored on your computer as long as they aren’t system files due to the closed source nature of ShiftOS.\r\n\r\nIf you had a text or image editing application you could save files onto your storage device and use the file skimmer to load them up whenever you want.",
+    "Cost": 60,
+    "Requires": [
+      "gray"
+    ]
+  },
+  {
+    "ID": "alfileskimmer",
+    "Name": "AL File Skimmer",
+    "Description": "What's the point of an App Launcher if it can't launch all your apps? \r\n\r\nUse this tweak to add a shortcut to the file skimmer in your app launcher so you can launch it at any time with just a few clicks.",
+    "Tutorial": "Your App Launcher is now more complete and will allow you to launch Knowledge input at any time you like.\r\n\r\nBe sure to buy tweaks to add all your installed programs to the app launcher so you never have to use the terminal to open up a program ever again!",
+    "Cost": 5,
+    "Requires": [
+      "applaunchermenu",
+      "fileskimmer"
+    ]
+  },
+  {
+    "ID": "fsdelete",
+    "Name": "FS Delete",
+    "Description": "You’re not a hoarder are you? If you are stop reading this and go look for another upgrade.\r\n\r\nIf you keep every file you create your storage device is sure to get cluttered… seriously, you need a delete button!",
+    "Tutorial": "You now have the power to delete files on your hard drive however proceed with caution because deleting system files will corrupt vital parts of your system causing you to lose your save data.\r\n\r\nAt the bottom of the file skimmer click the expander arrow to see delete button. Click a folder or file and then click delete to delete it.",
+    "Cost": 25,
+    "Requires": [
+      "fileskimmer"
+    ]
+  },
+  {
+    "ID": "fsnewfolder",
+    "Name": "FS New Folder",
+    "Description": "There are a few folders within the ShiftOS file system that you can sort your data into but why limit yourself?\r\n\r\nIn an operating system that you can shift to your liking surely you should be able to create your own folders right?",
+    "Tutorial": "Now this is more like it! Let’s say you have a few categories of documents. You can now create folders to store them in within the documents folder. Same goes for whatever other files you can think of.\r\n\r\nSimply open File Skimmer and click on the expander arrow at the bottom of the window to find the new folder button.",
+    "Cost": 25,
+    "Requires": [
+      "fileskimmer"
+    ]
+  },
+  {
+    "ID": "kiaddons",
+    "Name": "KI Addons",
+    "Description": "Knowledge input is a great game to play if you want to earn codepoints but what happens when you run out of things to guess?\r\n\r\nThis upgrade will allow you to install add-ons for knowledge input.",
+    "Tutorial": "Fantastic! Knowledge input can now be expanded with Add-ons. If you ever run out of Fruits, Countries or Animals to guess you will be able to buy more lists in the Shiftorium.\r\n\r\nBe careful not to spend all your codepoints on lists you can't guess otherwise you will be losing rather than earning codepoints!",
+    "Cost": 15
+  },
+  {
+    "ID": "kicarbrands",
+    "Name": "KI Car Brands",
+    "Description": "Need some more lists for Knowledge input? Why not add a list of automobile manufacturers to guess?\r\n\r\nYou know the brand of car you drive right? Toyota Maybe? Suzuki? Or maybe you have a Ferrari... come on you can do this!",
+    "Tutorial": "Now that you have added a list of car brands/companies to Knowledge Input open it now and start guessing as many car brands as you can think of!\r\n\r\nIf you are playing on a tablet computer take a walk down the road looking at the backs or fronts of cars for their names/brands.",
+    "Cost": 10,
+    "Requires": [
+      "kiaddons"
+    ]
+  },
+  {
+    "ID": "kielements",
+    "Name": "KI Elements",
+    "Description": "Need some more lists for Knowledge input? Why not add a list of Elements to guess?\r\n\r\nYou studied the periodic table of elements in highschool right? Hydrogen, oxygen, lead, silver… you can do this!",
+    "Tutorial": "Now that you have added a list of elements to Knowledge Input open it and start guessing as many elements as you can think of!\r\n\r\nIf you still have your old highschool notes from science class have a little skim through them and I’m sure you will strike gold.",
+    "Cost": 10,
+    "Requires": [
+      "kiaddons"
+    ]
+  },
+  {
+    "ID": "kigameconsoles",
+    "Name": "KI Game Consoles",
+    "Description": "Need some more lists for Knowledge input? Why not add a list of game consoles to guess?\r\n\r\nYou know the name of your game console right? Playstation 4 Maybe? Xbox one? Or maybe you have a Ouya... come on you can do this!",
+    "Tutorial": "Now that you have added a list of video game consoles to Knowledge Input open it now and start guessing as many game consoles as you can think of!\r\n\r\nIf you are playing on a tablet computer take a walk down to the shops and see what consoles you can find there.",
+    "Cost": 10,
+    "Requires": [
+      "kiaddons"
+    ]
+  },
+  {
+    "ID": "multitasking",
+    "Name": "Multitasking",
+    "Description": "These days people have many windows up on their computer so they can edit photos while they watch videos and chat to their friends about how good at multitasking they are.\r\n\r\nIf you like multitasking and having lots of windows open then buy this upgrade!",
+    "Tutorial": "Congratulations! You can now open as many applications as you want on your computer. Remember that all applications are 'single instance applications' so you can't open two versions of the same application.\r\n\r\nTo switch between open programs/bring a window to the front type \"switch to\" followed by the application name.",
+    "Cost": 50
+  },
+  {
+    "ID": "panelbuttons",
+    "Name": "Panel Buttons",
+    "Description": "A desktop panel seems like it could be useful for a variety of different features.\r\n\r\nMaybe with a little more research we could find a way to display the names of all your open programs in the desktop panel",
+    "Tutorial": "Great! From now on you can simply look at the panel buttons on your desktop panel to see what programs you have open.\r\n\r\nThat’s right, the panel buttons don’t do anything when you click them but maybe they will after a few more upgrades…",
+    "Cost": 75,
+    "Requires": [
+      "desktoppanel",
+      "multitasking"
+    ]
+  },
+  {
+    "ID": "pong",
+    "Name": "Pong",
+    "Description": "Finding it difficult to list more words with knowledge input? Everyone has their limits right? Well how about a game of pong?\r\n\r\nThis game is sure to get your adrenalin going and you can earn codepoints as you play it!",
+    "Tutorial": "Now, finally time to have a bit of fun! It’s you vs the computer in this mouse controlled game of pong. Simply move your paddle on the left up and down to prevent the ball going past it.\r\n\r\nThe longer you survive the faster the ball will get. Survive a minute to make it to the next level. The higher the level you make it to the more codepoints you will earn.",
+    "Cost": 70
+  },
+  {
+    "ID": "alpong",
+    "Name": "AL Pong",
+    "Description": "What's the point of an App Launcher if it can't launch all your apps? \r\n\r\nUse this tweak to add a shortcut to pong in your app launcher so you can launch it at any time with just a few clicks.",
+    "Tutorial": "Your App Launcher is now more complete and will allow you to launch Knowledge input at any time you like.\r\n\r\nBe sure to buy tweaks to add all your installed programs to the app launcher so you never have to use the terminal to open up a program ever again!",
+    "Cost": 5,
+    "Requires": [
+      "applaunchermenu",
+      "pong"
+    ]
+  },
+  {
+    "ID": "secondssincemidnight",
+    "Name": "Seconds Since Midnight",
+    "Description": "Ever wondered how many seconds have passed since the clock struck midnight? No?\r\n\r\nWell for just 9.99 codepoints (rounded to the nearest codepoint) you will finally have the answer to that question you have no intention of knowing the answer to.",
+    "Tutorial": "Interesting, the bios appears to have the ability to track how many seconds have passed since midnight. With further calculations we may be able to convert this format of time tracking to a more convenient one.\r\n\r\nYou can now find out how many seconds have passed since midnight by typing \"time\" in the terminal.",
+    "Cost": 10
+  },
+  {
+    "ID": "clock",
+    "Name": "Clock",
+    "Description": "You could type \"time\" in the terminal every time you wanted to know what the time was but that's a little inefficient don't you think?\r\n\r\nEver wish you could just have the time on the screen all the time? Well, there’s an app for that!",
+    "Tutorial": "Great Work! You can now use your expensive computer as a cheap clock that hopefully displays the time in a nice format.\r\n\r\nNow you can sit back spending the day watching the time or even play knowledge input while the time is being displayed if your computer can multitask.",
+    "Cost": 50,
+    "Requires": [
+      "secondssincemidnight"
+    ]
+  },
+  {
+    "ID": "alclock",
+    "Name": "AL Clock",
+    "Description": "What's the point of an App Launcher if it can't launch all your apps?\r\n\r\nUse this tweak to add a shortcut to the clock in your app launcher so you can launch it at any time with just a few clicks.",
+    "Tutorial": "Your App Launcher is now more complete and will allow you to launch the clock at any time you like.\r\n\r\nBe sure to buy tweaks to add all your installed programs to the app launcher so you never have to use the terminal to open up a program ever again!",
+    "Cost": 5,
+    "Requires": [
+      "applaunchermenu",
+      "clock"
+    ]
+  },
+  {
+    "ID": "desktoppanelclock",
+    "Name": "Desktop Panel Clock",
+    "Description": "Want to always know what the time is without typing \"time\" in the terminal or opening up an entire application?\r\n\r\nWell, with this somewhat expensive but extremely affordable clock you will know what the time is no matter what you are doing.",
+    "Tutorial": "Well Done! You now will know what the time is whenever you want as long as the desktop panel is visible.\r\n\r\nFeel free to spend the next hour starring at the top right corner of your desktop panel admiring your new clock. At least you will know how much time is passing...",
+    "Cost": 75,
+    "Requires": [
+      "desktoppanel",
+      "clock"
+    ]
+  },
+  {
+    "ID": "minutessincemidnight",
+    "Name": "Minutes Since Midnight",
+    "Description": "Most people would find looking out their window a better indication of what time it is than being told how many seconds have passed since midnight.\r\n\r\nIf you are like most people then enhancing the computers ability to tell the time is critical.",
+    "Tutorial": "Wow, isn't this amazing? Simply by dividing how many seconds have passed since midnight by 60 the computer is now able to tell you how many minutes have passed since midnight.\r\n\r\nTyping \"time\" in the terminal will now give you a better indication of what time it is.",
+    "Cost": 20,
+    "Requires": [
+      "secondssincemidnight"
+    ]
+  },
+  {
+    "ID": "hourssincemidnight",
+    "Name": "Hours Since Midnight",
+    "Description": "Need a somewhat normal method of time tracking? Well now you can have it with the Hours Past Midnight time format.\r\n\r\nIt's not perfectly accurate but it's easier than trying to work out the time from how many seconds or minutes have passed since midnight.",
+    "Tutorial": "Incredible! If you divide the amount of minutes that have passed since midnight by 60 you are able to determine a somewhat proper time in 24 hour format.\r\n\r\nTyping \"time\" in the terminal will now tell you the time in a not so accurate but very understandable format.",
+    "Cost": 40,
+    "Requires": [
+      "minutessincemidnight"
+    ]
+  },
+  {
+    "ID": "pmandam",
+    "Name": "PM and AM",
+    "Description": "You may be able read the time as it is now but by splitting the time into two 12 hour periods other less intelligent people around you will have an easier time reading the time.\r\n\r\nThis upgrade is necessary to stop your families and friends brains exploding!",
+    "Tutorial": "Congratulations, you have just saved anyone who looks at your computer for the time a few seconds converting it from 24 hour time to 12 hour time. Good Job!\r\n\r\nIt may not be totally accurate but now people won't think you are a complete nerd with a strange time format.",
+    "Cost": 60,
+    "Requires": [
+      "hourssincemidnight"
+    ]
+  },
+  {
+    "ID": "minuteaccuracytime",
+    "Name": "Minute Accuracy Time",
+    "Description": "Want to be completely normal for once? Well Shift your time format into one 60x more accurate. \r\n\r\nMost people these days make plans to meet at certain times such as 5:30pm so knowing the exact minute of the exact hour is very important.",
+    "Tutorial": "Finally you have a great time format. You may not know the exact second of each minute but knowing the minute of the hour is good enough right?\r\n\r\nIf you haven't already buy a desktop clock or title bar clock to show off the time so you don't have to type \"time\" in the terminal all the time.",
+    "Cost": 80,
+    "Requires": [
+      "hourssincemidnight"
+    ]
+  },
+  {
+    "ID": "shiftpanelbuttons",
+    "Name": "Shift Panel Buttons",
+    "Description": "The Shifter may have some functionality but why not add more modules to it so you can customize even more elements of ShiftOS?\r\n\r\nThis module will allow you to modify the Desktop Panel Buttons.",
+    "Tutorial": "You can now click on the Panel Buttons option within the desktop panel options to modify various features of the panel buttons such as the text size, font and colour.\r\n\r\nModifying these various settings will earn you codepoints. The longer spend tinkering with the options the more codepoints you will earn when you click 'Apply Changes.",
+    "Cost": 20,
+    "Requires": [
+      "shiftdesktoppanel",
+      "panelbuttons"
+    ]
+  },
+  {
+    "ID": "shifter",
+    "Name": "Shifter",
+    "Description": "For system compatibility reasons practically all ShiftOS elements are designed to display in gray style and look dull.\r\n\r\nWe may be able to overcome this dull interface however if the user is given the option to customize it through the use of an application.",
+    "Tutorial": "Fantastic! The Shifter can now be opened by typing 'open shifter' in the terminal. In its current state the shifter is simply a basic layout that has no UI Shifting functionality.\r\n\r\nWith further research we may be able to add some functionally to it allowing the user to modify the sizes and colours of various UI elements.",
+    "Cost": 40,
+    "Requires": [
+      "gray"
+    ]
+  },
+  {
+    "ID": "alshifter",
+    "Name": "AL Shifter",
+    "Description": "What's the point of an App Launcher if it can't launch all your apps? \r\n\r\nUse this tweak to add a shortcut to the shifter in your app launcher so you can launch it at any time with just a few clicks.",
+    "Tutorial": "Your App Launcher is now more complete and will allow you to launch the shifter at any time you like.\r\n\r\nBe sure to buy tweaks to add all your installed programs to the app launcher so you never have to use the terminal to open up a program ever again!",
+    "Cost": 5,
+    "Requires": [
+      "shifter",
+      "applaunchermenu"
+    ]
+  },
+  {
+    "ID": "shiftdesktop",
+    "Name": "Shift Desktop",
+    "Description": "The shifter is currently unable to change any settings but this simple upgrade may be able to add a module that allows you to change the colour of the desktop background.\r\n\r\nThis may even unlock further Shifter functionality.",
+    "Tutorial": "Brilliant! The Shifter can change your desktop background colour but unfortunately you only use the colours 'Black', 'Gray' and 'White'.\r\n\r\nFurther research may allow us to decipher the mysterious colour code allowing us to use more colours throughout ShiftOS with the Colour Picker application.",
+    "Cost": 20,
+    "Requires": [
+      "shifter"
+    ]
+  },
+  {
+    "ID": "grayshades",
+    "Name": "Gray Shades",
+    "Description": "Seeing gray on your computer screen may be a nice break from  black and white but why have just one shade of gray when you can have 3?\r\n\r\nMore shades of gray increase the uniqueness of your ShiftOS interface by expanding your range of colour options in the Shifter.",
+    "Tutorial": "Now with a more lively, illuminated light gray and a more dramatic dim gray your interface can be designed with more depth and variety.\r\n\r\nTo use these new shades of gray just open the shifter and click on a colour customization box. Once the colour picker appears you will see these new shades of gray ready to be used wherever you want.",
+    "Cost": 40,
+    "Requires": [
+      "gray"
+    ]
+  },
+  {
+    "ID": "fullgrayshadeset",
+    "Name": "Full Gray Shade Set",
+    "Description": "3 Shades of gray may be better than 1 shade but why not get a full gray shade set complete with 8 shades?\r\n\r\nFurther upgrades may even allow you to create your own custom shades of gray.",
+    "Tutorial": "Now with the complete gray shade set you can greatly alter the appearance of your ShiftOS desktop.\r\n\r\nIt appears that there is a pattern with these different shades of gray. The higher the numeric RGB value is the lighter the shade is. Further research may allow us to make our own custom shades of gray.",
+    "Cost": 60,
+    "Requires": [
+      "grayshades"
+    ]
+  },
+  {
+    "ID": "customgrayshades",
+    "Name": "Custom Gray Shades",
+    "Description": "Forget about having 8 shades of gray because this upgrade will allow you to crack the colour value code giving you the ability to create your own custom shades of gray.\r\n\r\nFurther research may even allow us to create other basic colours.",
+    "Tutorial": "It appears black has an RGB value of 0 and white has an RGB value of 255. Values between 0 – 255 are different shades of gray from 0 being the darkest to 255 being the lightest.\r\n\r\nNow you can make your own shades of gray in the colour picker by typing in a custom value and then right clicking any colour box in the gray shades area.",
+    "Cost": 100,
+    "Requires": [
+      "fullgrayshadeset"
+    ]
+  },
+  {
+    "ID": "blue",
+    "Name": "Blue",
+    "Description": "Blue may be the colour of the sky and the ocean but it’s also an important colour that may allow us to create more colours if we mix it with red.\r\n\r\nBuying this upgrade would enable you to set various UI elements in ShiftOS to Blue.",
+    "Tutorial": "Blue is a vital part of the RGB colour system and now that we can use it we should be able to create Purple if we mix it with red.\r\n\r\nWith all 3 RGB colours we may be able to start creating different shades of various other colours.",
+    "Cost": 20,
+    "Requires": [
+      "gray"
+    ]
+  },
+  {
+    "ID": "green",
+    "Name": "Green",
+    "Description": "Green may be the colour of nature and life but it’s also an important colour that may allow us to create more colours if we mix it with red.\r\n\r\nBuying this upgrade would enable you to set various UI elements in ShiftOS to Green.",
+    "Tutorial": "Green is a vital part of the RGB colour system and now that we can use it we should be able to create yellow and orange if we mix it with red.\r\n\r\nWith all 3 RGB colours we may be able to start creating different shades of various other colours.",
+    "Cost": 20,
+    "Requires": [
+      "gray"
+    ]
+  },
+  {
+    "ID": "red",
+    "Name": "Red",
+    "Description": "Red may be a demonic and evil colour that symbolizes hate and rage but it’s a very important colour that may allow us to create more colours if we mix it with Blue or Green.\r\n\r\nBuying this upgrade would enable you to set various UI elements in ShiftOS to red.",
+    "Tutorial": "Red is a vital part of the RGB colour system and now that we can use it we may be able to create Purple if we mix it with Blue. If we mix it with Green we may be able to create yellow and orange.\r\n\r\nWith all 3 RGB colours we may be able to start creating different shades of various other colours.",
+    "Cost": 20,
+    "Requires": [
+      "gray"
+    ]
+  },
+  {
+    "ID": "brown",
+    "Name": "Brown",
+    "Description": "Now that we have the all the RBG colours we are able to mix them together to form brown which symbolizes laziness and the earth.\r\n\r\nBuying this upgrade would enable you to set various UI elements in ShiftOS to Brown.",
+    "Tutorial": "People who like brown are usually conventional, orderly  and sometimes lazy and repressed. Use it in ShiftOS if you must...\r\n\r\nOnce we have discovered all the basic colours we may be able to use our knowledge to create more shades of the colours we have.",
+    "Cost": 20,
+    "Requires": [
+      "red",
+      "green",
+      "blue"
+    ]
+  },
+  {
+    "ID": "orange",
+    "Name": "Orange",
+    "Description": "Now that we have the RBG colours \"Red\" and \"Green\" we are able to mix them together to form orange which symbolizes enthusiasm and creativity.\r\n\r\nBuying this upgrade would enable you to set various UI elements in ShiftOS to Orange.",
+    "Tutorial": "Orange is apparently a color that can increase the desire for humans to eat food. Now that you have it you are free to eat, er… use it throughout ShiftOS.\r\n\r\nOnce we have discovered all the basic colours we may be able to use our knowledge to create more shades of the colours we have.",
+    "Cost": 20,
+    "Requires": [
+      "red",
+      "green",
+      "blue"
+    ]
+  },
+  {
+    "ID": "pink",
+    "Name": "Pink",
+    "Description": "Now that we have the all the RBG colours we are able to mix them together to form pink which symbolizes universal love and beauty.\r\n\r\nBuying this upgrade would enable you to set various UI elements in ShiftOS to Pink.",
+    "Tutorial": "Pink is apparently a color that can decrease aggressive behavior. Now that you have it you are free use it throughout ShiftOS if you can handle it ;)\r\n\r\nOnce we have discovered all the basic colours we may be able to use our knowledge to create more shades of the colours we have.",
+    "Cost": 20,
+    "Requires": [
+      "red",
+      "green",
+      "blue"
+    ]
+  },
+  {
+    "ID": "purple",
+    "Name": "Purple",
+    "Description": "Now that we have the RBG colours \"Red\" and \"Blue\" we are able to mix them together to form purple which symbolizes spirituality, royalty, magic and mystery.\r\n\r\nBuying this upgrade would enable you to set various UI elements in ShiftOS to Purple.",
+    "Tutorial": "Purple is an interesting colour as it is a mix of the warmest red colour and coolest blue colour. Now that you have it you are free to use it throughout ShiftOS.\r\n\r\nOnce we have discovered all the basic colours we may be able to use our knowledge to create more shades of the colours we have.",
+    "Cost": 20,
+    "Requires": [
+      "red",
+      "green",
+      "blue"
+    ]
+  },
+  {
+    "ID": "shiftapplauncher",
+    "Name": "Shift App Launcher",
+    "Description": "The Shifter may have some functionality but why not add more modules to it so you can customize even more elements of ShiftOS?\r\n\r\nThis module will allow you to modify the App Launcher.",
+    "Tutorial": "You can now click on the App Launcher option within the main desktop options to modify various features of the App Launcher such as its name, font and colour.\r\n\r\nModifying these various settings will earn you codepoints. The longer spend tinkering with the options the more codepoints you will earn when you click 'Apply Changes.",
+    "Cost": 20,
+    "Requires": [
+      "shiftdesktoppanel",
+      "applaunchermenu"
+    ]
+  },
+  {
+    "ID": "shiftdesktoppanel",
+    "Name": "Shift Desktop Panel",
+    "Description": "The Shifter may have some functionality but why not add more modules to it so you can customize even more elements of ShiftOS?\r\n\r\nThis module will allow you to modify the Desktop Panel.",
+    "Tutorial": "You can now click on the Desktop Panel option within the main desktop options to modify various features of the desktop panel such as the position, colour and height.\r\n\r\nModifying these various settings will earn you codepoints. The longer spend tinkering with the options the more codepoints you will earn when you click 'Apply Changes.",
+    "Cost": 20,
+    "Requires": [
+      "shiftdesktop",
+      "desktoppanel"
+    ]
+  },
+  {
+    "ID": "shiftlauncheritems",
+    "Name": "Shift Launcher Items",
+    "Description": "So you can shift the Applications Launcher button. Great, but arn't the menu items a little boring?\r\n\r\nThe Shift Launcher Items upgrade allow you to customize launcher items, as well as the button.",
+    "Tutorial": "You can now customize ShiftOS to the nth degree!\r\n\r\nSo, lets see, have a little go in the Shifter, you will find the new setting under the 'Items' button in the Applications Launcher",
+    "Cost": 20,
+    "Requires": [
+      "shiftapplauncher"
+    ]
+  },
+  {
+    "ID": "shiftpanelclock",
+    "Name": "Shift Panel Clock",
+    "Description": "The Shifter may have some functionality but why not add more modules to it so you can customize even more elements of ShiftOS?\r\n\r\nThis module will allow you to modify the Desktop Panel Clock.",
+    "Tutorial": "You can now click on the Panel clock option within the main desktop options to modify various features of the desktop panel clock such as the text size, font and colour.\r\n\r\nModifying these various settings will earn you codepoints. The longer spend tinkering with the options the more codepoints you will earn when you click 'Apply Changes.",
+    "Cost": 20,
+    "Requires": [
+      "shiftdesktoppanel",
+      "desktoppanelclock"
+    ]
+  },
+  {
+    "ID": "skinning",
+    "Name": "Skinning",
+    "Description": "Static colours of the windows and desktop in ShiftOS are beginning to look boring and unprofessional.\r\n\r\nSince the artpad is able to save .pic file we may be able to use them as UI elements.",
+    "Tutorial": "Brilliant! A skinning system is now in place. You now have a new graphic picker and skin loader at your disposal.\r\n\r\nRight click colour boxes in the Shifter to bring up the graphic picker instead of the colour picker.",
+    "Cost": 80,
+    "Requires": [
+      "artpad",
+      "fileskimmer",
+      "shifter"
+    ]
+  },
+  {
+    "ID": "splitsecondtime",
+    "Name": "Split Second Time",
+    "Description": "You already know the exact time down to the very last minute. Do you really need to know the exact second?\r\n\r\nIf so then give this upgrade a whirl but I'm sure you have better things to do than throw 100 codepoints away like this.",
+    "Tutorial": "Ok, looks like you just couldn't resist so here you go... Typing \"time\" in the terminal will now tell you the hour, minute and second of the day.\r\n\r\nIf you have any other clock like programs these will also now tell you the time to the exact second. Now go upgrade something that matters!",
+    "Cost": 100,
+    "Requires": [
+      "minuteaccuracytime"
+    ]
+  },
+  {
+    "ID": "systeminformation",
+    "Name": "System Information",
+    "Description": "Don't know your PC specs? Need to find out? want to know what version of ShiftOS your running?\r\n\r\nWell, this is the app for you. May I present: the System Information App!",
+    "Tutorial": "Congrats! you now have an app that doesn't do anything. Well, except find information about you PC that you all ready know.\r\n\r\nAt least the learning curve isn't too much, just open the app and read the info, your good to go!",
+    "Cost": 40
+  },
+  {
+    "ID": "textpad",
+    "Name": "Textpad",
+    "Description": "Need to quickly jot down something but you can’t find a pen and paper nearby? There’s an app for that!\r\n\r\nWith the Textpad you will be able to jot down whatever you like and have it displayed in all its glory on your computer screen.",
+    "Tutorial": "Now whenever you need to remember something or you just feel like writing stuff down you are free to open the Textpad application and type away.\r\n\r\nIf you have a program that allows you to access and manage the files on your storage device then with further upgrades you may be able to save and load text files.",
+    "Cost": 65
+  },
+  {
+    "ID": "altextpad",
+    "Name": "AL Textpad",
+    "Description": "What's the point of an App Launcher if it can't launch all your apps? \r\n\r\nUse this tweak to add a shortcut to textpad in your app launcher so you can launch it at any time with just a few clicks.",
+    "Tutorial": "Your App Launcher is now more complete and will allow you to launch Knowledge input at any time you like.\r\n\r\nBe sure to buy tweaks to add all your installed programs to the app launcher so you never have to use the terminal to open up a program ever again!",
+    "Cost": 5,
+    "Requires": [
+      "applaunchermenu",
+      "textpad"
+    ]
+  },
+  {
+    "ID": "textpadnew",
+    "Name": "Textpad New",
+    "Description": "Have you ever been typing a document and thought ‘I don’t like what I’m writing’. Closing and opening the entire application to clear the text is too much effort right?\r\n\r\nWell if you get this upgrade clearing the text can be as easy as pressing a button.",
+    "Tutorial": "Gone are the days you need to backspace your text document until all the text is removed. Gone are the days when you used to have to open and close the textpad every time you wanted to write a new document.\r\n\r\nClick the arrow at the bottom of textpad to display a button that will clear your entire text document the moment you click on it.",
+    "Cost": 25,
+    "Requires": [
+      "textpad"
+    ]
+  },
+  {
+    "ID": "textpadopen",
+    "Name": "Textpad Open",
+    "Description": "Sure you can open your text files by going to all the effort of opening File Skimmer and then clicking on the file you want to open but it doesn’t have to be that hard.\r\n\r\nWouldn't an open button make life much easier?",
+    "Tutorial": "See, I know you couldn’t resist making it a few seconds quicker to open your text documents. Either that or you think Textpad looks better with more options at the bottom…\r\n\r\nTo open a file click the expander arrow at the bottom of textpad to display the open button. After clicking open select the file that you wish to view.",
+    "Cost": 25,
+    "Requires": [
+      "textpad",
+      "fileskimmer"
+    ]
+  },
+  {
+    "ID": "textpadsave",
+    "Name": "Textpad Save",
+    "Description": "Have you just written something worth keeping with Textpad? Well, what a shame you can’t save it…\r\n\r\nOr can you? That’s right, with this upgrade your award winning documents can sit safely on your storage device.",
+    "Tutorial": "Now you can save your precious text files onto your storage device knowing that they are totally safe unless you throw your computer out of the window or kick it while its running.\r\n\r\nClick the expander arrow at the bottom of textpad to display the save button. After clicking save simply name your file and it’s yours to keep forever.",
+    "Cost": 25,
+    "Requires": [
+      "textpad",
+      "fileskimmer"
+    ]
+  },
+  {
+    "ID": "titlebar",
+    "Name": "Title Bar",
+    "Description": "Your windows are looking extremely bare right now. You know what they need? A gray bar on top of them! What is the gray bar for you ask?\r\n\r\nDepending on what kind of person you are it either \"Does Nothing\" or \"Looks Pretty\". The Title Bar has a lot of future potential though…",
+    "Tutorial": "Congratulations, windows will now have a gray, 30 pixel high title bar at the top of them!\r\n\r\nIt may not seem like much now but you've just opened up the ShiftOS GUI to a huge range of future upgrades that could turn this title bar into a very useful tool for window information and enhanced control.",
+    "Cost": 80,
+    "Requires": [
+      "gray"
+    ]
+  },
+  {
+    "ID": "closebutton",
+    "Name": "Close Button",
+    "Description": "Closing a program should be as easy as pressing a button. Opening up the terminal and typing \"Close [Program name]\" is just Ridiculous.\r\n\r\nPlease, for your own sake... Buy this close button before you waste another second opening up that terminal!",
+    "Tutorial": "What a relief! Finally programs can be closed with the click of a button. This is a big step forwards towards total graphical functionality without a terminal.\r\n\r\nIf you havn't already now would be a great time to start building up a desktop interface to free yourself from the terminal.",
+    "Cost": 90,
+    "Requires": [
+      "titlebar"
+    ]
+  },
+  {
+    "ID": "rollupcommand",
+    "Name": "Roll Up Command",
+    "Description": "Running out of space on your desktop? Wish you could keep a window running in the background without completely closing it?\r\n\r\nWell you 're in luck. The roll up command will allow you to roll windows up to their title bar when you want to save space.",
+    "Tutorial": "Great! You can now roll windows up to their title bar whenever you want simply by bringing up the terminal and typing 'roll' followed by the program you want to roll up.\r\n\r\nTyping 'roll shiftorium' will roll the shiftorium application up to its title bar while keeping all its data stored safely. Typing the command again will roll the shiftorium back down.",
+    "Cost": 10,
+    "Requires": [
+      "titlebar"
+    ]
+  },
+  {
+    "ID": "minimizecommand",
+    "Name": "Minimize Command",
+    "Description": "Ever wanted to completely remove a program from the screen without actually closing it?\r\n\r\nWell with a minimize command this may actually become possible and allow you to save the state of hidden programs in the process!",
+    "Tutorial": "Now whenever you have a program open that you wish to hide simply type 'minimize [program name]' and it will be hidden.\r\n\r\nTo unhide a program just type the same command again and it will be reappear in the same state you left it in earlier.",
+    "Cost": 20,
+    "Requires": [
+      "titlebar"
+    ]
+  },
+  {
+    "ID": "minimizebutton",
+    "Name": "Minimize Button",
+    "Description": "As useful as the minimize feature is you still have to go to all the effort of opening the terminal and typing in a command to use it.\r\n\r\nWouldn’t a button in the title of each window be more efficient?",
+    "Tutorial": "Isn’t this nifty! Each window now has its own minimize button in its title bar so hiding windows is a breeze.\r\n\r\nUnfortunately to you will still need to use the terminal to make windows reappear but maybe another upgrade could provide an alternative.",
+    "Cost": 50,
+    "Requires": [
+      "minimizecommand"
+    ]
+  },
+  {
+    "ID": "rollupbutton",
+    "Name": "Roll Up Button",
+    "Description": "Are you a fan of the Roll Up functionality? Are you absolutely sick of opening up the terminal and typing in a command every time you want to roll up a window?\r\n\r\nThis upgrade will making rolling up windows much quicker!",
+    "Tutorial": "Now isn’t this nice? All your windows now have a black square button on them that will roll windows up and down if you click on it.\r\n\r\nIt functions well but if I were you I would attempt to alter its appearance or change its colour so you can better distinguish it from any other buttons you may or may not have.",
+    "Cost": 45,
+    "Requires": [
+      "rollupcommand"
+    ]
+  },
+  {
+    "ID": "shifttitlebar",
+    "Name": "Shift Title Bar",
+    "Description": "The Shifter may have some functionality but why not add more modules to it so you can customize even more elements of ShiftOS?\r\n\r\nThis module will allow you to modify the Title Bar.",
+    "Tutorial": "You can now click on the Title Bar option within the Windows options to modify various features of the Title Bar such as the colour and height.\r\n\r\nModifying these various settings will earn you codepoints. The longer spend tinkering with the options the more codepoints you will earn when you click 'Apply Changes.",
+    "Cost": 20,
+    "Requires": [
+      "shifter",
+      "titlebar"
+    ]
+  },
+  {
+    "ID": "shifttitlebuttons",
+    "Name": "Shift Title Buttons",
+    "Description": "The Shifter may have some functionality but why not add more modules to it so you can customize even more elements of ShiftOS?\r\n\r\nThis module will allow you to modify the Title Buttons.",
+    "Tutorial": "You can now click on the Buttons option within the Windows options to modify various features of the Title Buttons such as their colour and size.\r\n\r\nModifying these various settings will earn you codepoints. The longer spend tinkering with the options the more codepoints you will earn when you click 'Apply Changes.",
+    "Cost": 20,
+    "Requires": [
+      "closebutton",
+      "minimizebutton",
+      "rollupbutton",
+      "shifttitlebar"
+    ]
+  },
+  {
+    "ID": "titletext",
+    "Name": "Title Text",
+    "Description": "Since looking at a program won't tell you the name of it you need Title Text. Unless of course you want to go through the trouble of remembering the name of the program...\r\n\r\nTitle Text sits in the top left hand corner of the title bar to label each program.",
+    "Tutorial": "Fantastic! You now have some beautiful title text that sits in the title bar and tells you the name of all open programs.\r\n\r\nIf you are unhappy with the font, size, colour or even position of the Title Text you are free to change it in the Shifter or even turn off Title Text all together if you don't like it.",
+    "Cost": 40,
+    "Requires": [
+      "titlebar"
+    ]
+  },
+  {
+    "ID": "titleicons",
+    "Name": "Title Icons",
+    "Cost": 60,
+    "Description": "All well and good to have title text on all of ShiftOS's windows, but there's a little bit of a gap between the title bar edge and the title text.. Hmmm... what could we puut there?\r\n\r\nThis upgrade allows programs to place an icon next to their Title Text and inside their panel buttons.",
+    "Tutorial": "Great! Now you should see an icon in the Shiftorium's title bar and its panel button.\r\n\r\nThat should make things look a tad bit cleaner.",
+    "Requires": [
+      "titletext",
+      "panelbuttons"
+    ]
+  },
+  {
+    "ID": "shifttitletext",
+    "Name": "Shift Title Text",
+    "Description": "The Shifter may have some functionality but why not add more modules to it so you can customize even more elements of ShiftOS?\r\n\r\nThis module will allow you to modify the Title Text.",
+    "Tutorial": "You can now click on the Title Text option within the Windows options to modify various features of the Title Text such as the text size, font and colour.\r\n\r\nModifying these various settings will earn you codepoints. The longer spend tinkering with the options the more codepoints you will earn when you click 'Apply Changes.",
+    "Cost": 20,
+    "Requires": [
+      "shifttitlebar",
+      "titletext"
+    ]
+  },
+  {
+    "ID": "usefulpanelbuttons",
+    "Name": "Useful Panel Buttons",
+    "Description": "How can you call those things on the desktop panel ‘panel buttons’ when they aren’t even clickable?.\r\n\r\nA graphical unminimize feature would be handy and those panel buttons might help us…",
+    "Tutorial": "Finally the panel buttons have a purpose. You can now click on them to unminimize minimized programs.\r\n\r\nSimply click on the panel button labeled with the program you want to unminimize and it will reappear before your eyes.",
+    "Cost": 40,
+    "Requires": [
+      "panelbuttons",
+      "minimizebutton"
+    ]
+  },
+  {
+    "ID": "windowborders",
+    "Name": "Window Borders",
+    "Description": "A borderless window on your desktop is like a picture hung on the wall without a frame. It looks completely out of place and awful!\r\n\r\nWithout this upgrade your overlapping windows will look extremely messy and appear to merge with each other,",
+    "Tutorial": "Now with your freshly framed windows you will no longer have issues distinguishing them from each other. Those borders may even perform a function other than looking pretty in a future upgrade.\r\n\r\nBorders only cover the right, left and bottom of windows so if you haven't bought a Title Bar your windows won't have a top border.",
+    "Cost": 40,
+    "Requires": [
+      "gray"
+    ]
+  },
+  {
+    "ID": "shiftborders",
+    "Name": "Shift Borders",
+    "Description": "The Shifter may have some functionality but why not add more modules to it so you can customize even more elements of ShiftOS?\r\n\r\nThis module will allow you to modify the Window Borders.",
+    "Tutorial": "You can now click on the Borders option within the Windows options to modify various features of the Window Borders such as the colour and size.\r\n\r\nModifying these various settings will earn you codepoints. The longer spend tinkering with the options the more codepoints you will earn when you click 'Apply Changes.",
+    "Cost": 20,
+    "Requires": [
+      "shifter",
+      "windowborders"
+    ]
+  },
+  {
+    "ID": "windowedterminal",
+    "Name": "Windowed Terminal",
+    "Description": "A nice big terminal is useful however it can sometimes get in the way of what you are doing.\r\n\r\nWith a few tweaks we may be able to program a command that allows the terminal to switch between a full screen and windowed state.",
+    "Tutorial": "Excellent! The terminal no longer has to be a huge barrier between you and your desktop.\r\n\r\nYou can now type \"windowed terminal\" to turn the terminal into a normal windowed program. You can also type \"fullscreen terminal\" to restore the terminal to it’s original state.",
+    "Cost": 45,
+    "Requires": [
+      "multitasking"
+    ]
+  },
+  {
+    "ID": "terminalscrollbar",
+    "Name": "Terminal Scrollbar",
+    "Description": "It’s great having the terminal windowed so it doesn't block the view of your desktop but at the same time size can be an issue.\r\n\r\nThis problem can easily be fixed however by adding a scrollbar to the terminal when it's windowed.",
+    "Tutorial": "Well, Isn't this heaven! The terminal will now display a scroll bar when windowed! It may not seem like much but it will certainly help if you need to backtrack on previous output in the terminal.\r\n\r\nPlease note that the scrollbar will only appear when the terminal is windowed and can't display all text at once.",
+    "Cost": 20,
+    "Requires": [
+      "windowedterminal"
+    ]
+  },
+  {
+    "ID": "windowsanywhere",
+    "Name": "Windows Anywhere",
+    "Description": "Having all windows open in the center of the screen is seriously limiting when it comes to multitasking.\r\n\r\nBuying this upgrade is essential if you plan on multitasking or even if you just hate having windows centered in the middle of screen.",
+    "Tutorial": "Congratulations! You can now move windows to any point on the screen... As long as you understand the concept of X and Y coordinates and screen resolution.\r\n\r\nType \"Move [insert program name here] to [xcoordinate],[ycoordinate]\" to teleport windows to any point on the screen.",
+    "Cost": 25
+  },
+  {
+    "ID": "movablewindows",
+    "Name": "Movable Windows",
+    "Description": "Although it's nice to be able to type commands in the terminal to teleport windows to any spot on the screen it’s a little time consuming and difficult at times.\r\n\r\nWell, with Movable Windows you can move Windows with the keyboard WASD keys.",
+    "Tutorial": "You can now move windows without total reliance on the terminal however movement is far from smooth and not fully efficient.\r\n\r\nTo move windows simply click once anywhere on the window you wish to move and hold the Ctrl key while tapping the WASD keys to move it 50 (customizable in Shifter) pixels in that direction.",
+    "Cost": 75,
+    "Requires": [
+      "windowsanywhere"
+    ]
+  },
+  {
+    "ID": "draggablewindows",
+    "Name": "Draggable Windows",
+    "Description": "So... I heard you have a Title Bar? I also heard that you have Movable Windows. Although Movable Windows are nice they aren't perfect.\r\n\r\nBuy this upgrade if you want to drag windows around by their Title Bar! Trust me... Its ultra-efficient!",
+    "Tutorial": "You have just taken a major step in the right direction. You no longer have to worry about relying on the keyboard to move windows around on the screen.\r\n\r\nFrom this point on you can use the pin point accuracy of your mouse to smoothly drag windows to any spot on the screen by pulling on their title bars.",
+    "Cost": 150,
+    "Requires": [
+      "titlebar",
+      "movablewindows"
+    ]
+  },
+  {
+    "ID": "yellow",
+    "Name": "Yellow",
+    "Description": "Now that we have the RBG colours \"Red\" and \"Green\" we are able to mix them together to form yellow which symbolizes happiness, creativity and high intellect.\r\n\r\nBuying this upgrade would enable you to set various UI elements in ShiftOS to Yellow.",
+    "Tutorial": "Yellow is a great colour to have up on your screen to improve your concentration and make you more alert. Now that you have it you are free to use it throughout ShiftOS.\r\n\r\nOnce we have discovered all the basic colours we may be able to use our knowledge to create more shades of the colours we have.",
+    "Cost": 20,
+    "Requires": [
+      "red",
+      "green",
+      "blue"
+    ]
+  },
+  {
+    "ID": "blueshades",
+    "Name": "Blue Shades",
+    "Description": "Having a splash of blue may be cool but why have just one shade of blue when you can have 3?\r\n\r\nFurther upgrades may even allow you to get more shades of blue.",
+    "Tutorial": "Now with a darker blue and lighter blue shade at your disposal your ShiftOS interface can be designed with more depth and variety.\r\n\r\nDiscovering more of these predefined colour shades may allow us to eventually use the RGB colour system to limitlessly create our own custom colours.",
+    "Cost": 40,
+    "Requires": [
+      "blue"
+    ]
+  },
+  {
+    "ID": "brownshades",
+    "Name": "Brown Shades",
+    "Description": "Having a splash of brown may be cool but why have just one shade of brown when you can have 3?\r\n\r\nFurther upgrades may even allow you to get more shades of brown.",
+    "Tutorial": "Now with a darker brown and lighter brown shade at your disposal your ShiftOS interface can be designed with more depth and variety.\r\n\r\nDiscovering more of these predefined colour shades may allow us to eventually use the RGB colour system to limitlessly create our own custom colours.",
+    "Cost": 40,
+    "Requires": [
+      "brown"
+    ]
+  },
+  {
+    "ID": "fullblueshadeset",
+    "Name": "Full Blue Shade Set",
+    "Description": "3 Shades of blue may be better than 1 shade but why not get a full blue shade set complete with 16 shades?\r\n\r\nFurther upgrades may even allow you to create your own custom shades of blue.",
+    "Tutorial": "Now with the complete blue shade set you can seriously customize your ShiftOS desktop to your liking.\r\n\r\nWith the knowledge of the RGB values of this blue set we are very close to discovering how to make our own custom shades of blue.",
+    "Cost": 60,
+    "Requires": [
+      "blueshades"
+    ]
+  },
+  {
+    "ID": "customblueshades",
+    "Name": "Custom Blue Shades",
+    "Description": "16 shades of blue gives you plenty of customization options but further investigation into the RBG colour system will allow you to make your own blue shades.\r\n\r\nEventually we may be able to limitlessly create shades of any colour.",
+    "Tutorial": "To make a Blue shade with the RGB colour system blue must have the highest value followed by red. Green must then have the lowest value.\r\n\r\nNow you can make your own shades of blue in the colour picker by typing in custom values that follow the blue rules.",
+    "Cost": 100,
+    "Requires": [
+      "fullblueshadeset"
+    ]
+  },
+  {
+    "ID": "fullbrownshadeset",
+    "Name": "Full Brown Shade Set",
+    "Description": "3 Shades of brown may be better than 1 shade but why not get a full brown shade set complete with 16 shades?\r\n\r\nFurther upgrades may even allow you to create your own custom shades of brown.",
+    "Tutorial": "Now with the complete brown shade set you can seriously customize your ShiftOS desktop to your liking.\r\n\r\nWith the knowledge of the RGB values of this brown set we are very close to discovering how to make our own custom shades of brown.",
+    "Cost": 60,
+    "Requires": [
+      "brownshades"
+    ]
+  },
+  {
+    "ID": "custombrownshades",
+    "Name": "Custom Brown Shades",
+    "Description": "16 shades of brown gives you plenty of customization options but further investigation into the RBG colour system will allow you to make your own brown shades.\r\n\r\nEventually we may be able to limitlessly create shades of any colour.",
+    "Tutorial": "To make a brown shade with the RGB colour system red must have the highest value. Green must be 30 - 128 values lower than red. Blue must be 60 or more values less than green.\r\n\r\nNow you can make your own shades of brown in the colour picker by typing in custom values that follow the brown rules.",
+    "Cost": 100,
+    "Requires": [
+      "fullbrownshadeset"
+    ]
+  },
+  {
+    "ID": "greenshades",
+    "Name": "Green Shades",
+    "Description": "Having a splash of green may be cool but why have just one shade of green when you can have 3?\r\n\r\nFurther upgrades may even allow you to get more shades of green.",
+    "Tutorial": "Now with a darker green and lighter green shade at your disposal your ShiftOS interface can be designed with more depth and variety.\r\n\r\nDiscovering more of these predefined colour shades may allow us to eventually use the RGB colour system to limitlessly create our own custom colours.",
+    "Cost": 40,
+    "Requires": [
+      "green"
+    ]
+  },
+  {
+    "ID": "fullgreenshadeset",
+    "Name": "Full Green Shade Set",
+    "Description": "3 Shades of green may be better than 1 shade but why not get a full green shade set complete with 16 shades?\r\n\r\nFurther upgrades may even allow you to create your own custom shades of green.",
+    "Tutorial": "Now with the complete green shade set you can seriously customize your ShiftOS desktop to your liking.\r\n\r\nWith the knowledge of the RGB values of this green set we are very close to discovering how to make our own custom shades of green.",
+    "Cost": 60,
+    "Requires": [
+      "greenshades"
+    ]
+  },
+  {
+    "ID": "customgreenshades",
+    "Name": "Custom Green Shades",
+    "Description": "16 shades of green gives you plenty of customization options but further investigation into the RBG colour system will allow you to make your own green shades.\r\n\r\nEventually we may be able to limitlessly create shades of any colour.",
+    "Tutorial": "To make a green shade with the RGB colour system green must have the highest value. Red and Blue need to have values within 150 of each other.\r\n\r\nNow you can make your own shades of green in the colour picker by typing in custom values that follow the green rules.",
+    "Cost": 100,
+    "Requires": [
+      "fullgreenshadeset"
+    ]
+  },
+  {
+    "ID": "orangeshades",
+    "Name": "Orange Shades",
+    "Description": "Having a splash of orange may be cool but why have just one shade of orange when you can have 3?\r\n\r\nFurther upgrades may even allow you to get more shades of orange.",
+    "Tutorial": "Now with a darker orange and lighter orange shade at your disposal your ShiftOS interface can be designed with more depth and variety.\r\n\r\nDiscovering more of these predefined colour shades may allow us to eventually use the RGB colour system to limitlessly create our own custom colours.",
+    "Cost": 40,
+    "Requires": [
+      "orange"
+    ]
+  },
+  {
+    "ID": "fullorangeshadeset",
+    "Name": "Full Orange Shade Set",
+    "Description": "3 Shades of orange may be better than 1 shade but why not get a full orange shade set complete with 6 shades?\r\n\r\nFurther upgrades may even allow you to create your own custom shades of orange.",
+    "Tutorial": "Now with the complete orange shade set you can seriously customize your ShiftOS desktop to your liking.\r\n\r\nWith the knowledge of the RGB values of this orange set we are very close to discovering how to make our own custom shades of orange.",
+    "Cost": 60,
+    "Requires": [
+      "orangeshades"
+    ]
+  },
+  {
+    "ID": "customorangeshades",
+    "Name": "Custom Orange Shades",
+    "Description": "6 shades of orange gives you plenty of customization options but further investigation into the RBG colour system will allow you to make your own orange shades.\r\n\r\nEventually we may be able to limitlessly create shades of any colour.",
+    "Tutorial": "To make an orange shade with the RGB colour system red must have a value of 255. Green must be 100 or more values less than red. Blue must be 30 or more values less than green.\r\n\r\nNow you can make your own shades of orange in the colour picker by typing in custom values that follow the orange rules.",
+    "Cost": 100,
+    "Requires": [
+      "fullorangeshadeset"
+    ]
+  },
+  {
+    "ID": "pinkshades",
+    "Name": "Pink Shades",
+    "Description": "Having a splash of pink may be cool but why have just one shade of pink when you can have 3?\r\n\r\nFurther upgrades may even allow you to get more shades of pink.",
+    "Tutorial": "Now with a darker pink and lighter pink shade at your disposal your ShiftOS interface can be designed with more depth and variety.\r\n\r\nDiscovering more of these predefined colour shades may allow us to eventually use the RGB colour system to limitlessly create our own custom colours.",
+    "Cost": 40,
+    "Requires": [
+      "pink"
+    ]
+  },
+  {
+    "ID": "fullpinkshadeset",
+    "Name": "Full Pink Shade Set",
+    "Description": "3 Shades of pink may be better than 1 shade but why not get a full pink shade set complete with 6 shades?\r\n\r\nFurther upgrades may even allow you to create your own custom shades of pink.",
+    "Tutorial": "Now with the complete pink shade set you can seriously customize your ShiftOS desktop to your liking.\r\n\r\nWith the knowledge of the RGB values of this pink set we are very close to discovering how to make our own custom shades of pink.",
+    "Cost": 60,
+    "Requires": [
+      "pinkshades"
+    ]
+  },
+  {
+    "ID": "custompinkshades",
+    "Name": "Custom Pink Shades",
+    "Description": "6 shades of pink gives you plenty of customization options but further investigation into the RBG colour system will allow you to make your own pink shades.\r\n\r\nEventually we may be able to limitlessly create shades of any colour.",
+    "Tutorial": "To make a pink shade with the RGB colour system red must have the highest value. Blue must be 50 or more values less than red. Green must have the lowest value.\r\n\r\nNow you can make your own shades of pink in the colour picker by typing in custom values that follow the pink rules.",
+    "Cost": 100,
+    "Requires": [
+      "fullpinkshadeset"
+    ]
+  },
+  {
+    "ID": "purpleshades",
+    "Name": "Purple Shades",
+    "Description": "Having a splash of purple may be cool but why have just one shade of purple when you can have 3?\r\n\r\nFurther upgrades may even allow you to get more shades of purple.",
+    "Tutorial": "Now with a darker purple and lighter purple shade at your disposal your ShiftOS interface can be designed with more depth and variety.\r\n\r\nDiscovering more of these predefined colour shades may allow us to eventually use the RGB colour system to limitlessly create our own custom colours.",
+    "Cost": 40,
+    "Requires": [
+      "purple"
+    ]
+  },
+  {
+    "ID": "fullpurpleshadeset",
+    "Name": "Full Purple Shade Set",
+    "Description": "3 Shades of purple may be better than 1 shade but why not get a full purple shade set complete with 16 shades?\r\n\r\nFurther upgrades may even allow you to create your own custom shades of purple.",
+    "Tutorial": "Now with the complete purple shade set you can seriously customize your ShiftOS desktop to your liking.\r\n\r\nWith the knowledge of the RGB values of this purple set we are very close to discovering how to make our own custom shades of purple.",
+    "Cost": 60,
+    "Requires": [
+      "purpleshades"
+    ]
+  },
+  {
+    "ID": "custompurpleshades",
+    "Name": "Custom Purple Shades",
+    "Description": "16 shades of purple gives you plenty of customization options but further investigation into the RBG colour system will allow you to make your own purple shades.\r\n\r\nEventually we may be able to limitlessly create shades of any colour.",
+    "Tutorial": "To make a purple shade with the RGB colour system Blue must have the highest value followed by red. Green must then have the lowest value.\r\n\r\nNow you can make your own shades of purple in the colour picker by typing in custom values that follow the purple rules.",
+    "Cost": 100,
+    "Requires": [
+      "fullpurpleshadeset"
+    ]
+  },
+  {
+    "ID": "redshades",
+    "Name": "Red Shades",
+    "Description": "Having a splash of red may be cool but why have just one shade of red when you can have 3?\r\n\r\nFurther upgrades may even allow you to get more shades of red.",
+    "Tutorial": "Now with a darker red and lighter red shade at your disposal your ShiftOS interface can be designed with more depth and variety.\r\n\r\nDiscovering more of these predefined colour shades may allow us to eventually use the RGB colour system to limitlessly create our own custom colours.",
+    "Cost": 40,
+    "Requires": [
+      "red"
+    ]
+  },
+  {
+    "ID": "fullredshadeset",
+    "Name": "Full Red Shade Set",
+    "Description": "3 Shades of red may be better than 1 shade but why not get a full red shade set complete with 9 shades?\r\n\r\nFurther upgrades may even allow you to create your own custom shades of red.",
+    "Tutorial": "Now with the complete red shade set you can seriously customize your ShiftOS desktop to your liking.\r\n\r\nWith the knowledge of the RGB values of this red set we are very close to discovering how to make our own custom shades of red.",
+    "Cost": 60,
+    "Requires": [
+      "redshades"
+    ]
+  },
+  {
+    "ID": "customredshades",
+    "Name": "Custom Red Shades",
+    "Description": "9 shades of red gives you plenty of customization options but further investigation into the RBG colour system will allow you to make your own red shades.\r\n\r\nEventually we may be able to limitlessly create shades of any colour.",
+    "Tutorial": "To make a red shade with the RGB colour system red must have the highest value. Green and blue must be 80 or more values less than red but within 50 values of each other.\r\n\r\nNow you can make your own shades of red in the colour picker by typing in custom values that follow the red rules.",
+    "Cost": 100,
+    "Requires": [
+      "fullredshadeset"
+    ]
+  },
+  {
+    "ID": "yellowshades",
+    "Name": "Yellow Shades",
+    "Description": "Having a splash of yellow may be cool but why have just one shade of yellow when you can have 3?\r\n\r\nFurther upgrades may even allow you to get more shades of yellow.",
+    "Tutorial": "Now with a darker yellow and lighter yellow shade at your disposal your ShiftOS interface can be designed with more depth and variety.\r\n\r\nDiscovering more of these predefined colour shades may allow us to eventually use the RGB colour system to limitlessly create our own custom colours.",
+    "Cost": 40,
+    "Requires": [
+      "yellow"
+    ]
+  },
+  {
+    "ID": "fullyellowshadeset",
+    "Name": "Full Yellow Shade Set",
+    "Description": "3 Shades of yellow may be better than 1 shade but why not get a full yellow shade set complete with 10 shades?\r\n\r\nFurther upgrades may even allow you to create your own custom shades of yellow.",
+    "Tutorial": "Now with the complete yellow shade set you can seriously customize your ShiftOS desktop to your liking.\r\n\r\nWith the knowledge of the RGB values of this yellow set we are very close to discovering how to make our own custom shades of yellow.",
+    "Cost": 60,
+    "Requires": [
+      "yellowshades"
+    ]
+  },
+  {
+    "ID": "customyellowshades",
+    "Name": "Custom Yellow Shades",
+    "Description": "10 shades of yellow gives you plenty of customization options but further investigation into the RBG colour system will allow you to make your own yellow shades.\r\n\r\nEventually we may be able to limitlessly create shades of any colour.",
+    "Tutorial": "To make a yellow shade with the RGB colour system red must have the highest value and be over 180. Green must be within 30 values of red. Blue must be the lowest value.\r\n\r\nNow you can make your own shades of yellow in the colour picker by typing in custom values that follow the yellow rules.",
+    "Cost": 100,
+    "Requires": [
+      "fullyellowshadeset"
+    ]
+  },
+  {
+    "ID": "basiccustomshade",
+    "Name": "Basic Custom shade",
+    "Description": "Now that we can create shades of colours based on certain rules our level of customization is very high.\r\n\r\nWith further research ShiftOS may be able to support the ability to make a shade not linked to the rules of a certain colour.",
+    "Tutorial": "Amazing! The colour picker can now support the ability to make a single shade not linked to any colour rules.\r\n\r\nDue to system limitations though only one custom shade can be stored and that shade must have an RGB value between 100 and 150. Further research may improve this systems compatibility with the RGB colour system.",
+    "Cost": 50,
+    "Requires": [
+      "customredshades",
+      "customgreenshades",
+      "customgrayshades",
+      "customblueshades",
+      "customorangeshades",
+      "customyellowshades",
+      "custombrownshades",
+      "custompurpleshades",
+      "custompinkshades"
+    ]
+  },
+  {
+    "ID": "generalcustomshades",
+    "Name": "General Custom Shades",
+    "Description": "There isn’t much use making a single custom colour that looks mostly gray. Further research into optimizing ShiftOS may improve its compatibility with the RGB colour system.\r\n\r\nThis would lead to a higher range in values and shades being stored.",
+    "Tutorial": "Fantastic, We are now one step closer to complete control over the RGB colour system without any limitations.\r\n\r\nWe can now have up to 4 custom shades not linked to certain colour rules. The custom RGB range has now increased to values between 100 and 200. A little more research will continue to break these limits.",
+    "Cost": 100,
+    "Requires": [
+      "basiccustomshade"
+    ]
+  },
+  {
+    "ID": "advancedcustomshades",
+    "Name": "Advanced Custom Shades",
+    "Description": "4 savable shade spaces is nowhere near decent for storing custom colours and with RGB limits of 100 to 200 the colours are still looking quite dull.\r\n\r\nMore research into optimizing ShiftOS may further break these limits.",
+    "Tutorial": "Brilliant! It looks like we are just around the corner from having the full RGB colour system supported natively in ShiftOS.\r\n\r\nYou can now have up to 8 custom colours stored in the colour picker but they must have RGB values of 75 to 225.",
+    "Cost": 250,
+    "Requires": [
+      "generalcustomshades"
+    ]
+  },
+  {
+    "ID": "limitlesscustomshades",
+    "Name": "Limitless Custom Shades",
+    "Description": "It’s time to break all RGB colour limits forever! This upgrade may be expensive but it will allow us to master the RGB colour system.\r\n\r\nWith total native RGB colour support in ShiftOS we will limitlessly be able to make millions of shades of colours.",
+    "Tutorial": "This is EPIC! ShiftOS now supports the ability to display 16,777,216 shades of colour. Yes many of them may look the same but now you can have them all!\r\n\r\nYou can now have a full set of 16 stored colours in the colour picker set to any RGB values between 0 and 255. This native RGB support opens up a lot of cross compatibility opportunities in the future.",
+    "Cost": 500,
+    "Requires": [
+      "advancedcustomshades"
+    ]
+  },
+  {
+    "ID": "unitymode",
+    "Name": "Unity Mode",
+    "Description": "ShiftOS uses Microsoft Windows as nothing more than supportive boot code however further research could enhance interactivity between operating systems.\r\n\r\nThe Full RGB colour system support should enable better compatibility allowing ShiftOS to run in Unity with Windows.",
+    "Tutorial": "Amazing! A new mode called ‘unity mode’ can be turned on and off in the terminal by typing ‘unity mode on’ or ‘unity mode off’.\r\n\r\nWith unity mode on you should be able to run ShiftOS applications and Windows applications side by side.",
+    "Cost": 1000,
+    "Requires": [
+      "windowsanywhere",
+      "multitasking",
+      "desktoppanel",
+      "windowedterminal",
+      "limitlesscustomshades"
+    ]
+  },
+  {
+    "ID": "alunitymode",
+    "Name": "AL Unity Mode",
+    "Description": "So you like to use ShiftOS along side Microsoft Windows? Sick of typing 'unity mode on'? Well, this is the alternative!\r\n\r\nThis little upgrade gives you Unity Mode, right from the Applications Launcher, hassle free!",
+    "Tutorial": "Great, you can now toggle Unity Mode on and off with the click of a button, no more typing silly commands!\r\n\r\nNext, we may even be able to get you a fancy icon for it, check the upgrade list and go earn some more Code Points!",
+    "Cost": 5,
+    "Requires": [
+      "applaunchermenu",
+      "unitymode"
+    ]
+  }
+]

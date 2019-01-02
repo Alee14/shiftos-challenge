@@ -244,6 +244,9 @@ namespace ShiftOS
             // Go through every installed program.
             foreach(var program in this.CurrentSystem.GetInstalledPrograms())
             {
+                if (!CurrentSystem.IsAppLauncherItemAvailable(program))
+                    continue;
+
                 // Get the friendly (UI) name
                 string friendlyName = this.CurrentSystem.GetProgramName(program);
 
@@ -265,22 +268,29 @@ namespace ShiftOS
             var separator = new ToolStripSeparator();
             AppLauncherMenu.DropDownItems.Add(separator);
 
-            var unityToggle = new ToolStripMenuItem("Toggle Unity Mode");
-            var shutdown = new ToolStripMenuItem("Shut Down");
-
-            shutdown.Click += (o, a) =>
+            if (CurrentSystem.HasShiftoriumUpgrade("unitymodetoggle"))
             {
-                // Closing this window causes the system context to shut down.
-                this.Close();
-            };
+                var unityToggle = new ToolStripMenuItem("Toggle Unity Mode");
 
-            unityToggle.Click += (o, a) =>
+                unityToggle.Click += (o, a) =>
+                {
+                    _inUnity = !_inUnity;
+                };
+
+                AppLauncherMenu.DropDownItems.Add(unityToggle);
+            }
+
+            if (CurrentSystem.HasShiftoriumUpgrade("applaunchershutdown"))
             {
-                _inUnity = !_inUnity;
-            };
+                var shutdown = new ToolStripMenuItem("Shut Down");
 
-            AppLauncherMenu.DropDownItems.Add(unityToggle);
-            AppLauncherMenu.DropDownItems.Add(shutdown);
+                shutdown.Click += (o, a) =>
+                {
+                    // Closing this window causes the system context to shut down.
+                    this.Close();
+                };
+                AppLauncherMenu.DropDownItems.Add(shutdown);
+            }
         }
 
         private void Desktop_KeyDown(object sender, KeyEventArgs e)
@@ -289,6 +299,11 @@ namespace ShiftOS
             {
                 CurrentSystem.LaunchProgram("terminal");
             }
+            else if(e.KeyCode == Keys.S && e.Control)
+            {
+                CurrentSystem.LaunchProgram("shiftorium");
+            }
+                
         }
     }
 }

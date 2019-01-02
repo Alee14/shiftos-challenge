@@ -65,7 +65,7 @@
             // 
             // IconBox
             // 
-            this.IconBox.BackColor = System.Drawing.Color.Black;
+            this.IconBox.BackColor = System.Drawing.Color.Transparent;
             this.IconBox.Location = new System.Drawing.Point(7, 7);
             this.IconBox.Name = "IconBox";
             this.IconBox.Size = new System.Drawing.Size(16, 16);
@@ -197,10 +197,12 @@
             this.Controls.Add(this.TitleBarHolder);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "Window";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TopMost = true;
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Window_KeyDown);
             this.TitleBarHolder.ResumeLayout(false);
             this.TitleBarHolder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconBox)).EndInit();

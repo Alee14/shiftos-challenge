@@ -17,12 +17,20 @@ namespace ShiftOS.Windowing
         private SystemContext _currentSystem = null;
         private int PreRollHeight = 0;
         private bool IsRolled = false;
+        private bool _showshiftborders = true;
+
+        /// <summary>
+        /// Gets or sets whether the ShiftOS window borders should be rendered on this window.
+        /// </summary>
+        public bool ShowShiftOSBorders { get => _showshiftborders; set => _showshiftborders = value; }
 
 
         public Window()
         {
             InitializeComponent();
         }
+
+        protected virtual void OnDesktopUpdate() { }
 
         public void SetSystemContext(SystemContext InSystemContext)
         {
@@ -38,6 +46,16 @@ namespace ShiftOS.Windowing
 
         private void OnDesktopUpdated(object sender, EventArgs e)
         {
+            OnDesktopUpdate();
+
+            this.TitleBarHolder.Visible = CurrentSystem.HasShiftoriumUpgrade("titlebar") && _showshiftborders;
+            this.LeftBar.Visible = this.RightBar.Visible = this.BottomBarHolder.Visible = CurrentSystem.HasShiftoriumUpgrade("windowborders") && _showshiftborders;
+            this.TitleText.Visible = CurrentSystem.HasShiftoriumUpgrade("titletext");
+            this.CloseButton.Visible = CurrentSystem.HasShiftoriumUpgrade("closebutton");
+            this.RollButton.Visible = CurrentSystem.HasShiftoriumUpgrade("rollupbutton");
+            this.MinimizeButton.Visible = CurrentSystem.HasShiftoriumUpgrade("minimizebutton");
+            this.IconBox.Visible = CurrentSystem.HasShiftoriumUpgrade("titleicons") && this.WindowIcon != null;
+
             // Get the skin data.
             var skin = this.CurrentSystem.GetSkinContext();
             var skindata = skin.GetSkinData();
@@ -357,6 +375,28 @@ namespace ShiftOS.Windowing
         {
             this.Opacity = 0;
             this.Enabled = false;
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.W && CurrentSystem.HasShiftoriumUpgrade("movablewindows"))
+            {
+                this.Top -= 50;
+            }
+            if (e.Control && e.KeyCode == Keys.S && CurrentSystem.HasShiftoriumUpgrade("movablewindows"))
+            {
+                this.Left -= 50;
+            }
+            if (e.Control && e.KeyCode == Keys.A && CurrentSystem.HasShiftoriumUpgrade("movablewindows"))
+            {
+                this.Top += 50;
+            }
+            if (e.Control && e.KeyCode == Keys.D && CurrentSystem.HasShiftoriumUpgrade("movablewindows"))
+            {
+                this.Left += 50;
+            }
+
+
         }
     }
 }

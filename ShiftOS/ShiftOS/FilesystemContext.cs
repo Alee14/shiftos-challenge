@@ -191,13 +191,41 @@ namespace ShiftOS
 
             for (int i = 0; i < ret.Length; i++)
             {
-                ret[i] = InPath + "/" + Path.GetFileName(files[i]);
+                if (InPath.EndsWith("/"))
+                {
+                    ret[i] = InPath + Path.GetFileName(files[i]);
+                }
+                else
+                {
+                    ret[i] = InPath + "/" + Path.GetFileName(files[i]);
+                }
             }
 
             return ret;
         }
 
-        
+        public string[] GetDirectories(string InPath)
+        {
+            var files = Directory.GetDirectories(MapToEnvironmentPath(InPath));
+
+            var ret = new string[files.Length];
+
+            for (int i = 0; i < ret.Length; i++)
+            {
+                if (InPath.EndsWith("/"))
+                {
+                    ret[i] = InPath + Path.GetFileName(files[i]);
+                }
+                else
+                {
+                    ret[i] = InPath + "/" + Path.GetFileName(files[i]);
+                }
+            }
+
+            return ret;
+        }
+
+
 
     }
 }
