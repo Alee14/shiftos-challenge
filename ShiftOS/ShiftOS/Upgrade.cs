@@ -15,7 +15,12 @@ namespace ShiftOS
         private int _codepoints;
         private string[] _dependencies;
         private bool _finalized = false;
-        
+        private string _prebuyTip = null;
+        private string _installedTip = null;
+
+        public string UsageTip { get => _installedTip; set => _installedTip = value; }
+        public string PreInstallTip { get => _prebuyTip; set => _prebuyTip = value; }
+
         public string ImageResource { get; set; }
 
         public string Tutorial

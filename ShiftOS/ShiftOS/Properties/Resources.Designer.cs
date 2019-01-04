@@ -786,6 +786,45 @@ namespace ShiftOS.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {
+        ///	&quot;gray&quot;: {
+        ///		1: [
+        ///			&quot;Black&quot;,
+        ///			&quot;Gray&quot;,
+        ///			&quot;White&quot;
+        ///		],
+        ///		2: [
+        ///			&quot;Black&quot;,
+        ///			&quot;DimGray&quot;,
+        ///			&quot;Gray&quot;,
+        ///			&quot;LightGray&quot;,
+        ///			&quot;White&quot;
+        ///		]
+        ///	}
+        ///}.
+        /// </summary>
+        internal static string ColorPickerDefaults {
+            get {
+                return ResourceManager.GetString("ColorPickerDefaults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///	0: 0,
+        ///	1: 3,
+        ///	2: 5,
+        ///	3: 9,
+        ///	4: 16
+        ///}.
+        /// </summary>
+        internal static string ColorPickerLevels {
+            get {
+                return ResourceManager.GetString("ColorPickerLevels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap crash {
@@ -2399,11 +2438,10 @@ namespace ShiftOS.Properties {
         /// <summary>
         ///   Looks up a localized string similar to [
         ///  {
-        ///    &quot;ID&quot;: &quot;gray&quot;,
-        ///    &quot;Name&quot;: &quot;Gray&quot;,
-        ///    &quot;Cost&quot;: 20,
-        ///    &quot;Tutorial&quot;: &quot;Originally the screen could only display black and white but now with the ability to display gray it&apos;s easier and more efficient to display more information and controls on the screen.\r\n\r\nYou can now set the colour of screen controls including the background to gray using Shifter and even draw in gray within Artpad.&quot;,
-        ///    &quot;Description&quot;: &quot;Everything doesn&apos;t always have to be black and white. Give your programs and GUI some [rest of string was truncated]&quot;;.
+        ///    &quot;ID&quot;: &quot;autoscrollterminal&quot;,
+        ///    &quot;Name&quot;: &quot;Auto Scroll Terminal&quot;,
+        ///    &quot;Description&quot;: &quot;Getting sick of the terminal filling up with text leaving you not knowing what you have typed unless you start typing more?\r\n\r\nThen buy this upgrade to keep the terminal scrolled to the bottom so you can always see the latest stuff you&apos;ve typed.&quot;,
+        ///    &quot;Tutorial&quot;: &quot;Buggy terminal Fixed! Although your terminal may not get filled up that much when it&apos;s full screen it certainly will if you find a way to make t [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string UpgradeDatabase {
             get {

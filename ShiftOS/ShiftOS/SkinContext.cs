@@ -28,6 +28,94 @@ namespace ShiftOS
             return _skin;
         }
 
+        public SkinContext MakeClone()
+        {
+            var ctx = new SkinContext();
+            ctx._skin = JsonConvert.DeserializeObject<Skin>(JsonConvert.SerializeObject(_skin));
+            ctx._skinimages = new Dictionary<string, Image>();
+            foreach (var kvs in _skinimages)
+            {
+                var image = kvs.Value;
+                if (image == null)
+                    continue;
+                ctx._skinimages.Add(kvs.Key, new Bitmap(image));
+            }
+            return ctx;
+        }
+
+        public void SaveToDisk(FilesystemContext InFilesystem)
+        {
+            // Does the skin data folder exist?
+            if (InFilesystem.DirectoryExists("/Shiftum42/Skins/Loaded"))
+            {
+                InFilesystem.DeleteDirectory("/Shiftum42/Skins/Loaded", true);
+            }
+
+            // Create the skin data directory.
+            InFilesystem.CreateDirectory("/Shiftum42/Skins/Loaded");
+
+            // Serialize the data blob.
+            string dataJson = JsonConvert.SerializeObject(_skin);
+
+            // Write the data blob to the disk.
+            InFilesystem.WriteAllText("/Shiftum42/Skins/Loaded/data.dat", dataJson);
+
+            // For every loaded image...
+            foreach(var kvs in _skinimages)
+            {
+                // Get the GDI image.
+                var image = kvs.Value;
+
+                // If it's null, skip it.
+                if (image == null)
+                    continue;
+
+                // Open a file stream for the image.
+                using (var stream = InFilesystem.Open("/Shiftum42/Skins/Loaded/" + kvs.Key, FileMode.OpenOrCreate))
+                {
+                    // Save the image in PNG format.
+                    image.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                }
+            }
+
+        }
+
+        public void SetImage(string key, Image value)
+        {
+            if (_skinimages.ContainsKey(key))
+            {
+                if (value == null)
+                    _skinimages.Remove(key);
+                else
+                {
+                    _skinimages[key].Dispose();
+                    _skinimages[key] = value;
+                }
+            }
+            else
+            {
+                if (value == null)
+                    return;
+
+                _skinimages.Add(key, value);
+            }
+        }
+
+        public void Reset()
+        {
+            Console.WriteLine("Resetting skin context...");
+            while(_skinimages.Count > 0)
+            {
+                var kvs = _skinimages.First();
+                Console.WriteLine(" --> Unloading image {0}...", kvs.Key);
+                kvs.Value.Dispose();
+                _skinimages.Remove(kvs.Key);
+            }
+            Console.WriteLine(" --> Creating default skin data...");
+            _skin = new Skin();
+            Console.WriteLine(" --> Reset complete.");
+        }
+
         public void LoadFromDisk(SystemContext InSystemContext)
         {
             var fs = InSystemContext.GetFilesystem();
@@ -83,17 +171,14 @@ namespace ShiftOS
                     {
                         if (!path.EndsWith("data.dat"))
                         {
-                            using (var stream = fs.OpenRead(path))
-                            {
-                                var image = Image.FromStream(stream);
+                            var image = fs.LoadImage(path);
 
-                                string filenameWithoutExtension = Path.GetFileNameWithoutExtension(path);
+                            string filenameWithoutExtension = Path.GetFileNameWithoutExtension(path);
 
-                                Console.WriteLine(" --> Loaded: {0}", path);
-                                Console.WriteLine(" --> Storing as: {0}", filenameWithoutExtension);
+                            Console.WriteLine(" --> Loaded: {0}", path);
+                            Console.WriteLine(" --> Storing as: {0}", filenameWithoutExtension);
 
-                                _skinimages.Add(filenameWithoutExtension, image);
-                            }
+                            _skinimages.Add(filenameWithoutExtension, image);
                         }
                     }
                 }
@@ -391,12 +476,7 @@ namespace ShiftOS
 
         private Image GetImage(FilesystemContext fs, string path)
         {
-            if (!fs.FileExists(path))
-                return null;
-            using (var stream = fs.OpenRead(path))
-            {
-                return Image.FromStream(stream);
-            }
+            return fs.LoadImage(path);
         }
 
         private void PhilLoadDesktopPanelAndClock(StreamReader stream)
@@ -508,7 +588,7 @@ namespace ShiftOS
 
             // Line 38 is a string representing the title text position - centered or
             // left. Why Phil decided a string is a good idea instead of a boolean, we may never know.
-            _skin.titletextpos = stream.ReadLine();
+            _skin.titletextposition = stream.ReadLine();
 
             // And right after that - line 39 and 40 - is the position for the title text as a 2d point.
             _skin.titletextfromtop = Convert.ToInt32(stream.ReadLine());
@@ -550,7 +630,7 @@ namespace ShiftOS
             _skin.applicationlaunchername = stream.ReadLine();
 
             Console.WriteLine(" --> Read Title Text Position");
-            _skin.titletextpos = stream.ReadLine();
+            _skin.titletextposition = stream.ReadLine();
         }
 
         public bool HasImage(string ImageKey)

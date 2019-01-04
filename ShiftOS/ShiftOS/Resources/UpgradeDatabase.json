@@ -4,7 +4,9 @@
     "Name": "Auto Scroll Terminal",
     "Description": "Getting sick of the terminal filling up with text leaving you not knowing what you have typed unless you start typing more?\r\n\r\nThen buy this upgrade to keep the terminal scrolled to the bottom so you can always see the latest stuff you've typed.",
     "Tutorial": "Buggy terminal Fixed! Although your terminal may not get filled up that much when it's full screen it certainly will if you find a way to make the terminal smaller.\r\n\r\nEvery time you press enter the terminal will now automatically scroll you to bottom so you can always see the latest terminal output.",
-    "Cost": 5
+    "Cost": 5,
+    "PreInstallTip": "The Terminal can only show one screen of text and won't show anything typed off-screen.",
+    "UsageTip": "The Terminal now scrolls to the cursor when new text is added."
   },
   {
     "ID": "osname",
@@ -14,353 +16,27 @@
     "Cost": 15,
     "Requires": [
       "customusername"
-    ]
+    ],
+    "PreInstallTip": "You cannot change your computer's OS name.",
+    "UsageTip": "You can change your computer's OS name with \"set osname <name>\"."
   },
   {
     "ID": "customusername",
     "Name": "Custom Username",
     "Description": "Sick of being known as \"User\"? Want to be recognized and labeled? Then you need to replace the default username with your own!\r\n\r\nIf you want ShiftOS to refer to you by name then you are going to need this upgrade.",
     "Tutorial": "Well, isn't this special? The terminal will now display any name you want it to. Even the ShiftOS desktop and some other applications will refer to you by the username you set.\r\n\r\nTo set your username simply type \"set username\" in the terminal followed by the name you want (spaces not allowed).",
-    "Cost": 15
+    "Cost": 15,
+    "PreInstallTip": "You cannot change your computer's username.",
+    "UsageTip": "You can change your computer's username with \"set username <name>\"."
   },
   {
     "ID": "gray",
     "Name": "Gray",
     "Description": "Everything doesn't always have to be black and white. Give your programs and GUI some depth by mixing black and white together to form grey.\r\n\r\nNote: You are unable to make controls grey until you buy the Shifter.",
     "Tutorial": "Originally the screen could only display black and white but now with the ability to display gray it's easier and more efficient to display more information and controls on the screen.\r\n\r\nYou can now set the colour of screen controls including the background to gray using Shifter and even draw in gray within Artpad.",
-    "Cost": 20
-  },
-  {
-    "ID": "artpad",
-    "Name": "Artpad",
-    "Description": "Ever wanted to play around with pixels on your screen?\r\n\r\nWell it looks like your newest companion may become the Artpad but be sure you know your x and y coordinates!",
-    "Tutorial": "Ah, I knew you were an artist at heart. Get your pixel setter ready and your magnifying glass, you’ll need it to see your 2 pixel masterpiece.\r\n\r\nMore tools, more pixels and more colours would be helpful though so be on the lookout for more upgrades.",
-    "Cost": 75,
-    "Requires": [
-      "gray"
-    ]
-  },
-  {
-    "ID": "artpad4colorpallettes",
-    "Name": "Artpad 4 Color pallettes",
-    "Description": "Having just 2 colours in your work may give it an interesting style but overall its very limiting.\r\n\r\nThis upgrade will double the amount of usable colour pallettes in the Artpad to allow you quick access to a wider range of colours.",
-    "Tutorial": "Two new black colour pallettes are available for you to use in the artpad.\r\n\r\nIf you would like to change the colour of any of the colour pallettes you can do so by right clicking them and then selecting a colour you would like to be from the colour picker.",
-    "Cost": 10,
-    "Requires": [
-      "artpad"
-    ]
-  },
-  {
-    "ID": "artpad8colorpallettes",
-    "Name": "Artpad 8 Color pallettes",
-    "Description": "4 colour pallettes is still very limiting and a lot less than your average paint program.\r\n\r\nThis upgrade will double the amount of usable colour pallettes in the Artpad to allow you quick access to a wider range of colours.",
-    "Tutorial": "Four new black colour pallettes are available for you to use in the artpad.\r\n\r\nIf you would like to change the colour of any of the colour pallettes you can do so by right clicking them and then selecting a colour you would like to be from the colour picker.",
     "Cost": 20,
-    "Requires": [
-      "artpad4colorpallettes"
-    ]
-  },
-  {
-    "ID": "artpad16colorpallettes",
-    "Name": "Artpad 16 Color pallettes",
-    "Description": "8 colours is still going to leave you changing the colour of your pallettes quite often.\r\n\r\nThis upgrade will double the amount of usable colour pallettes in the Artpad to allow you quick access to a wider range of colours.",
-    "Tutorial": "Eight new black colour pallettes are available for you to use in the artpad.\r\n\r\nIf you would like to change the colour of any of the colour pallettes you can do so by right clicking them and then selecting a colour you would like to be from the colour picker.",
-    "Cost": 35,
-    "Requires": [
-      "artpad8colorpallettes"
-    ]
-  },
-  {
-    "ID": "artpad32colorpallettes",
-    "Name": "Artpad 32 Color pallettes",
-    "Description": "16 colours is definitely usable but it certainly could get better than that right?\r\n\r\nThis upgrade will double the amount of usable colour pallettes in the Artpad to allow you quick access to a wider range of colours.",
-    "Tutorial": "Sixteen new black colour pallettes are available for you to use in the artpad.\r\n\r\nIf you would like to change the colour of any of the colour pallettes you can do so by right clicking them and then selecting a colour you would like to be from the colour picker.",
-    "Cost": 50,
-    "Requires": [
-      "artpad16colorpallettes"
-    ]
-  },
-  {
-    "ID": "artpad64colorpallettes",
-    "Name": "Artpad 64 Color pallettes",
-    "Description": "32 colours is slightly more than average for a paint program but don’t you want extreme?\r\n\r\nThis upgrade will double the amount of usable colour pallettes in the Artpad to allow you quick access to a wider range of colours.",
-    "Tutorial": "Thirty Two new black colour pallettes are available for you to use in the artpad.\r\n\r\nIf you would like to change the colour of any of the colour pallettes you can do so by right clicking them and then selecting a colour you would like to be from the colour picker.",
-    "Cost": 100,
-    "Requires": [
-      "artpad32colorpallettes"
-    ]
-  },
-  {
-    "ID": "artpad128colorpallettes",
-    "Name": "Artpad 128 Color pallettes",
-    "Description": "For some people 64 colour pallettes may already be overkill but for the extremists like yourself it’s just not enough.\r\n\r\nThis upgrade will double the amount of usable colour pallettes in the Artpad to allow you quick access to a wider range of colours.",
-    "Tutorial": "Sixty Four new black colour pallettes are available for you to use in the artpad.\r\n\r\nIf you would like to change the colour of any of the colour pallettes you can do so by right clicking them and then selecting a colour you would like to be from the colour picker.",
-    "Cost": 150,
-    "Requires": [
-      "artpad64colorpallettes"
-    ]
-  },
-  {
-    "ID": "artpadcustompallettes",
-    "Name": "Artpad Custom pallettes",
-    "Description": "It can be annoying when things are set in stone and can’t be changed.\r\n\r\nLet’s not let that happen to the Artpad by programming the colour pallettes to be resizable by the user.",
-    "Tutorial": "Nice! The colour pallettes are now able to be resized any time you like and you can even adjust the spaces between pallettes.\r\n\r\nTo resize the colour pallettes simply middle click any of them and a special settings window will pop up.",
-    "Cost": 75,
-    "Requires": [
-      "artpad128colorpallettes"
-    ]
-  },
-  {
-    "ID": "artpadnew",
-    "Name": "Artpad New",
-    "Description": "Ever wanted to start a fresh with a new canvas without restarting Artpad\r\n\r\nWith a little research it may be possible to add a button to do just that whenever you want.",
-    "Tutorial": "Much better. A new button that looks like a folded page should now be in your tool set.\r\n\r\nBy clicking the button you should be able create a new canvas and even type in a new size for it as many times as you like without opening and closing Artpad.",
-    "Cost": 10,
-    "Requires": [
-      "artpad"
-    ]
-  },
-  {
-    "ID": "artpadpixellimit4",
-    "Name": "Artpad Pixel Limit 4",
-    "Description": "With just two pixels you can’t make very interesting artworks.\r\n\r\nDoubling the pixel limit to 4 should more than double the variety of unique creations you can make with the artpad.",
-    "Tutorial": "This increased pixel limit has unlocked the ability to make canvases in artpad totaling 4 whole pixels.\r\n\r\nYou can make a variety of interesting artworks such as um, a 4 pixel high tower or a 4 pixel tower lying on its side and err, other stuff.",
-    "Cost": 10,
-    "Requires": [
-      "artpad"
-    ]
-  },
-  {
-    "ID": "artpadpixellimit8",
-    "Name": "Artpad Pixel Limit 8",
-    "Description": "Earlier I lied about 4 pixels giving you many different types of unique artistic opportunities.\r\n\r\nA pixel limit of 8 may be a little limiting though and its still dirt cheap.",
-    "Tutorial": "Great you can now have canvases with a total of 8 pixels.\r\n\r\nIt may not seem like much but… oh I give up, it’s still hopeless. On the bright side you can always buy another upgrade.",
-    "Cost": 20,
-    "Requires": [
-      "artpadpixellimit4"
-    ]
-  },
-  {
-    "ID": "artpadpixellimit16",
-    "Name": "Artpad Pixel Limit 16",
-    "Description": "8 pixels may not be great but 16 is looking a little more pristine.\r\n\r\nIt may be a silly rhyme but it’s true.",
-    "Tutorial": "You’ve just doubled your pixel limit from 8 to 16.\r\n\r\nYou can now make a very cramped smiley face without a nose or a quarter of a chess board if you put your mind to it.",
-    "Cost": 30,
-    "Requires": [
-      "artpadpixellimit8"
-    ]
-  },
-  {
-    "ID": "artpadpixellimit64",
-    "Name": "Artpad Pixel Limit 64",
-    "Description": "Step right up to a pixel limit 4x greater than your current one.\r\n\r\nIsn’t it usually double you say? Well this time around its quadruple but unfortunately it does come with a dearer price.",
-    "Tutorial": "Finally you are starting to make it into deeper waters.\r\n\r\nI’m not quite sure what I meant by that but if you’re drawing ocean scenes you could make them deeper and if you’re up to it you could draw a full chessboard without and pieces on it.",
-    "Cost": 50,
-    "Requires": [
-      "artpadpixellimit16"
-    ]
-  },
-  {
-    "ID": "artpadpixellimit256",
-    "Name": "Artpad Pixel Limit 256",
-    "Description": "Finally we are on the verge on a decent pixel limit. Think of what you could do with 256 pixels\r\n\r\nThe width and height of your canvas could be huge!",
-    "Tutorial": "Actually I just realized that with 256 pixels the biggest canvas size you can make is 16 by 16 pixels.\r\n\r\nStill that’s enough pixels to make a picture of a grave yard with gravestones and sad faces right?",
-    "Cost": 75,
-    "Requires": [
-      "artpadpixellimit64"
-    ]
-  },
-  {
-    "ID": "artpadpixellimit1024",
-    "Name": "Artpad Pixel Limit 1024",
-    "Description": "Ahh, now we’re talking. This is an upgrade that will do you a world of good.\r\n\r\nIt’s a shame it’s is so expensive but good things always come at a cost.",
-    "Tutorial": "Designing things like UI elements should be a breeze with this limit.\r\n\r\nMany icon designers used to make their icons at a resolution of 32 by 32 pixels so if you want to make those kind of icons then you’re all set.",
-    "Cost": 100,
-    "Requires": [
-      "artpadpixellimit256"
-    ]
-  },
-  {
-    "ID": "artpadpixellimit4096",
-    "Name": "Artpad Pixel Limit 4096",
-    "Description": " With a pixel limit of 4096 you would have the ability to make canvases 64 by 64 pixels.\r\n\r\nDo you really think you will need this high of a pixel limit?",
-    "Tutorial": "Finally we are nearing the point where you are able to draw freely at a zoom level of 1x.\r\n\r\nOverall though 4096 pixels is still not good for large free hand sketch-like drawings.",
-    "Cost": 150,
-    "Requires": [
-      "artpadpixellimit1024"
-    ]
-  },
-  {
-    "ID": "artpadpixellimit16384",
-    "Name": "Artpad Pixel Limit 16384",
-    "Description": "You may think your current pixel limit is good but you aren’t seen nothing yet.\r\n\r\nFor some true 4x zoomed freehand drawing don’t miss this upgrade.",
-    "Tutorial": "Awesome! Now you can try and do some free hand drawing at 4x magnification with a canvas size of 160 by 100\r\n\r\nYou may even be able to design tiny website banners.",
-    "Cost": 200,
-    "Requires": [
-      "artpadpixellimit4096"
-    ]
-  },
-  {
-    "ID": "artpadpixellimit65536",
-    "Name": "Artpad Pixel Limit 65536",
-    "Description": "Oh come on how much higher can the pixel limit go?\r\n\r\nI doubt you actually need it but aren’t you curious how much higher this goes?",
-    "Tutorial": "Go ahead and celebrate your seemingly limitless pixel limit for a moment and don’t look at the upgrade list.\r\n\r\nYou couldn’t resist looking and making this upgrade seem so small could you? That’s right, you’re an upgrade away from truly limitless pixels.",
-    "Cost": 250,
-    "Requires": [
-      "artpadpixellimit16384"
-    ]
-  },
-  {
-    "ID": "artpadlimitlesspixels",
-    "Name": "Artpad Limitless Pixels",
-    "Description": "This is what you’ve been waiting for all this time after purchasing all those pixel limit upgrades\r\n\r\nIt may be ultra-expensive but you won’t have to ever get another after this one.",
-    "Tutorial": "Congratulations you now have absolutely no pixel limit and can create canvases as big as you want as long as your own computer can handle it.\r\n\r\nGo ahead and make yourself a native resolution desktop background to celebrate!",
-    "Cost": 350,
-    "Requires": [
-      "artpadpixellimit65536"
-    ]
-  },
-  {
-    "ID": "artpadpixelplacer",
-    "Name": "Artpad Pixel Placer",
-    "Description": "The pixel setter allows you to set pixels but do you really want to go around trying to pinpoint and calculate x and y coordinates\r\n\r\nClicking the pixel you want to change directly would be much more efficient don’t you agree?",
-    "Tutorial": "Now with the new Pixel Placer you have the power to simply click any pixel to change its colour.\r\n\r\nSimply left click a colour pallette then click any pixel on your canvas to set it to that colour. You can also right click your colour pallettes to change their colour.",
-    "Cost": 20,
-    "Requires": [
-      "artpad"
-    ]
-  },
-  {
-    "ID": "artpadppmovementmode",
-    "Name": "Artpad PP Movement Mode",
-    "Description": "Constantly clicking each individual pixel on your canvas using the Pixel Placer can be very time consuming and tiring for your hands\r\n\r\nWouldn’t it be easier to just click and drag? Well there’s an upgrade for that!",
-    "Tutorial": "The Pixel Placer now has a movement mode option. Simply Click the Pixel Placer tool and you will see the Movement Mode Switch in the options panel.\r\n\r\nWhen movement mode is on you can click and drag slowly to draw pixels with the mouse. Be slow otherwise it may skip pixels though.",
-    "Cost": 20,
-    "Requires": [
-      "artpadpixelplacer"
-    ]
-  },
-  {
-    "ID": "artpadpencil",
-    "Name": "Artpad Pencil",
-    "Description": "Does the buggy Pixel placer movement mode annoy you when it skips pixels?\r\n\r\nWell with a little more research we may be able to develop a new tool that can draw much more smoothly.",
-    "Tutorial": "Fantastic! You now have a new pencil tool which you can access from the toolbox.\r\n\r\nYou can now draw as fast as you want freehand and it won’t skip a single pixel. You can also draw with three different levels of thickness which can be set in the pencil’s option panel.",
-    "Cost": 30,
-    "Requires": [
-      "artpadppmovementmode"
-    ]
-  },
-  {
-    "ID": "artpaderaser",
-    "Name": "Artpad Eraser",
-    "Description": "Made a little mistake and want to erase it? Sounds like you need an eraser\r\n\r\nWith a little bit of research an eraser tool may not be too far away as overall its just a paintbrush set to the colour of the canvas.",
-    "Tutorial": "Your toolbox now has a new addition to it, An Eraser!\r\n\r\nThe eraser tool can be circular or square and any size you want. Clicking and dragging on the canvas will remove any colour on it and replace it with the default canvas colour which in most cases will be white.",
-    "Cost": 20,
-    "Requires": [
-      "artpadpencil"
-    ]
-  },
-  {
-    "ID": "artpadfilltool",
-    "Name": "Artpad Fill Tool",
-    "Description": "Instead of coloring in every single individual pixel sometimes it is more appropriate to simply draw an outline and instantly fill a space in.\r\n\r\nIf that’s a feature you’re interested in then you should definitely buy this upgrade.",
-    "Tutorial": "Fantastic! You now have a new fill tool which you can access from the toolbox.\r\n\r\nTo use the fill tool you simply have to click it, choose a colour then click a pixel on the canvas and it and every surrounding pixel matching its colour will become the new colour you set.",
-    "Cost": 60,
-    "Requires": [
-      "artpadppmovementmode"
-    ]
-  },
-  {
-    "ID": "artpadlinetool",
-    "Name": "Artpad Line Tool",
-    "Description": "Having difficulty drawing strait lines? Then you obviously need a line tool.\r\n\r\nWith a line tool you will be able to draw straight lines from any point to any point on your canvas.",
-    "Tutorial": "Great! You got a line tool. You can begin using it by selecting the tool from your toolbox.\r\n\r\nSimply click and drag on your canvas to draw a horizontal, vertical or diagonal line on your canvas.",
-    "Cost": 30,
-    "Requires": [
-      "artpadppmovementmode"
-    ]
-  },
-  {
-    "ID": "artpadovaltool",
-    "Name": "Artpad Oval Tool",
-    "Description": "Drawing perfect circles is a very tricky process especially if zoomed right in on the canvas\r\n\r\nWith a bit of research we may be able to discover a tool that calculates how to draw circles without much effort on our side.",
-    "Tutorial": "The new oval tool now allows you to draw circles and ovals with the mouse just by clicking and dragging on the canvas.\r\n\r\nYou can also change the inside and outside colour of the ovals and change their border width in the options panel.",
-    "Cost": 40,
-    "Requires": [
-      "artpadlinetool"
-    ]
-  },
-  {
-    "ID": "artpadpaintbrush",
-    "Name": "Artpad Paint Brush",
-    "Description": "Ever wanted to paint with a tool that can paint free handedly and be big, small, circular or square?\r\n\r\nThis paint brush tool may be the tool you want then and its pretty cheap too.",
-    "Tutorial": "You now have access to the paintbrush tool which you can use simply by clicking on its icon in the tool box.\r\n\r\nA good thing about the paint brush is that you can set its size to a specific value in pixels making it perfect for a variety of different situations.",
-    "Cost": 30,
-    "Requires": [
-      "artpadpencil"
-    ]
-  },
-  {
-    "ID": "artpadrectangletool",
-    "Name": "Artpad Rectangle Tool",
-    "Description": "Drawing perfect squares is a time consuming process especially if you are trying to draw them perfectly straight\r\n\r\nWith a bit of research we may be able to discover a tool that calculates how to draw squares without much effort on our side.",
-    "Tutorial": "The new rectangle tool now allows you to draw squares and rectangles with the mouse just by clicking and dragging on the canvas.\r\n\r\nYou can also change the inside and outside colour of the rectangles and change their border width in the options panel.",
-    "Cost": 40,
-    "Requires": [
-      "artpadlinetool"
-    ]
-  },
-  {
-    "ID": "artpadsave",
-    "Name": "Artpad Save",
-    "Description": "Artpad may be fun to play around with but wouldn’t saving be an amazing feature?\r\n\r\nSaving your pictures may even generate codepoints and the saved pictures might be able to be used for something.",
-    "Tutorial": "Now with your new saving ability you can save all those amazing artpad creations to be viewed at any point in the future\r\n\r\nEvery time you save a picture the amount of codepoints you earned for making it will appear briefly as title text or in an info box.",
-    "Cost": 50,
-    "Requires": [
-      "artpadnew",
-      "fileskimmer"
-    ]
-  },
-  {
-    "ID": "artpadload",
-    "Name": "Artpad Load",
-    "Description": "Sometimes after making something and saving it you wish to alter it slightly to enhance it\r\n\r\nA load feature in the Artpad should let you modify saved .pic files by allowing you to load them up again with the click of a button.",
-    "Tutorial": "You should now be able to load old .pic files by clicking the load button in your tool box and choosing the file you want with the file opener\r\n\r\nThe image will then pop up in artpad and you can get right to editing.",
-    "Cost": 50,
-    "Requires": [
-      "artpadnew",
-      "fileskimmer"
-    ]
-  },
-  {
-    "ID": "artpadtexttool",
-    "Name": "Artpad Text Tool",
-    "Description": "drawing text is very difficult but if you can pull it off then well done, nice accomplishment!\r\n\r\nFor those who can’t though research into a text drawing tool would be very handy unless you don’t require text in your artwork.",
-    "Tutorial": "A text tool is now sitting in your toolbox waiting patiently for you to use it.\r\n\r\nSimply choose a font, colour and size then type something in and click and drag the mouse to move the text around on the canvas until you are happy with its position. Once you’re done release the mouse and the text will be placed in the spot you chose.",
-    "Cost": 45,
-    "Requires": [
-      "artpadppmovementmode"
-    ]
-  },
-  {
-    "ID": "artpadundo",
-    "Name": "Artpad Undo",
-    "Description": "Ever spilt your paint over your masterpiece? It’s an awful feeling right?\r\n\r\nWell in situations like these an undo feature would be very useful so for backup I would definitely get this upgrade.",
-    "Tutorial": "From now on a line draw too long or the wrong splash of colour can’t hurt you anymore.\r\n\r\nAn undo button has been added to your toolbox and any time you make a mistake on your canvas you can fix it with a single click of that button.",
-    "Cost": 40,
-    "Requires": [
-      "artpad"
-    ]
-  },
-  {
-    "ID": "artpadredo",
-    "Name": "Artpad Redo",
-    "Description": "Ever clicked undo too many times and found that you have lost a large portion of work\r\n\r\nFor cases like these a redo button can be quite handy but obviously you could save your codepoints by just being careful with the undo button.",
-    "Tutorial": "Now that you can redo any undone actions you are totally free to cycle forwards and backwards through your work.\r\n\r\nIf you really wanted you could undo all your work then keep clicking redo to watch the creation of your entire picture.",
-    "Cost": 40,
-    "Requires": [
-      "artpadundo"
-    ]
+    "PreInstallTip": "ShiftOS can only display black and white.",
+    "UsageTip": "ShiftOS can display black, white and gray."
   },
   {
     "ID": "desktoppanel",
@@ -380,17 +56,6 @@
     "Cost": 120,
     "Requires": [
       "desktoppanel"
-    ]
-  },
-  {
-    "ID": "alartpad",
-    "Name": "AL Artpad",
-    "Description": "What's the point of an App Launcher if it can't launch all your apps? \r\n\r\nUse this tweak to add a shortcut to artpad in your app launcher so you can launch it at any time with just a few clicks.",
-    "Tutorial": "Your App Launcher is now more complete and will allow you to launch artpad at any time you like.\r\n\r\nBe sure to buy tweaks to add all your installed programs to the app launcher so you never have to use the terminal to open up a program ever again!",
-    "Cost": 5,
-    "Requires": [
-      "applaunchermenu",
-      "artpad"
     ]
   },
   {
@@ -816,7 +481,7 @@
     "Tutorial": "Brilliant! A skinning system is now in place. You now have a new graphic picker and skin loader at your disposal.\r\n\r\nRight click colour boxes in the Shifter to bring up the graphic picker instead of the colour picker.",
     "Cost": 80,
     "Requires": [
-      "artpad",
+      "customgrayshades",
       "fileskimmer",
       "shifter"
     ]
@@ -1053,8 +718,11 @@
     "Tutorial": "Well, Isn't this heaven! The terminal will now display a scroll bar when windowed! It may not seem like much but it will certainly help if you need to backtrack on previous output in the terminal.\r\n\r\nPlease note that the scrollbar will only appear when the terminal is windowed and can't display all text at once.",
     "Cost": 20,
     "Requires": [
-      "windowedterminal"
-    ]
+      "windowedterminal",
+      "autoscrollterminal"
+    ],
+    "PreInstallTip": "The Terminal cannot be scrolled.",
+    "UsageTip": "The Terminal has a scroll bar on its right side that lets you scroll up and down."
   },
   {
     "ID": "windowsanywhere",

@@ -189,6 +189,7 @@ namespace ShiftOS
                         {
                             menuItem.Font = new Font(appItemFontName, appItemFontSize, appItemFontStyle);
                         }
+                        menuItem.ForeColor = skin.GetSkinData().launcheritemcolour;
                     }
                 }
 
@@ -197,16 +198,16 @@ namespace ShiftOS
                 if (skin.HasImage("applauncher"))
                 {
                     AppLauncherMenu.Text = "";
-                    AppLauncherMenu.BackColor = Color.Transparent;
-                    if(AppLauncherMenu.BackgroundImage != skin.GetImage("applauncher"))
-                        AppLauncherMenu.BackgroundImage = skin.GetImage("applauncher");
-                    AppLauncherMenu.BackgroundImageLayout = skin.GetSkinData().applauncherlayout;
+                    AppLauncherStrip.BackColor = Color.Transparent;
+                    if(AppLauncherStrip.BackgroundImage != skin.GetImage("applauncher"))
+                        AppLauncherStrip.BackgroundImage = skin.GetImage("applauncher");
+                    AppLauncherStrip.BackgroundImageLayout = skin.GetSkinData().applauncherlayout;
                 }
                 else
                 {
-                    AppLauncherMenu.BackColor = skin.GetSkinData().applauncherbackgroundcolour;
-                    AppLauncherMenu.Text = skin.GetSkinData().applicationlaunchername;
-                    AppLauncherMenu.BackgroundImage = null;
+                    AppLauncherStrip.BackColor = skin.GetSkinData().applauncherbuttoncolour;
+                    AppLauncherStrip.Text = skin.GetSkinData().applicationlaunchername;
+                    AppLauncherStrip.BackgroundImage = null;
                 }
 
                 AppLauncherMenu.Height = skin.GetSkinData().applicationbuttonheight;
@@ -265,10 +266,13 @@ namespace ShiftOS
 
             // TODO: Check if we actually have unity mode toggle and shutdown.
 
-            var separator = new ToolStripSeparator();
-            AppLauncherMenu.DropDownItems.Add(separator);
+            if (CurrentSystem.HasShiftoriumUpgrade("alunitymode") || CurrentSystem.HasShiftoriumUpgrade("applaunchershutdown"))
+            {
+                var separator = new ToolStripSeparator();
+                AppLauncherMenu.DropDownItems.Add(separator);
+            }
 
-            if (CurrentSystem.HasShiftoriumUpgrade("unitymodetoggle"))
+            if (CurrentSystem.HasShiftoriumUpgrade("alunitymode"))
             {
                 var unityToggle = new ToolStripMenuItem("Toggle Unity Mode");
 
@@ -301,7 +305,10 @@ namespace ShiftOS
             }
             else if(e.KeyCode == Keys.S && e.Control)
             {
-                CurrentSystem.LaunchProgram("shiftorium");
+                CurrentSystem.AskForColor("Desktop Panel color", CurrentSystem.GetSkinContext().GetSkinData().desktoppanelcolour, (color) =>
+                {
+                    CurrentSystem.GetSkinContext().GetSkinData().desktoppanelcolour = color;
+                });
             }
                 
         }

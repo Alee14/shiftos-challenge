@@ -117,10 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="AppLauncherStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>139, 17</value>
+  <data name="Label68.Text" xml:space="preserve">
+    <value>Welcome to the windows settings panel. Here you can modify the appearance of the controls that are displayed on your open windows. Just select a sub option to the left to get started!
+
+The preview window above will track your modifications live until you click "Apply Changes".</value>
+  </data>
+  <metadata name="predesktopappmenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>314, 45</value>
   </metadata>
-  <metadata name="UpdateTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="predesktopappmenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>314, 45</value>
   </metadata>
+  <data name="Label69.Text" xml:space="preserve">
+    <value>Welcome to the desktop settings panel. Here you can modify the appearance of the controls that are displayed on your desktop. Just select a sub option to the left to get started!
+
+The preview desktop above will track your modifications live until you click "Apply Changes".</value>
+  </data>
+  <data name="Label109.Text" xml:space="preserve">
+    <value>After spending hours customizing ShiftOS you may want to reset all settings to their default values so you can have a clean slate. Remember that once you reset your settings you can't undo your actions so only do so if you truly want to abandon all the customizations you have made to ShiftOS.
+
+</value>
+  </data>
+  <data name="Label66.Text" xml:space="preserve">
+    <value>That's right! Simply by customizing your ShiftOS interface you can earn as many codepoints as you like. The amount of codepoints you earn will be calculated and displayed the moment you press "Apply Changes".  The more time you spend customizing the more codepoints you will earn!
+</value>
+  </data>
+  <data name="Label64.Text" xml:space="preserve">
+    <value>The shifter is an application that allows you to modify various features in ShiftOS. Initially the user interface of ShiftOS is very dull however you can use the Shifter and various sub programs within the Shifter such as the "Colour Picker" to improve the appearance of ShiftOS.
+
+The basic process of modifying your ShiftOS interface is very simple. You first choose a main category on the left which will bring up a list of sub categories. Next select a sub category to display your list of customization options. Once you have modified the appropriate settings click Apply Changes to confirm your choices.
+</value>
+  </data>
 </root>

@@ -90,11 +90,35 @@
     <Compile Include="Programs\Clock.Designer.cs">
       <DependentUpon>Clock.cs</DependentUpon>
     </Compile>
+    <Compile Include="Programs\ColorPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programs\ColorPicker.Designer.cs">
+      <DependentUpon>ColorPicker.cs</DependentUpon>
+    </Compile>
     <Compile Include="Programs\FileSkimmer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Programs\FileSkimmer.Designer.cs">
       <DependentUpon>FileSkimmer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programs\GraphicPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programs\GraphicPicker.Designer.cs">
+      <DependentUpon>GraphicPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programs\Infobox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programs\Infobox.Designer.cs">
+      <DependentUpon>Infobox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programs\Shifter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programs\Shifter.Designer.cs">
+      <DependentUpon>Shifter.cs</DependentUpon>
     </Compile>
     <Compile Include="Programs\Shiftorium.cs">
       <SubType>Form</SubType>
@@ -107,6 +131,12 @@
     </Compile>
     <Compile Include="Programs\Terminal.Designer.cs">
       <DependentUpon>Terminal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programs\TextPad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programs\TextPad.Designer.cs">
+      <DependentUpon>TextPad.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -135,14 +165,29 @@
     <EmbeddedResource Include="Programs\Clock.resx">
       <DependentUpon>Clock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Programs\ColorPicker.resx">
+      <DependentUpon>ColorPicker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Programs\FileSkimmer.resx">
       <DependentUpon>FileSkimmer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programs\GraphicPicker.resx">
+      <DependentUpon>GraphicPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programs\Infobox.resx">
+      <DependentUpon>Infobox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programs\Shifter.resx">
+      <DependentUpon>Shifter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Programs\Shiftorium.resx">
       <DependentUpon>Shiftorium.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Programs\Terminal.resx">
       <DependentUpon>Terminal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programs\TextPad.resx">
+      <DependentUpon>TextPad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -172,7 +217,8 @@
     <None Include="Resources\UpgradeDatabase.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Main.usage.txt" />
+    <None Include="Resources\ColorPickerDefaults.txt" />
+    <None Include="Resources\ColorPickerLevels.txt" />
     <None Include="Resources\zoombuttonpressed.png" />
     <None Include="Resources\zoombutton.png" />
     <None Include="Resources\writesound.wav" />

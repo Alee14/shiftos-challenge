@@ -34,14 +34,29 @@ namespace ShiftOS.Programs
             // Make ourselves maximized if the borders are hidden.
             this.WindowState = ShowShiftOSBorders ? FormWindowState.Normal : FormWindowState.Maximized;
 
+            // Terminal scrollbar upgrade.
+            if(CurrentSystem.HasShiftoriumUpgrade("terminalscrollbar"))
+            {
+                TerminalControl.ScrollBars = ScrollBars.Vertical;
+            }
+            else
+            {
+                TerminalControl.ScrollBars = ScrollBars.None;
+            }
+
             base.OnDesktopUpdate();
         }
 
         public void Write(string text)
         {
             TerminalControl.SelectionStart = TerminalControl.Text.Length;
-            TerminalControl.AppendText(text);
+            TerminalControl.Text += text;
             TerminalControl.SelectionStart = TerminalControl.Text.Length;
+
+            if(CurrentSystem.HasShiftoriumUpgrade("autoscrollterminal"))
+            {
+                TerminalControl.ScrollToCaret();
+            }
         }
 
         public void WriteLine(string text)

@@ -130,6 +130,7 @@
             this.Controls.Add(this.DesktopPanel);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.MainMenuStrip = this.AppLauncherStrip;
             this.Name = "Desktop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

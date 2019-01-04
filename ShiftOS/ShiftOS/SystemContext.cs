@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.IO;
 using System.Security.Cryptography;
+using ShiftOS.Programs;
 
 namespace ShiftOS
 {
@@ -380,6 +381,113 @@ namespace ShiftOS
             return _installedUpgrades.Contains(InUpgrade);
         }
 
+        public void AskForColor(string colorTitle, Color oldColor, Action<Color> callback)
+        {
+            var picker = new ColorPicker();
+            picker.ColorName = colorTitle;
+            picker.OldColor = oldColor;
+            picker.Callback = callback;
+            _windows.Add(picker);
+            picker.SetSystemContext(this);
+            picker.FormClosed += (o, a) =>
+            {
+                _windows.Remove(picker);
+            };
+            picker.Show();
+        }
+
+        public void AskForGraphic(string GraphicName, Image OldGraphic, ImageLayout OldLayout, Action<Image, ImageLayout> Callback)
+        {
+            var picker = new GraphicPicker();
+            picker.SetSystemContext(this);
+            picker.GraphicName = GraphicName;
+            picker.Callback = Callback;
+            picker.CurrentGraphic = OldGraphic;
+            picker.CurrentLayout = OldLayout;
+
+            _windows.Add(picker);
+            picker.Show();
+
+            picker.FormClosed += (o, a) =>
+            {
+                _windows.Remove(picker);
+            };
+        }
+
+        /// <summary>
+        /// Clones the specified skin context and applies it, saving it to the disk.
+        /// </summary>
+        /// <param name="InContext">The skin context containing data to apply.</param>
+        public void ApplySkin(SkinContext InContext)
+        {
+            _skinContext = InContext.MakeClone();
+            _skinContext.SaveToDisk(_filesystem);
+        }
+
+        public void AskForFile(string[] filters, bool save, Func<string, bool> callback)
+        {
+            var fileskimmer = new FileSkimmer();
+            fileskimmer.SetSystemContext(this);
+            fileskimmer.SetFilters(filters);
+            fileskimmer.Mode = (save) ? FileSkimmerMode.Save : FileSkimmerMode.Open;
+            fileskimmer.FileOpenCallback = callback;
+            _windows.Add(fileskimmer);
+            fileskimmer.FormClosed += (o, a) =>
+            {
+                _windows.Remove(fileskimmer);
+            };
+            fileskimmer.Show();
+        }
+
+        public void AskForText(string title, string message, Func<string, bool> callback)
+        {
+            var info = new Infobox();
+            _windows.Add(info);
+            info.WindowTitle = title;
+            info.Info = message;
+            info.SetSystemContext(this);
+            info.Mode = InfoboxMode.TextInput;
+            info.TextSubmitted = callback;
+            info.FormClosed += (o, a) =>
+            {
+                _windows.Remove(info);
+            };
+            info.Show();
+
+        }
+
+
+        public void AskYesNo(string title, string message, Action<bool> callback)
+        {
+            var info = new Infobox();
+            _windows.Add(info);
+            info.WindowTitle = title;
+            info.Info = message;
+            info.SetSystemContext(this);
+            info.Mode = InfoboxMode.YesNo;
+            info.ChoiceMade = callback;
+            info.FormClosed += (o, a) =>
+            {
+                _windows.Remove(info);
+            };
+            info.Show();
+
+        }
+
+        public void ShowInfo(string title, string message)
+        {
+            var info = new Infobox();
+            _windows.Add(info);
+            info.WindowTitle = title;
+            info.Info = message;
+            info.SetSystemContext(this);
+            info.FormClosed += (o, a) =>
+            {
+                _windows.Remove(info);
+            };
+            info.Show();
+        }
+
         public bool LaunchProgram(string InExecutableName)
         {
             // Does the program exist in our typemap?
@@ -630,6 +738,35 @@ namespace ShiftOS
                     {
                         return ((int)now.TimeOfDay.TotalSeconds).ToString();
                     }
+                }
+            }
+        }
+
+        public string GetProgramDescription(string InProgramExe)
+        {
+            var meta = _programMetadata.FirstOrDefault(x => x.ExecutableName == InProgramExe);
+            if (meta == null)
+                return "";
+            return meta.Description;
+        }
+
+        public IEnumerable<string> GetUsefulTips()
+        {
+            yield return "You can type in the name of a program in Terminal to open it.";
+            yield return "Commands will tell you their usage when you use them incorrectly.";
+            yield return "You can type 'help [command]' to see info about a specific command.";
+
+            foreach(var upgrade in _upgrades)
+            {
+                if(HasShiftoriumUpgrade(upgrade.ID))
+                {
+                    if (!string.IsNullOrWhiteSpace(upgrade.UsageTip))
+                        yield return upgrade.UsageTip;
+                }
+                else
+                {
+                    if (!string.IsNullOrWhiteSpace(upgrade.PreInstallTip))
+                        yield return upgrade.PreInstallTip;
                 }
             }
         }

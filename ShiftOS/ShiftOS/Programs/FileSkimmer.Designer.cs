@@ -40,9 +40,18 @@
             this.ImageList1 = new System.Windows.Forms.ImageList(this.components);
             this.lvfiles = new System.Windows.Forms.ListView();
             this.pgcontents = new System.Windows.Forms.Panel();
+            this.pnlopenoptions = new System.Windows.Forms.Panel();
+            this.txtfilename = new System.Windows.Forms.TextBox();
+            this.lblfilenameprompt = new System.Windows.Forms.Label();
+            this.cmbformatchooser = new System.Windows.Forms.ComboBox();
+            this.btncancel = new System.Windows.Forms.Button();
+            this.btnopen = new System.Windows.Forms.Button();
+            this.lbextention = new System.Windows.Forms.Label();
+            this.lblcurrentlydisplayingprompt = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.pnloptions.SuspendLayout();
             this.pgcontents.SuspendLayout();
+            this.pnlopenoptions.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbllocation
@@ -91,6 +100,7 @@
             this.btndeletefile.Text = "Delete Folder";
             this.btndeletefile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btndeletefile.UseVisualStyleBackColor = false;
+            this.btndeletefile.Click += new System.EventHandler(this.btndeletefile_Click);
             // 
             // btnnewfolder
             // 
@@ -106,6 +116,7 @@
             this.btnnewfolder.Text = "New Folder";
             this.btnnewfolder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnnewfolder.UseVisualStyleBackColor = false;
+            this.btnnewfolder.Click += new System.EventHandler(this.btnnewfolder_Click);
             // 
             // pnlbreak
             // 
@@ -113,7 +124,7 @@
             this.pnlbreak.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlbreak.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlbreak.ForeColor = System.Drawing.Color.Black;
-            this.pnlbreak.Location = new System.Drawing.Point(0, 365);
+            this.pnlbreak.Location = new System.Drawing.Point(0, 323);
             this.pnlbreak.Name = "pnlbreak";
             this.pnlbreak.Size = new System.Drawing.Size(796, 15);
             this.pnlbreak.TabIndex = 7;
@@ -123,7 +134,7 @@
             this.pnloptions.Controls.Add(this.btndeletefile);
             this.pnloptions.Controls.Add(this.btnnewfolder);
             this.pnloptions.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnloptions.Location = new System.Drawing.Point(0, 380);
+            this.pnloptions.Location = new System.Drawing.Point(0, 338);
             this.pnloptions.Name = "pnloptions";
             this.pnloptions.Size = new System.Drawing.Size(796, 38);
             this.pnloptions.TabIndex = 6;
@@ -162,7 +173,7 @@
             this.lvfiles.LargeImageList = this.ImageList1;
             this.lvfiles.Location = new System.Drawing.Point(0, 33);
             this.lvfiles.Name = "lvfiles";
-            this.lvfiles.Size = new System.Drawing.Size(796, 332);
+            this.lvfiles.Size = new System.Drawing.Size(796, 290);
             this.lvfiles.TabIndex = 3;
             this.lvfiles.UseCompatibleStateImageBehavior = false;
             this.lvfiles.DoubleClick += new System.EventHandler(this.lvfiles_DoubleClick);
@@ -172,6 +183,7 @@
             this.pgcontents.Controls.Add(this.lvfiles);
             this.pgcontents.Controls.Add(this.pnlbreak);
             this.pgcontents.Controls.Add(this.pnloptions);
+            this.pgcontents.Controls.Add(this.pnlopenoptions);
             this.pgcontents.Controls.Add(this.panel3);
             this.pgcontents.Controls.Add(this.panel4);
             this.pgcontents.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -179,6 +191,98 @@
             this.pgcontents.Name = "pgcontents";
             this.pgcontents.Size = new System.Drawing.Size(796, 418);
             this.pgcontents.TabIndex = 25;
+            // 
+            // pnlopenoptions
+            // 
+            this.pnlopenoptions.Controls.Add(this.txtfilename);
+            this.pnlopenoptions.Controls.Add(this.lblfilenameprompt);
+            this.pnlopenoptions.Controls.Add(this.cmbformatchooser);
+            this.pnlopenoptions.Controls.Add(this.btncancel);
+            this.pnlopenoptions.Controls.Add(this.btnopen);
+            this.pnlopenoptions.Controls.Add(this.lbextention);
+            this.pnlopenoptions.Controls.Add(this.lblcurrentlydisplayingprompt);
+            this.pnlopenoptions.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlopenoptions.Location = new System.Drawing.Point(0, 376);
+            this.pnlopenoptions.Name = "pnlopenoptions";
+            this.pnlopenoptions.Size = new System.Drawing.Size(796, 42);
+            this.pnlopenoptions.TabIndex = 11;
+            // 
+            // txtfilename
+            // 
+            this.txtfilename.BackColor = System.Drawing.Color.White;
+            this.txtfilename.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtfilename.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtfilename.Location = new System.Drawing.Point(87, 10);
+            this.txtfilename.Name = "txtfilename";
+            this.txtfilename.Size = new System.Drawing.Size(480, 22);
+            this.txtfilename.TabIndex = 0;
+            // 
+            // lblfilenameprompt
+            // 
+            this.lblfilenameprompt.AutoSize = true;
+            this.lblfilenameprompt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfilenameprompt.Location = new System.Drawing.Point(6, 13);
+            this.lblfilenameprompt.Name = "lblfilenameprompt";
+            this.lblfilenameprompt.Size = new System.Drawing.Size(73, 16);
+            this.lblfilenameprompt.TabIndex = 1;
+            this.lblfilenameprompt.Text = "File Name:";
+            // 
+            // cmbformatchooser
+            // 
+            this.cmbformatchooser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbformatchooser.FormattingEnabled = true;
+            this.cmbformatchooser.Location = new System.Drawing.Point(579, 10);
+            this.cmbformatchooser.Name = "cmbformatchooser";
+            this.cmbformatchooser.Size = new System.Drawing.Size(45, 21);
+            this.cmbformatchooser.TabIndex = 4;
+            this.cmbformatchooser.SelectedIndexChanged += new System.EventHandler(this.cmbformatchooser_SelectedIndexChanged);
+            // 
+            // btncancel
+            // 
+            this.btncancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancel.Location = new System.Drawing.Point(630, 5);
+            this.btncancel.Name = "btncancel";
+            this.btncancel.Size = new System.Drawing.Size(75, 29);
+            this.btncancel.TabIndex = 4;
+            this.btncancel.Text = "Cancel";
+            this.btncancel.UseVisualStyleBackColor = true;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
+            // 
+            // btnopen
+            // 
+            this.btnopen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnopen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnopen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnopen.Location = new System.Drawing.Point(711, 5);
+            this.btnopen.Name = "btnopen";
+            this.btnopen.Size = new System.Drawing.Size(75, 29);
+            this.btnopen.TabIndex = 3;
+            this.btnopen.Text = "Open";
+            this.btnopen.UseVisualStyleBackColor = true;
+            this.btnopen.Click += new System.EventHandler(this.btnopen_Click);
+            // 
+            // lbextention
+            // 
+            this.lbextention.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbextention.AutoSize = true;
+            this.lbextention.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbextention.Location = new System.Drawing.Point(573, 3);
+            this.lbextention.Name = "lbextention";
+            this.lbextention.Size = new System.Drawing.Size(51, 31);
+            this.lbextention.TabIndex = 2;
+            this.lbextention.Text = ".txt";
+            // 
+            // lblcurrentlydisplayingprompt
+            // 
+            this.lblcurrentlydisplayingprompt.AutoSize = true;
+            this.lblcurrentlydisplayingprompt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcurrentlydisplayingprompt.Location = new System.Drawing.Point(8, 13);
+            this.lblcurrentlydisplayingprompt.Name = "lblcurrentlydisplayingprompt";
+            this.lblcurrentlydisplayingprompt.Size = new System.Drawing.Size(360, 16);
+            this.lblcurrentlydisplayingprompt.TabIndex = 1;
+            this.lblcurrentlydisplayingprompt.Text = "Currently displaying files to open with the following extention:";
             // 
             // FileSkimmer
             // 
@@ -194,6 +298,8 @@
             this.panel4.ResumeLayout(false);
             this.pnloptions.ResumeLayout(false);
             this.pgcontents.ResumeLayout(false);
+            this.pnlopenoptions.ResumeLayout(false);
+            this.pnlopenoptions.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -209,5 +315,13 @@
         internal System.Windows.Forms.ImageList ImageList1;
         internal System.Windows.Forms.ListView lvfiles;
         internal System.Windows.Forms.Panel pgcontents;
+        internal System.Windows.Forms.Panel pnlopenoptions;
+        internal System.Windows.Forms.Button btncancel;
+        internal System.Windows.Forms.Button btnopen;
+        internal System.Windows.Forms.Label lbextention;
+        internal System.Windows.Forms.Label lblcurrentlydisplayingprompt;
+        internal System.Windows.Forms.TextBox txtfilename;
+        internal System.Windows.Forms.Label lblfilenameprompt;
+        internal System.Windows.Forms.ComboBox cmbformatchooser;
     }
 }

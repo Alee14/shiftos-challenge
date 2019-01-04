@@ -65,7 +65,7 @@ namespace ShiftOS.Windowing
 
             // Set the title text position.
             this.TitleText.Top = skindata.titletextfromtop;
-            if(skindata.titletextpos == "Left")
+            if(skindata.titletextposition == "Left")
             {
                 this.TitleText.Left = skindata.titletextfromside;
             }

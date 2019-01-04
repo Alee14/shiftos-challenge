@@ -21,7 +21,10 @@ namespace ShiftOS.Commands
             InConsole.WriteLine("");
             InConsole.WriteLine("Tips:");
             InConsole.WriteLine("");
-            InConsole.WriteLine(" - Not yet implemented.");
+            foreach (var tip in InConsole.CurrentSystem.GetUsefulTips().OrderBy(x=>x))
+            {
+                InConsole.WriteLine($" - {tip}");
+            }
             InConsole.WriteLine("");
             InConsole.WriteLine("Terminal commands:");
             InConsole.WriteLine("");
@@ -34,7 +37,10 @@ namespace ShiftOS.Commands
             InConsole.WriteLine("");
             InConsole.WriteLine("Programs:");
             InConsole.WriteLine("");
-            InConsole.WriteLine(" - Not yet implemented.");
+            foreach(var program in InConsole.CurrentSystem.GetInstalledPrograms().OrderBy(x=>x))
+            {
+                InConsole.WriteLine($" - {program}: {InConsole.CurrentSystem.GetProgramDescription(program)}");
+            }
             InConsole.WriteLine("");
         }
     }

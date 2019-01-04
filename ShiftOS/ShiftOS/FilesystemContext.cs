@@ -6,6 +6,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Reflection;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace ShiftOS
 {
@@ -72,6 +73,19 @@ namespace ShiftOS
 
             Console.WriteLine("Mapped {0} to {1}.", InPath, mapped);
             return mapped;
+        }
+
+        public Image LoadImage(string InPath)
+        {
+            Image ret = null;
+            if(FileExists(InPath))
+            {
+                using (var stream = OpenRead(InPath))
+                {
+                    ret = new Bitmap(Bitmap.FromStream(stream));
+                }
+            }
+            return ret;
         }
 
         public Stream Open(string InPath, FileMode InFileMode)

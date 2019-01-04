@@ -16,17 +16,29 @@ namespace ShiftOS
         {
             CurrentSystem = InSystem;
         }
+
+        public ToolStripSkinRenderer(SkinContext InSkinPreview) : base(new ToolStripSkinColorTable(InSkinPreview))
+        {
+
+        }
     }
 
     public class ToolStripSkinColorTable : ProfessionalColorTable
     {
         private SystemContext CurrentSystem;
+        private SkinContext _previewSkin = null;
 
         public ToolStripSkinColorTable(SystemContext InSystem)
         {
             CurrentSystem = InSystem;
         }
 
+        public ToolStripSkinColorTable(SkinContext InPreviewSkin)
+        {
+            _previewSkin = InPreviewSkin;
+        }
+
+        public SkinContext Skin => (_previewSkin == null) ? CurrentSystem.GetSkinContext() : _previewSkin;
         public override Color ButtonSelectedHighlight => ButtonSelectedGradientMiddle;
 
         public override Color ButtonSelectedHighlightBorder => ButtonSelectedBorder;
@@ -71,7 +83,7 @@ namespace ShiftOS
 
         public override Color GripLight => Color.White;
 
-        public override Color ImageMarginGradientBegin => CurrentSystem.GetSkinContext().GetSkinData().applauncherbackgroundcolour;
+        public override Color ImageMarginGradientBegin => Skin.GetSkinData().applauncherbackgroundcolour;
 
         public override Color ImageMarginGradientMiddle => ImageMarginGradientBegin;
 
@@ -83,21 +95,21 @@ namespace ShiftOS
 
         public override Color ImageMarginRevealedGradientEnd => Color.Gray;
 
-        public override Color MenuStripGradientBegin => (CurrentSystem.GetSkinContext().HasImage("applauncher") ? Color.Transparent : CurrentSystem.GetSkinContext().GetSkinData().applauncherbuttoncolour);
+        public override Color MenuStripGradientBegin => (Skin.HasImage("applauncher") ? Color.Transparent : Skin.GetSkinData().applauncherbuttoncolour);
 
         public override Color MenuStripGradientEnd => MenuStripGradientBegin;
 
-        public override Color MenuItemSelected => CurrentSystem.GetSkinContext().GetSkinData().applaunchermouseovercolour;
+        public override Color MenuItemSelected => Skin.GetSkinData().applaunchermouseovercolour;
 
-        public override Color MenuItemBorder => (CurrentSystem.GetSkinContext().HasImage("applauncher") ? Color.Transparent : MenuItemSelected);
+        public override Color MenuItemBorder => (Skin.HasImage("applauncher") ? Color.Transparent : MenuItemSelected);
 
-        public override Color MenuBorder => (CurrentSystem.GetSkinContext().HasImage("applauncher") ? Color.Transparent : CurrentSystem.GetSkinContext().GetSkinData().applauncherbackgroundcolour);
+        public override Color MenuBorder => (Skin.HasImage("applauncher") ? Color.Transparent : Skin.GetSkinData().applauncherbackgroundcolour);
 
-        public override Color MenuItemSelectedGradientBegin => MenuItemSelected;
+        public override Color MenuItemSelectedGradientBegin => (Skin.HasImage("applauncher") || Skin.HasImage("applaunchermouseover") ? Color.Transparent : MenuItemSelected);
 
         public override Color MenuItemSelectedGradientEnd => MenuItemSelectedGradientBegin;
 
-        public override Color MenuItemPressedGradientBegin => (CurrentSystem.GetSkinContext().HasImage("applauncher") ? Color.Transparent : CurrentSystem.GetSkinContext().GetSkinData().applauncherbuttonclickedcolour);
+        public override Color MenuItemPressedGradientBegin => (Skin.HasImage("applauncher") || Skin.HasImage("applauncherclick") ? Color.Transparent : Skin.GetSkinData().applauncherbuttonclickedcolour);
 
         public override Color MenuItemPressedGradientMiddle => MenuItemPressedGradientBegin;
 
@@ -107,7 +119,7 @@ namespace ShiftOS
 
         public override Color RaftingContainerGradientEnd => RaftingContainerGradientEnd;
 
-        public override Color SeparatorDark => Color.Black;
+        public override Color SeparatorDark => Skin.GetSkinData().launcheritemcolour;
 
         public override Color SeparatorLight => SeparatorDark;
 
@@ -117,7 +129,7 @@ namespace ShiftOS
 
         public override Color ToolStripBorder => Color.Gray;
 
-        public override Color ToolStripDropDownBackground => MenuStripGradientBegin;
+        public override Color ToolStripDropDownBackground => Skin.GetSkinData().applauncherbackgroundcolour;
 
         public override Color ToolStripGradientBegin => Color.Gray;
 

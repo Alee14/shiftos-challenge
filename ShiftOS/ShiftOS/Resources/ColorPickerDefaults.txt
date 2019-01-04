@@ -1,0 +1,419 @@
+{
+	"gray": {
+		1: [
+			"Black",
+			"Gray",
+			"White"		
+		],
+		2: [
+			"Black",
+			"DimGray",
+			"Gray",
+			"LightGray",
+			"White"		
+		],
+		3: [
+			"Black",
+			"DimGray",
+			"Gray",
+			"DarkGray",
+			"Silver",
+			"LightGray",
+			"Gainsboro",
+			"WhiteSmoke",
+			"White"		
+		],
+		4: [
+			"Black",
+			"DimGray",
+			"Gray",
+			"DarkGray",
+			"Silver",
+			"LightGray",
+			"Gainsboro",
+			"WhiteSmoke",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White"
+		]
+	},
+	"purple": {
+		1: [
+			"Purple"		
+		],
+		2: [
+			"Indigo",
+			"Purple",
+			"MediumPurple"		
+		],
+		3: [
+			"Indigo",
+			"DarkSlateBlue",
+			"Purple",
+			"DarkOrchid",
+			"DarkViolet",
+			"BlueViolet",
+			"SlateBlue",
+			"MediumSlateBlue",
+			"MediumPurple",
+			"MediumOrchid",
+			"Magenta",
+			"Orchid",
+			"Violet",
+			"Plum",
+			"Thistle",
+			"Lavender"		
+		],
+		4: [
+			"Indigo",
+			"DarkSlateBlue",
+			"Purple",
+			"DarkOrchid",
+			"DarkViolet",
+			"BlueViolet",
+			"SlateBlue",
+			"MediumSlateBlue",
+			"MediumPurple",
+			"MediumOrchid",
+			"Magenta",
+			"Orchid",
+			"Violet",
+			"Plum",
+			"Thistle",
+			"Lavender"
+		]
+	},
+	"blue": {
+		1: [
+			"Blue"
+		],
+		2: [
+			"Navy",
+			"Blue",
+			"LightBlue"
+		],
+		3: [
+			"MidnightBlue",
+			"Navy",
+			"Blue",
+			"RoyalBlue",
+			"CornflowerBlue",
+			"DeepSkyBlue",
+			"SkyBlue",
+			"LightBlue",
+			"LightSteelBlue",
+			"Cyan",
+			"Aquamarine",
+			"DarkTurquoise",
+			"MediumAquamarine",
+			"CadetBlue",
+			"Teal",
+			"White"
+		],
+		4: [
+			"MidnightBlue",
+			"Navy",
+			"Blue",
+			"RoyalBlue",
+			"CornflowerBlue",
+			"DeepSkyBlue",
+			"SkyBlue",
+			"LightBlue",
+			"LightSteelBlue",
+			"Cyan",
+			"Aquamarine",
+			"DarkTurquoise",
+			"MediumAquamarine",
+			"CadetBlue",
+			"Teal",
+			"White"
+		]
+	},
+	"green": {
+		1: [
+			"Green"		
+		],
+		2: [
+			"DarkGreen",
+			"Green",
+			"LightGreen"		
+		],
+		3: [
+			"DarkGreen",
+			"Green",
+			"SeaGreen",
+			"MediumSeaGreen",
+			"DarkSeaGreen",
+			"LightGreen",
+			"MediumSpringGreen",
+			"SpringGreen",
+			"GreenYellow",
+			"LawnGreen",
+			"Lime",
+			"LimeGreen",
+			"YellowGreen",
+			"OliveDrab",
+			"Olive",
+			"DarkOliveGreen"		
+		],
+		4: [
+			"DarkGreen",
+			"Green",
+			"SeaGreen",
+			"MediumSeaGreen",
+			"DarkSeaGreen",
+			"LightGreen",
+			"MediumSpringGreen",
+			"SpringGreen",
+			"GreenYellow",
+			"LawnGreen",
+			"Lime",
+			"LimeGreen",
+			"YellowGreen",
+			"OliveDrab",
+			"Olive",
+			"DarkOliveGreen"
+		]
+	},
+	"yellow": {
+		1: [
+			"Yellow"		
+		],
+		2: [
+			"DarkKhaki",
+			"Yellow",
+			"PaleGoldenrod"		
+		],
+		3: [
+			"DarkKhaki",
+			"Yellow",
+			"Khaki",
+			"PaleGoldenrod",
+			"PeachPuff",
+			"Moccasin",
+			"PapayaWhip",
+			"LightGoldenrodYellow",
+			"LemonChiffon",
+			"LightYellow"		
+		],
+		4: [
+			"DarkKhaki",
+			"Yellow",
+			"Khaki",
+			"PaleGoldenrod",
+			"PeachPuff",
+			"Moccasin",
+			"PapayaWhip",
+			"LightGoldenrodYellow",
+			"LemonChiffon",
+			"LightYellow",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White"
+		]
+	},
+	"orange": {
+		1: [
+			"DarkOrange"		
+		],
+		2: [
+			"OrangeRed",
+			"DarkOrange",
+			"Orange"		
+		],
+		3: [
+			"OrangeRed",
+			"Tomato",
+			"Coral",
+			"DarkOrange",
+			"Orange",
+			"Gold"		
+		],
+		4: [
+			"OrangeRed",
+			"Tomato",
+			"Coral",
+			"DarkOrange",
+			"Orange",
+			"Gold",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White"
+		]
+	},
+	"brown": {
+		1: [
+			"Sienna"		
+		],
+		2: [
+			"SaddleBrown",
+			"Sienna",
+			"BurlyWood"		
+		],
+		3: [
+			"Maroon",
+			"Brown",
+			"Sienna",
+			"SaddleBrown",
+			"Chocolate",
+			"Peru",
+			"DarkGoldenrod",
+			"Goldenrod",
+			"SandyBrown",
+			"RosyBrown",
+			"Tan",
+			"BurlyWood",
+			"Wheat",
+			"NavajoWhite",
+			"Bisque",
+			"BlanchedAlmond"		
+		],
+		4: [
+			"Maroon",
+			"Brown",
+			"Sienna",
+			"SaddleBrown",
+			"Chocolate",
+			"Peru",
+			"DarkGoldenrod",
+			"Goldenrod",
+			"SandyBrown",
+			"RosyBrown",
+			"Tan",
+			"BurlyWood",
+			"Wheat",
+			"NavajoWhite",
+			"Bisque",
+			"BlanchedAlmond"
+		]
+	},
+	"red": {
+		1: [
+			"Red"		
+		],
+		2: [
+			"DarkRed",
+			"Red",
+			"Salmon"		
+		],
+		3: [
+			"DarkRed",
+			"Red",
+			"Firebrick",
+			"Crimson",
+			"IndianRed",
+			"LightCoral",
+			"DarkSalmon",
+			"Salmon",
+			"LightSalmon"		
+		],
+		4: [
+			"DarkRed",
+			"Red",
+			"Firebrick",
+			"Crimson",
+			"IndianRed",
+			"LightCoral",
+			"DarkSalmon",
+			"Salmon",
+			"LightSalmon",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White"
+		]
+	},
+	"pink": {
+		1: [
+			"HotPink"		
+		],
+		2: [
+			"DeepPink",
+			"HotPink",
+			"LightPink"		
+		],
+		3: [
+			"MediumVioletRed",
+			"PaleVioletRed",
+			"DeepPink",
+			"HotPink",
+			"LightPink",
+			"Pink"		
+		],
+		4: [
+			"MediumVioletRed",
+			"PaleVioletRed",
+			"DeepPink",
+			"HotPink",
+			"LightPink",
+			"Pink",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White"
+		]
+	},
+	"any": {
+		1: [
+			"White"		
+		],
+		2: [
+			"White",
+			"White",
+			"White",
+			"White"		
+		],
+		3: [
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White"		
+		],
+		4: [
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White",
+			"White"
+		]
+	}
+}

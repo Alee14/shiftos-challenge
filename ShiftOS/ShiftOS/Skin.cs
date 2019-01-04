@@ -62,7 +62,6 @@ namespace ShiftOS
         public string titletextfontfamily = "Microsoft Sans Serif";
         public int titletextfontsize = 10;
         public FontStyle titletextfontstyle = FontStyle.Bold;
-        public string titletextpos = "Left";
         public int titletextfromtop = 3;
         public int titletextfromside = 24;
         public Color titletextcolour = Color.White;
